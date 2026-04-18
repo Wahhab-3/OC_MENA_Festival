@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What is MENA — OC MENA Festival</title>
+  <meta name="description" content="MENA — Middle East and North Africa. 22 countries, 400M+ people, one of the world's oldest and most electric musical traditions. A doorway into the festival.">
+  <link rel="icon" type="image/png" href="./assets/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    /* =====================================================
+       OC MENA FESTIVAL — What is MENA?
+       Heritage Hearth — educational, country grid
+    ===================================================== */
+
+    @font-face {
+      font-family: 'Aldhabi';
+      src: url('./assets/fonts/aldhabi.ttf') format('truetype');
+      font-weight: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --cream:      #fff8f4;
+      --sand:       #fff1e4;
+      --sand-deep:  #ffe4c2;
+      --ink:        #281801;
+      --ink-soft:   #5c403c;
+      --red:        #dc2626;
+      --red-deep:   #b70011;
+      --maroon:     #930046;
+      --maroon-ink: #66002f;
+      --gold:       #f5c842;
+      --gold-deep:  #d0a61e;
+
+      --maxw:   1200px;
+      --maxw-read: 740px;
+      --pad:    clamp(1.25rem, 5vw, 3rem);
+      --nav-h:  72px;
+
+      --fs-display: clamp(2.75rem, 6vw, 5.5rem);
+      --fs-h1:      clamp(2rem, 4vw, 3.5rem);
+      --fs-h2:      clamp(1.5rem, 2.5vw, 2.25rem);
+      --fs-h3:      clamp(1.125rem, 1.5vw, 1.375rem);
+      --fs-body:    1rem;
+      --fs-meta:    0.8125rem;
+
+      --r-sm:  0.5rem;
+      --r-md:  0.75rem;
+      --r-lg:  1rem;
+      --r-xl:  1.5rem;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--cream); color: var(--ink);
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: var(--fs-body); line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+
+    .ar { font-family: 'Aldhabi', serif; font-weight: normal; font-size: 1.7em; line-height: 1; vertical-align: baseline; }
+
+    /* =====================================================
+       BUTTONS
+    ===================================================== */
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.85rem 2rem;
+      background: linear-gradient(135deg, var(--red-deep) 0%, var(--red) 100%);
+      color: #fff; font-weight: 600; font-size: 0.95rem; letter-spacing: 0.02em;
+      border-radius: var(--r-md);
+      box-shadow: 0 8px 24px rgba(40, 24, 1, 0.08);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(40, 24, 1, 0.12); opacity: 0.96; }
+
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.85rem 2rem;
+      background: var(--sand-deep); color: var(--ink);
+      font-weight: 600; font-size: 0.95rem; letter-spacing: 0.02em;
+      border-radius: var(--r-md);
+      transition: transform 0.25s ease, background 0.25s ease;
+    }
+    .btn-secondary:hover { transform: translateY(-2px); background: #ffd89a; }
+
+    @keyframes heartbeat-maroon {
+      0%   { box-shadow: 0 0 0 0 rgba(147, 0, 70, 0.6), 0 8px 24px rgba(40, 24, 1, 0.08); transform: scale(1); }
+      50%  { box-shadow: 0 0 0 14px rgba(147, 0, 70, 0), 0 10px 28px rgba(40, 24, 1, 0.1); transform: scale(1.03); }
+      100% { box-shadow: 0 0 0 0 rgba(147, 0, 70, 0), 0 8px 24px rgba(40, 24, 1, 0.08); transform: scale(1); }
+    }
+    .heartbeat { animation: heartbeat-maroon 1.6s infinite ease-in-out; }
+
+    /* =====================================================
+       NAV (same as about.html)
+    ===================================================== */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      height: var(--nav-h);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 var(--pad);
+      background: rgba(255, 248, 244, 0.72);
+      backdrop-filter: blur(20px) saturate(1.2);
+      -webkit-backdrop-filter: blur(20px) saturate(1.2);
+      transition: background 0.35s ease;
+    }
+    .nav.scrolled { background: rgba(255, 248, 244, 0.92); }
+    .nav-logo img { height: 44px; width: auto; }
+    .nav-links { display: flex; align-items: center; gap: 1.75rem; list-style: none; }
+    .nav-links a {
+      color: var(--ink); font-size: 0.88rem; font-weight: 500;
+      letter-spacing: 0.01em; transition: color 0.2s; opacity: 0.78;
+    }
+    .nav-links a:hover { opacity: 1; color: var(--red-deep); }
+    .nav-links a.is-active { opacity: 1; color: var(--ink); font-weight: 600; position: relative; }
+    .nav-links a.is-active::after {
+      content: ''; position: absolute; left: 0; right: 0; bottom: -8px;
+      height: 2px; background: var(--gold-deep); border-radius: 2px;
+    }
+    .nav-dropdown { position: relative; }
+    .nav-dropdown > a { display: flex; align-items: center; gap: 0.3rem; }
+    .nav-dropdown > a::after { content: '▾'; font-size: 0.65rem; opacity: 0.5; }
+    .nav-dropdown-menu {
+      position: absolute; top: calc(100% + 0.75rem); left: 50%;
+      transform: translateX(-50%) translateY(6px); min-width: 210px;
+      background: rgba(255, 248, 244, 0.96); border-radius: var(--r-md); padding: 0.5rem 0;
+      opacity: 0; visibility: hidden; transition: all 0.2s ease;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 16px 40px rgba(40, 24, 1, 0.08);
+    }
+    .nav-dropdown:hover .nav-dropdown-menu {
+      opacity: 1; visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+    .nav-dropdown-menu a {
+      display: block; padding: 0.65rem 1.2rem; font-size: 0.88rem;
+      color: var(--ink); opacity: 0.82;
+      transition: opacity 0.15s, background 0.15s;
+    }
+    .nav-dropdown-menu a:hover { opacity: 1; background: var(--sand); }
+    .nav-cta { flex-shrink: 0; }
+    .nav-burger { display: none; color: var(--ink); font-size: 1.5rem; padding: 0.25rem; }
+    .mobile-menu {
+      display: none; position: fixed;
+      top: var(--nav-h); left: 0; right: 0; bottom: 0;
+      background: var(--cream); z-index: 99;
+      flex-direction: column; padding: 2rem var(--pad); gap: 0; overflow-y: auto;
+    }
+    .mobile-menu.is-open { display: flex; }
+    .mobile-menu a { color: var(--ink); font-size: 1.1rem; font-weight: 500; padding: 1rem 0; }
+    .mobile-menu a + a {
+      background-image: linear-gradient(to right, rgba(40,24,1,0.08) 50%, transparent 50%);
+      background-size: 4px 1px; background-position: top; background-repeat: repeat-x;
+    }
+    .mobile-menu .mobile-cta { margin-top: 2rem; align-self: flex-start; }
+
+    /* =====================================================
+       PAGE HEADER
+    ===================================================== */
+    .page-head {
+      position: relative; min-height: 68vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center;
+      padding: calc(var(--nav-h) + 4rem) var(--pad) 4rem;
+      overflow: hidden; background-color: var(--maroon);
+    }
+    .page-head__bg {
+      position: absolute; inset: 0;
+      background-image: url('./assets/images/hero-crowd.webp');
+      background-size: cover; background-position: center;
+      filter: saturate(1.05);
+    }
+    .page-head__scrim {
+      position: absolute; inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(147, 0, 70, 0.55) 0%,
+        rgba(102, 0, 47, 0.45) 50%,
+        rgba(40, 24, 1, 0.72) 100%
+      );
+    }
+    .page-head-inner {
+      position: relative; z-index: 2; max-width: 920px; width: 100%;
+      display: flex; flex-direction: column; gap: 1.1rem; align-items: center;
+    }
+    .page-eyebrow { display: flex; flex-direction: column; align-items: center; gap: 0.3rem; }
+    .page-eyebrow-ar { color: var(--gold); line-height: 1; font-size: clamp(4rem, 10vw, 100px); }
+    .page-eyebrow-en {
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.28em;
+      text-transform: uppercase; color: rgba(255, 248, 244, 0.78);
+    }
+    .page-title {
+      font-family: 'Newsreader', serif; font-weight: 400;
+      font-size: var(--fs-display); line-height: 1.05;
+      color: #fff; letter-spacing: -0.015em;
+    }
+    .page-title em { font-style: italic; font-weight: 300; color: var(--sand-deep); }
+    .page-title .ar-word {
+      font-family: 'Aldhabi', serif; font-size: 1.7em;
+      color: var(--gold); letter-spacing: 0;
+      font-weight: normal; vertical-align: baseline; line-height: 1;
+    }
+    .page-sub {
+      font-size: clamp(1rem, 1.4vw, 1.18rem);
+      color: rgba(255, 248, 244, 0.88);
+      max-width: 660px; line-height: 1.7;
+      font-family: 'Newsreader', serif; font-weight: 400; font-style: italic;
+    }
+
+    /* =====================================================
+       PULL QUOTE / OPENING
+    ===================================================== */
+    .pull-quote-block {
+      background: var(--cream);
+      padding: clamp(4rem, 8vw, 6rem) var(--pad) clamp(2.5rem, 5vw, 4rem);
+    }
+    .pull-quote-inner {
+      max-width: 920px; margin: 0 auto; display: grid; gap: 1.5rem;
+    }
+    .pq-eyebrow {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.24em;
+      text-transform: uppercase; color: var(--maroon);
+    }
+    .pq-body {
+      font-family: 'Newsreader', serif; font-weight: 400;
+      font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+      line-height: 1.25; color: var(--ink); letter-spacing: -0.01em;
+    }
+    .pq-body em { font-style: italic; color: var(--maroon); font-weight: 400; }
+
+    /* =====================================================
+       STATS ROW
+    ===================================================== */
+    .stats {
+      background: var(--sand);
+      padding: clamp(3rem, 6vw, 5rem) var(--pad);
+    }
+    .stats-inner {
+      max-width: var(--maxw); margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+    }
+    .stat-block {
+      display: flex; flex-direction: column; gap: 0.5rem;
+      padding: 0 0.5rem;
+    }
+    .stat-number {
+      font-family: 'Aldhabi', serif;
+      font-size: clamp(3rem, 6vw, 4.5rem);
+      color: var(--maroon); line-height: 1;
+    }
+    .stat-number.latin {
+      font-family: 'Newsreader', serif; font-weight: 500; font-style: italic;
+      font-size: clamp(2.75rem, 5.5vw, 4rem);
+    }
+    .stat-label {
+      font-family: 'Newsreader', serif; font-weight: 500;
+      font-size: 1.2rem; color: var(--ink);
+    }
+    .stat-note { font-size: 0.88rem; color: var(--ink-soft); line-height: 1.55; }
+
+    /* =====================================================
+       BODY INTRO
+    ===================================================== */
+    .story {
+      padding: clamp(3rem, 6vw, 5rem) var(--pad);
+    }
+    .story--cream { background: var(--cream); }
+    .story-inner {
+      max-width: var(--maxw-read); margin: 0 auto;
+      display: grid; gap: 1.4rem;
+    }
+    .story-eyebrow {
+      font-size: 0.74rem; font-weight: 700; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--maroon);
+      display: inline-flex; align-items: center; gap: 0.6rem;
+    }
+    .story-eyebrow-ar {
+      font-family: 'Aldhabi', serif; font-size: 1.7em;
+      color: var(--maroon); font-weight: normal; line-height: 1; letter-spacing: 0;
+    }
+    .story-title {
+      font-family: 'Newsreader', serif; font-weight: 500;
+      font-size: clamp(1.9rem, 3.5vw, 2.75rem);
+      line-height: 1.15; color: var(--ink);
+      letter-spacing: -0.015em;
+    }
+    .story-title em { font-style: italic; font-weight: 400; color: var(--maroon); }
+    .story-body { font-size: 1.05rem; line-height: 1.75; color: var(--ink); }
+    .story-body strong { color: var(--maroon-ink); font-weight: 600; }
+
+    /* =====================================================
+       COUNTRY GRID — heritage-tile cards w/ flags
+    ===================================================== */
+    .countries {
+      background: var(--sand);
+      padding: clamp(4rem, 8vw, 6rem) var(--pad);
+    }
+    .countries-inner { max-width: var(--maxw); margin: 0 auto; }
+    .countries-head {
+      max-width: var(--maxw-read); margin: 0 auto 3rem; text-align: center;
+      display: grid; gap: 0.75rem;
+    }
+    .countries-head .story-title { margin: 0; }
+
+    .country-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.25rem;
+    }
+    .country-card {
+      background: var(--cream);
+      padding: 1.4rem 1.3rem;
+      border-radius: var(--r-lg);
+      display: grid; gap: 0.45rem;
+      transition: transform 0.25s ease;
+    }
+    .country-card:nth-child(even) {
+      border-radius: var(--r-xl) var(--r-sm) var(--r-xl) var(--r-sm);
+    }
+    .country-card:nth-child(3n) {
+      background: var(--sand-deep);
+    }
+    .country-card:hover { transform: translateY(-3px); }
+    .country-flag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.25rem; height: 2.25rem;
+      border-radius: var(--r-md) var(--r-sm);
+      background: var(--maroon);
+      color: var(--gold);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      line-height: 1;
+      box-shadow: inset 0 0 0 1.5px rgba(245, 200, 66, 0.35);
+    }
+    .country-card:nth-child(3n) .country-flag {
+      background: var(--ink);
+    }
+    .country-card:nth-child(even) .country-flag {
+      border-radius: var(--r-sm) var(--r-md);
+    }
+    .country-name {
+      font-family: 'Newsreader', serif; font-weight: 500;
+      font-size: 1.3rem; color: var(--ink); line-height: 1.2;
+    }
+    .country-ar {
+      font-family: 'Aldhabi', serif; font-size: 2.21rem; /* 1.7× the 1.3rem Newsreader country-name */
+      color: var(--maroon); line-height: 1;
+    }
+    .country-note {
+      font-size: 0.88rem; color: var(--ink-soft); line-height: 1.55;
+      margin-top: 0.15rem;
+    }
+
+    /* =====================================================
+       REGION BANDS — grouped by cultural region
+    ===================================================== */
+    .regions {
+      background: var(--cream);
+      padding: clamp(4rem, 8vw, 6rem) var(--pad);
+    }
+    .regions-inner { max-width: var(--maxw); margin: 0 auto; }
+    .regions-head {
+      max-width: var(--maxw-read); margin: 0 auto 3rem; text-align: center;
+      display: grid; gap: 0.75rem;
+    }
+    .regions-head .story-title { margin: 0; }
+
+    .region-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .region-card {
+      background: var(--sand);
+      padding: 1.75rem 1.6rem;
+      border-radius: var(--r-lg);
+      display: grid; gap: 0.5rem;
+    }
+    .region-card:nth-child(even) {
+      background: var(--sand-deep);
+      border-radius: var(--r-xl) var(--r-sm) var(--r-xl) var(--r-sm);
+    }
+    .region-card:nth-child(3n+2) { transform: translateY(-10px); }
+    .region-name {
+      font-family: 'Newsreader', serif; font-weight: 500;
+      font-size: 1.5rem; color: var(--ink); line-height: 1.2;
+    }
+    .region-ar {
+      font-family: 'Aldhabi', serif; font-size: 2.55rem; /* 1.7× the 1.5rem Newsreader region-name */
+      color: var(--maroon); line-height: 1;
+    }
+    .region-countries {
+      font-size: 0.82rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+    .region-body {
+      font-size: 0.98rem; line-height: 1.65; color: var(--ink);
+    }
+
+    /* =====================================================
+       WHY IT MATTERS — editorial pull-quote
+    ===================================================== */
+    .why-mena {
+      padding: clamp(4rem, 8vw, 6rem) var(--pad);
+      background: var(--sand);
+    }
+    .why-mena-inner {
+      max-width: var(--maxw-read); margin: 0 auto;
+      display: grid; gap: 1.4rem;
+    }
+    .inline-pull {
+      margin: 1.25rem 0;
+      padding-left: 1.25rem;
+      border-left: 3px solid var(--gold-deep);
+      font-family: 'Newsreader', serif; font-style: italic; font-weight: 400;
+      font-size: clamp(1.3rem, 2.1vw, 1.55rem);
+      line-height: 1.35; color: var(--maroon-ink);
+    }
+
+    /* =====================================================
+       SOCAL BRIDGE BAND
+    ===================================================== */
+    .bridge {
+      padding: clamp(4rem, 8vw, 6rem) var(--pad);
+      background: var(--cream);
+      text-align: center;
+    }
+    .bridge-inner {
+      max-width: var(--maxw-read); margin: 0 auto;
+      display: grid; gap: 1.2rem;
+    }
+    .bridge-ar {
+      font-family: 'Aldhabi', serif;
+      font-size: clamp(3rem, 7vw, 5rem);
+      color: var(--maroon); line-height: 1;
+    }
+    .bridge-cta-row {
+      display: flex; flex-wrap: wrap; gap: 0.85rem; justify-content: center;
+      margin-top: 1rem;
+    }
+
+    /* =====================================================
+       CLOSING CTA
+    ===================================================== */
+    .closing-cta {
+      padding: 5.5rem var(--pad);
+      background: linear-gradient(135deg, var(--maroon) 0%, var(--maroon-ink) 100%);
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .closing-cta::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at 80% 20%, rgba(245, 200, 66, 0.18), transparent 50%);
+      pointer-events: none;
+    }
+    .closing-inner {
+      max-width: 720px; margin: 0 auto;
+      display: flex; flex-direction: column; gap: 1rem;
+      align-items: center; position: relative; z-index: 1;
+    }
+    .closing-eyebrow {
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.22em;
+      text-transform: uppercase; color: rgba(255, 248, 244, 0.72);
+    }
+    .closing-title {
+      font-family: 'Newsreader', serif; font-weight: 400;
+      font-size: clamp(2rem, 4.2vw, 3.1rem);
+      color: #fff; line-height: 1.15; letter-spacing: -0.015em;
+    }
+    .closing-title em { font-style: italic; color: var(--sand-deep); font-weight: 300; }
+    .closing-title .ar-word {
+      font-family: 'Aldhabi', serif; font-size: 1.7em;
+      color: var(--gold); font-weight: normal; vertical-align: baseline; line-height: 1;
+    }
+    .closing-sub { color: rgba(255, 248, 244, 0.82); line-height: 1.65; max-width: 540px; }
+    .closing-ctas {
+      display: flex; flex-wrap: wrap; gap: 0.85rem;
+      justify-content: center; margin-top: 1rem;
+    }
+    .closing-ctas .heartbeat { animation-name: heartbeat-gold; }
+    @keyframes heartbeat-gold {
+      0%   { box-shadow: 0 0 0 0 rgba(245, 200, 66, 0.6), 0 8px 24px rgba(40, 24, 1, 0.24); transform: scale(1); }
+      50%  { box-shadow: 0 0 0 14px rgba(245, 200, 66, 0), 0 10px 28px rgba(40, 24, 1, 0.3); transform: scale(1.03); }
+      100% { box-shadow: 0 0 0 0 rgba(245, 200, 66, 0), 0 8px 24px rgba(40, 24, 1, 0.24); transform: scale(1); }
+    }
+    .closing-ctas .btn-secondary {
+      background: rgba(255, 248, 244, 0.15); color: #fff;
+      backdrop-filter: blur(12px);
+    }
+    .closing-ctas .btn-secondary:hover { background: rgba(255, 248, 244, 0.25); }
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+    .footer {
+      background: var(--ink);
+      color: rgba(255, 248, 244, 0.78);
+      padding: 4.5rem var(--pad) 2rem;
+    }
+    .footer-inner { max-width: var(--maxw); margin: 0 auto; }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.4fr repeat(4, 1fr);
+      gap: 2.5rem; padding-bottom: 2.5rem;
+      background: linear-gradient(to bottom, transparent calc(100% - 1px), rgba(255, 248, 244, 0.12) calc(100% - 1px));
+    }
+    .footer-brand img { height: 54px; width: auto; margin-bottom: 0.9rem; }
+    .footer-brand-ar {
+      display: block; font-family: 'Aldhabi', serif; font-size: 1.85rem;
+      color: var(--gold); line-height: 1; margin-bottom: 0.7rem;
+    }
+    .footer-tagline { font-size: 0.85rem; color: rgba(255, 248, 244, 0.6); line-height: 1.6; }
+    .footer-col h4 {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em;
+      text-transform: uppercase; color: #fff; margin-bottom: 1rem;
+    }
+    .footer-col a {
+      display: block; font-size: 0.88rem;
+      color: rgba(255, 248, 244, 0.68);
+      padding: 0.3rem 0; transition: color 0.2s;
+    }
+    .footer-col a:hover { color: var(--gold); }
+    .footer-bottom {
+      display: flex; justify-content: space-between; align-items: center;
+      padding-top: 1.5rem; font-size: 0.78rem;
+      color: rgba(255, 248, 244, 0.5); flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-social { display: flex; gap: 1.25rem; }
+    .footer-social a { color: rgba(255, 248, 244, 0.65); font-size: 0.82rem; transition: color 0.2s; }
+    .footer-social a:hover { color: var(--gold); }
+
+    @media (max-width: 960px) {
+      .nav-links { display: none; }
+      .nav-cta { display: none; }
+      .nav-burger { display: block; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .footer-brand { grid-column: 1 / -1; }
+      .region-card:nth-child(3n+2) { transform: none; }
+    }
+    @media (max-width: 640px) {
+      .footer-top { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<header class="nav" id="mainNav">
+  <a class="nav-logo" href="./index.html">
+    <img src="./assets/images/Logo.webp" alt="OC MENA Festival">
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="./music-entertainment.html">Music &amp; Entertainment</a></li>
+    <li><a href="./schedule.html">Schedule</a></li>
+    <li><a href="./map.html">Map</a></li>
+    <li class="nav-dropdown">
+      <a href="#">Experience</a>
+      <div class="nav-dropdown-menu">
+        <a href="./experience-food-bazaar.html">Food &amp; Bazaar</a>
+        <a href="./experience-rides.html">Rides &amp; Family</a>
+        <a href="./experience-stages.html">Stages</a>
+      </div>
+    </li>
+    <li><a class="is-active" href="./about.html">About</a></li>
+    <li><a href="./info.html">Info</a></li>
+    <li class="nav-dropdown">
+      <a href="#">For Partners</a>
+      <div class="nav-dropdown-menu">
+        <a href="./sponsors.html">Sponsors</a>
+        <a href="./vendors.html">Vendors</a>
+        <a href="./partners.html">Partners &amp; Affiliates</a>
+      </div>
+    </li>
+    <li><a href="./contact.html">Contact</a></li>
+  </ul>
+
+  <a class="btn-primary nav-cta heartbeat" href="./tickets.html">Get Tickets</a>
+  <button class="nav-burger" id="navBurger" aria-label="Open menu">☰</button>
+</header>
+
+<nav class="mobile-menu" id="mobileMenu">
+  <a href="./music-entertainment.html">Music &amp; Entertainment</a>
+  <a href="./schedule.html">Schedule</a>
+  <a href="./map.html">Map</a>
+  <a href="./experience-food-bazaar.html">Food &amp; Bazaar</a>
+  <a href="./experience-rides.html">Rides &amp; Family</a>
+  <a href="./experience-stages.html">Stages</a>
+  <a href="./about.html">About</a>
+  <a href="./what-is-mena.html">What is MENA</a>
+  <a href="./info.html">Info</a>
+  <a href="./sponsors.html">Sponsors</a>
+  <a href="./vendors.html">Vendors</a>
+  <a href="./contact.html">Contact</a>
+  <a class="btn-primary mobile-cta" href="./tickets.html">Get Tickets</a>
+</nav>
+
+
+<!-- PAGE HEADER -->
+<section class="page-head">
+  <div class="page-head__bg"></div>
+  <div class="page-head__scrim"></div>
+  <div class="page-head-inner">
+    <div class="page-eyebrow">
+      <span class="ar page-eyebrow-ar">ما هو منا</span>
+      <span class="page-eyebrow-en">What is MENA?</span>
+    </div>
+    <h1 class="page-title">
+      One region. <em>One heartbeat.</em><br>
+      A hundred ways to say it.
+    </h1>
+    <p class="page-sub">
+      Middle East and North Africa. Twenty-two countries. Four hundred million
+      people. Three continents brushing against each other. A doorway —
+      not a textbook.
+    </p>
+  </div>
+</section>
+
+
+<!-- OPENING QUOTE -->
+<section class="pull-quote-block">
+  <div class="pull-quote-inner">
+    <span class="pq-eyebrow">The tapestry</span>
+    <p class="pq-body">
+      MENA is not a country, <em>not a language, not a sound.</em>
+      It's a tapestry — woven from Casablanca to Muscat,
+      from Khartoum to Aleppo, and pulled, over a century,
+      into every major diaspora city on earth.
+    </p>
+  </div>
+</section>
+
+
+<!-- STATS -->
+<section class="stats">
+  <div class="stats-inner">
+    <div class="stat-block">
+      <span class="stat-number">٢٢</span>
+      <span class="stat-label">Countries</span>
+      <p class="stat-note">From Morocco in the far west to Oman in the far east. Three continents brush against each other here.</p>
+    </div>
+    <div class="stat-block">
+      <span class="stat-number">٤٠٠م+</span>
+      <span class="stat-label">People</span>
+      <p class="stat-note">Roughly one in twenty humans alive today. Median age under thirty — a young region with a loud culture.</p>
+    </div>
+    <div class="stat-block">
+      <span class="stat-number">٣٠+</span>
+      <span class="stat-label">Arabic Dialects</span>
+      <p class="stat-note">Plus Amazigh, Kurdish, Farsi, Hebrew, Armenian, Assyrian. One word, a dozen ways to say it.</p>
+    </div>
+    <div class="stat-block">
+      <span class="stat-number latin">1M+</span>
+      <span class="stat-label">MENA-Americans in SoCal</span>
+      <p class="stat-note">One of the largest diaspora concentrations in the country — and the room this festival is built to fill.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- INTRO BODY -->
+<section class="story story--cream">
+  <div class="story-inner">
+    <span class="story-eyebrow">
+      The basics
+      <span class="story-eyebrow-ar">أساسيات</span>
+    </span>
+    <h2 class="story-title">It's a region, not a country.</h2>
+
+    <p class="story-body">
+      <strong>MENA</strong> stands for <strong>M</strong>iddle <strong>E</strong>ast
+      and <strong>N</strong>orth <strong>A</strong>frica — a geographic and cultural
+      region stretching from Morocco's Atlantic coast to Oman on the Arabian Sea.
+      It's not a single country. It's twenty-two, connected by shared language
+      families, shared musical traditions, shared foods, shared history — and
+      wildly different dialects, cuisines, and local cultures on the ground.
+    </p>
+
+    <p class="story-body">
+      Arabic is the region's most-spoken language, but it isn't the only one.
+      Amazigh across North Africa. Kurdish across the Levant and Iraq.
+      Farsi in the east. Hebrew, Armenian, Assyrian, and dozens of regional
+      tongues. What the region shares is a long history of trade, migration,
+      and sound moving back and forth across borders — the Silk Road,
+      the Mediterranean, the Indian Ocean — for two thousand years.
+    </p>
+
+    <p class="story-body">
+      Musically, MENA gave the world the <em>oud</em>, the <em>qanun</em>,
+      the <em>ney</em>, the <em>darbuka</em>, and the <em>maqam</em> scale
+      system — one of the oldest continuous classical traditions on earth.
+      Today it also produces viral pop, Arabic trap, khaleeji stadium shows,
+      Gnawa fusion, and Palestinian electronica. The festival exists because
+      all of that belongs on the same weekend.
+    </p>
+  </div>
+</section>
+
+
+<!-- COUNTRY GRID -->
+<section class="countries">
+  <div class="countries-inner">
+    <div class="countries-head">
+      <span class="story-eyebrow" style="justify-content: center;">
+        Twenty-two countries
+        <span class="story-eyebrow-ar">الدول</span>
+      </span>
+      <h2 class="story-title" style="margin: 0;">The map, at a glance.</h2>
+      <p class="story-body" style="max-width: 640px; margin: 0 auto; color: var(--ink-soft);">
+        One line per country. Every one of them brings a musical lineage,
+        a kitchen, and a diaspora to this festival.
+      </p>
+    </div>
+
+    <div class="country-grid">
+
+      <article class="country-card">
+        <span class="country-flag" aria-hidden="true">MA</span>
+        <h3 class="country-name">Morocco</h3>
+        <p class="country-ar">المغرب</p>
+        <p class="country-note">Gnawa rhythm, chaabi dance-pop, and the West African edge of the Maghreb.</p>
+      </article>
+
+      <article class="country-card">
+        <span class="country-flag" aria-hidden="true">DZ</span>
+        <h3 class="country-name">Algeria</h3>
+        <p class="country-ar">الجزائر</p>
+        <p class="country-note">Raï — the rebel pop that moved Arabic music onto European dance floors.</p>
+      </article>
+
+      <article class="country-card">
+        <span class="country-flag" aria-hidden="true">TN</span>
+        <h3 class="country-name">Tunisia</h3>
+        <p class="country-ar">تونس</p>
+        <p class="country-note">Mezwed folk, Mediterranean pop, and the diaspora's quieter electronica scene.</p>
+      </article>
+
+      <article class="country-card">
+        <span class="country-flag" aria-hidden="true">LY</span>
+        <h3 class="country-name">Libya</h3>
+        <p class="country-ar">ليبيا</p>
+        <p class="country-note">Saharan brass, Andalusian echoes, and a cuisine anchored by the sea.</p>
+      </article>
+
+      <article class="country-card">
+        <span class="country-flag" aria-hidden="true">EG</span>
+        <h3 class="country-name">Egypt</h3>
+        <p class="country-ar">مصر</p>
+        <p class="country-note">The cultural heart. Umm Kulthum to mahraganat. Cinema soundtracks that raised everyone.</p>
+      </article>
+
+      <article class="country-card">
+        <span class="country-flag" aria-hidden="true">SD</span>
+        <h3 class="country-name">Sudan</h3>
+        <p class="country-ar">السودان</p>
+        <p class="country-note">Nile-rooted call-and-response traditions; one of the region's richest folk archives.</p>
+      </article>
+
+      <article class="country-card">
+        <span class="country-flag" aria-hidden="true">PS</span>
+        <h3 class="country-name">Palestine</h3>
+        <p class="country-ar">فلسطين</p>
+        <p class="country-note">Resistance poetry set to oud, and an anthem-making voice on every stage of the diaspora.</p>
+      </article>
+
+      <article class="country-card">
+        <span class="country-flag" aria-hidden="true">JO</span>
+        <h3 class="country-name">Jordan</h3>
+        <p class="country-ar">الأردن</p>
+        <p class="country-note">Amman's new-wave pop scene — a studio culture that's exported a generation of stars.</p>
+      </article>
+
+      <article class="country-card">
+        <span class="country-flag" aria-hidden="true">LB</span>
+        <h3 class="country-name">Lebanon</h3>
+        <p class="country-ar">لبنان</p>
+        <p class="country-note">Beirut cassette-pop, Fairouz mornings, and the mezze table that exported its vocabulary worldwide.</p>
+      </article>
+
+      <article class="country-card">
+        <span class="country-flag" aria-hidden="true">SY</span>
+        <h3 class="country-name">Syria</h3>
+        <p class="country-ar">سوريا</p>
+        <p class="country-note">Damascus qanun, Aleppo muwashahat, and the classical backbone of Levantine music.</p>
+      </article>
+
+      <article class="country-card">
+        <span class="country-flag" aria-hidden="true">IQ</span>
+        <h3 class="country-name">Iraq</h3>
+        <p class="country-ar">العراق</p>
+        <p class="country-note">Maqam — the oldest classical tradition still played — plus Baghdadi jazz and diaspora hip-hop.</p>
+      </article>
+
+      <article class="country-card">
+        <span class="country-flag" aria-hidden="true">SA</span>
+        <h3 class="country-name">Saudi Arabia</h3>
+        <p class="country-ar">السعودية</p>
+        <p class="country-note">Khaleeji rhythm, stadium-scale pop, and the region's fastest-growing live-music infrastructure.</p>
+      </article>
+
+      <article class="country-card">
+        <span class="country-flag" aria-hidden="true">KW</span>
+        <h3 class="country-name">Kuwait</h3>
+        <p class="country-ar">الكويت</p>
+        <p class="country-note">The Gulf's comedy capital and a long television tradition that the whole region grew up on.</p>
+      </article>
+
+      <article class="country-card">
+        <span class="country-flag" aria-hidden="true">QA</span>
+        <h3 class="country-name">Qatar</h3>
+        <p class="country-ar">قطر</p>
+        <p class="country-note">Khaleeji pop and global sports staging; a small country with outsized cultural investment.</p>
+      </article>
+
+      <article class="country-card">
+        <span class="country-flag" aria-hidden="true">BH</span>
+        <h3 class="country-name">Bahrain</h3>
+        <p class="country-ar">البحرين</p>
+        <p class="country-note">Pearl-coast oud traditions, khaleeji pop, and a studio scene punching above its size.</p>
+      </article>
+
+      <article class="country-card">
+        <span class="country-flag" aria-hidden="true">AE</span>
+        <h3 class="country-name">UAE</h3>
+        <p class="country-ar">الإمارات</p>
+        <p class="country-note">A diaspora hub where MENA pop meets trap, house, and global touring infrastructure.</p>
+      </article>
+
+      <article class="country-card">
+        <span class="country-flag" aria-hidden="true">OM</span>
+        <h3 class="country-name">Oman</h3>
+        <p class="country-ar">عُمان</p>
+        <p class="country-note">Indian-Ocean-facing rhythms; where Swahili, Balochi, and Arabic musical traditions meet.</p>
+      </article>
+
+      <article class="country-card">
+        <span class="country-flag" aria-hidden="true">YE</span>
+        <h3 class="country-name">Yemen</h3>
+        <p class="country-ar">اليمن</p>
+        <p class="country-note">One of the region's oldest musical literatures; oud traditions that predate the modern map.</p>
+      </article>
+
+      <article class="country-card">
+        <span class="country-flag" aria-hidden="true">SO</span>
+        <h3 class="country-name">Somalia</h3>
+        <p class="country-ar">الصومال</p>
+        <p class="country-note">Horn-of-Africa polyrhythm and a diaspora music scene reshaping Twin Cities and London.</p>
+      </article>
+
+      <article class="country-card">
+        <span class="country-flag" aria-hidden="true">DJ</span>
+        <h3 class="country-name">Djibouti</h3>
+        <p class="country-ar">جيبوتي</p>
+        <p class="country-note">Indian Ocean trade winds in musical form; Afar, Somali, and Arabic traditions in conversation.</p>
+      </article>
+
+      <article class="country-card">
+        <span class="country-flag" aria-hidden="true">KM</span>
+        <h3 class="country-name">Comoros</h3>
+        <p class="country-ar">جزر القمر</p>
+        <p class="country-note">Swahili-Arabic island music at MENA's southern edge — a sound most Americans have never heard.</p>
+      </article>
+
+      <article class="country-card">
+        <span class="country-flag" aria-hidden="true">MR</span>
+        <h3 class="country-name">Mauritania</h3>
+        <p class="country-ar">موريتانيا</p>
+        <p class="country-note">The Sahara's western edge; griot traditions that move between West Africa and the Maghreb.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- REGION BANDS -->
+<section class="regions">
+  <div class="regions-inner">
+    <div class="regions-head">
+      <span class="story-eyebrow" style="justify-content: center;">
+        Six cultural regions
+        <span class="story-eyebrow-ar">المناطق</span>
+      </span>
+      <h2 class="story-title" style="margin: 0;">How the map actually sings.</h2>
+    </div>
+
+    <div class="region-grid">
+
+      <article class="region-card">
+        <p class="region-ar">بلاد الشام</p>
+        <h3 class="region-name">The Levant</h3>
+        <p class="region-countries">Lebanon · Syria · Palestine · Jordan</p>
+        <p class="region-body">Beirut's cassette-tape pop. Damascus's qanun. Palestinian resistance poetry set to oud. Amman's new-wave. A small geography with an outsized musical memory — and a diaspora that never stopped singing back.</p>
+      </article>
+
+      <article class="region-card">
+        <p class="region-ar">الخليج</p>
+        <h3 class="region-name">The Gulf</h3>
+        <p class="region-countries">Saudi Arabia · UAE · Kuwait · Qatar · Bahrain · Oman</p>
+        <p class="region-body">Khaleeji rhythm. The oud tradition reinvented in stadiums. Modern pop crossing with trap and house. The region financing MENA's global moment — and starting to lead it.</p>
+      </article>
+
+      <article class="region-card">
+        <p class="region-ar">وادي النيل</p>
+        <h3 class="region-name">The Nile</h3>
+        <p class="region-countries">Egypt · Sudan</p>
+        <p class="region-body">The cultural heart. Umm Kulthum to mahraganat. Cairo's cinema soundtracks. Sudan's call-and-response traditions. Every Arabic music lineage runs through here somewhere.</p>
+      </article>
+
+      <article class="region-card">
+        <p class="region-ar">المغرب الكبير</p>
+        <h3 class="region-name">The Maghreb</h3>
+        <p class="region-countries">Morocco · Algeria · Tunisia · Libya · Mauritania</p>
+        <p class="region-body">Raï. Gnawa. Chaabi. Amazigh rhythms older than the Sahara. A region that has always lived across the Mediterranean — and whose artists are rewriting European pop right now.</p>
+      </article>
+
+      <article class="region-card">
+        <p class="region-ar">العراق وكردستان</p>
+        <h3 class="region-name">Iraq &amp; the Kurdish lands</h3>
+        <p class="region-countries">Iraq · Kurdish regions across MENA</p>
+        <p class="region-body">Maqam — the oldest classical tradition on earth still played. Baghdadi jazz, Kurdish folk revival, and Iraqi hip-hop emerging from diaspora cities like Chicago and Copenhagen.</p>
+      </article>
+
+      <article class="region-card">
+        <p class="region-ar">القرن الأفريقي</p>
+        <h3 class="region-name">Horn &amp; edges</h3>
+        <p class="region-countries">Yemen · Somalia · Djibouti · Comoros</p>
+        <p class="region-body">The region's southern edge — where Arabic music meets East African polyrhythm and Indian Ocean trade winds. A sound most Americans have never heard, and should.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- WHY IT MATTERS / WHY MAIN-STAGE -->
+<section class="why-mena">
+  <div class="why-mena-inner">
+    <span class="story-eyebrow">
+      Why it matters in SoCal
+      <span class="story-eyebrow-ar">لماذا الآن</span>
+    </span>
+    <h2 class="story-title">A main stage that's <em>long overdue.</em></h2>
+
+    <p class="story-body">
+      Southern California is home to one of the largest MENA diaspora
+      communities in the United States — across Orange County, Los Angeles,
+      the San Fernando Valley, the Inland Empire, and San Diego. For decades,
+      that community has driven hours, sometimes flown across the continent,
+      to catch the headliners the rest of the region takes for granted.
+    </p>
+
+    <p class="story-body">
+      For most of the last century, MENA artists have been treated like a niche
+      in American music discovery — filed under "world" or "international," and
+      rarely booked at the same scale as their peers in hip-hop, Latin, or K-pop.
+      <strong>That framing is breaking right now.</strong> Issam Alnajjar's
+      "Hadal Ahbek" crossed a billion streams. Dystinct's Arabic hooks are
+      charting across Europe. Mohammed Assaf sells out amphitheatres from Amman
+      to New Jersey. The audience was always here — the infrastructure is
+      finally catching up.
+    </p>
+
+    <p class="inline-pull">
+      "We don't need permission to put our music on a main stage.
+      We just need the stage."
+    </p>
+
+    <p class="story-body">
+      OC MENA Festival is a 150-acre, three-stage, three-day statement.
+      We're not the first MENA festival in North America, and we won't be
+      the last. But we are among the first to say it out loud: this is pop,
+      this is rock, this is rap, this is dance music. Book it accordingly.
+    </p>
+  </div>
+</section>
+
+
+<!-- BRIDGE -->
+<section class="bridge">
+  <div class="bridge-inner">
+    <span class="bridge-ar">الجسر</span>
+    <span class="story-eyebrow" style="justify-content: center;">
+      The festival as bridge
+      <span class="story-eyebrow-ar">&mdash;</span>
+    </span>
+    <h2 class="story-title" style="margin: 0;">Come in. <em>Welcome.</em> This is the room.</h2>
+
+    <p class="story-body" style="max-width: 640px; margin: 0.5rem auto 0;">
+      For the Arab kid who grew up in Anaheim translating lyrics in the back
+      seat. For the Moroccan grandmother who hasn't heard Dystinct live and
+      should. For the non-MENA neighbor curious about the music echoing out
+      of the OC Fairgrounds. For anyone who needs this room to exist —
+      the door is open, and the stage is real.
+    </p>
+
+    <div class="bridge-cta-row">
+      <a class="btn-primary heartbeat" href="./music-entertainment.html">See Who We Booked</a>
+      <a class="btn-secondary" href="./tickets.html">Get Tickets</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- CLOSING CTA -->
+<section class="closing-cta">
+  <div class="closing-inner">
+    <div class="closing-eyebrow">June 19 · 20 · 21 · 2026</div>
+    <h2 class="closing-title">
+      One weekend. <em>The whole</em> <span class="ar-word">وطن</span>.
+    </h2>
+    <p class="closing-sub">
+      Twenty-two countries under one sky at the OC Fairgrounds in Costa Mesa.
+      Three stages, three days, and a community that has been waiting for this
+      room to exist.
+    </p>
+    <div class="closing-ctas">
+      <a class="btn-primary heartbeat" href="./tickets.html">Get Tickets</a>
+      <a class="btn-secondary" href="./about.html">Read Our Story</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="./assets/images/Logo.webp" alt="OC MENA Festival">
+        <span class="footer-brand-ar">مهرجان أورنج كاونتي</span>
+        <p class="footer-tagline">June 19–21, 2026<br>OC Fairgrounds, Costa Mesa CA</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Event</h4>
+        <a href="./music-entertainment.html">Music &amp; Entertainment</a>
+        <a href="./schedule.html">Schedule</a>
+        <a href="./map.html">Map</a>
+        <a href="./tickets.html">Tickets</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Experience</h4>
+        <a href="./experience-food-bazaar.html">Food &amp; Bazaar</a>
+        <a href="./experience-rides.html">Rides &amp; Family</a>
+        <a href="./experience-stages.html">Stages</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>About</h4>
+        <a href="./about.html">Our Story</a>
+        <a href="./what-is-mena.html">What is MENA</a>
+        <a href="./info.html">Festival Info</a>
+        <a href="./faq.html">FAQ</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Business</h4>
+        <a href="./sponsors.html">Sponsors</a>
+        <a href="./vendors.html">Vendors</a>
+        <a href="./partners.html">Partners &amp; Affiliates</a>
+        <a href="./contact.html">Contact</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 OC MENA Festival. All rights reserved.</span>
+      <div class="footer-social">
+        <a href="https://instagram.com/ocmenafestival" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://tiktok.com/@ocmenafestival" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://twitter.com/ocmenafestival" target="_blank" rel="noopener">X / Twitter</a>
+        <a href="https://facebook.com/ocmenafestival" target="_blank" rel="noopener">Facebook</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  const burger = document.getElementById('navBurger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  burger.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('is-open');
+    burger.textContent = open ? '✕' : '☰';
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+</script>
+
+</body>
+</html>

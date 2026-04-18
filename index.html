@@ -1,0 +1,1943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OC MENA Festival — June 19–21, 2026 · Orange County</title>
+  <meta name="description" content="Three days. Three stages. The music the Arab world grew up on, and the sound it's building right now — live at the OC Fairgrounds, Costa Mesa CA, June 19–21, 2026.">
+  <link rel="icon" type="image/png" href="./assets/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    /* =====================================================
+       OC MENA FESTIVAL — Homepage
+       Heritage Hearth retrofit — see DESIGN_SYSTEM.md
+    ===================================================== */
+
+    @font-face {
+      font-family: 'Aldhabi';
+      src: url('./assets/fonts/aldhabi.ttf') format('truetype');
+      font-weight: normal;
+      font-display: swap;
+    }
+
+    :root {
+      /* Core Heritage Hearth palette */
+      --cream:      #fff8f4;
+      --sand:       #fff1e4;
+      --sand-deep:  #ffe4c2;
+      --ink:        #281801;
+      --ink-soft:   #5c403c;
+      --red:        #dc2626;
+      --red-deep:   #b70011;
+      --maroon:     #930046;
+      --maroon-ink: #66002f;
+      --gold:       #f5c842;
+      --gold-deep:  #d0a61e;
+
+      /* Layout */
+      --maxw:   1200px;
+      --pad:    clamp(1.25rem, 5vw, 3rem);
+      --nav-h:  72px;
+
+      /* Type scale */
+      --fs-display: clamp(2.75rem, 6vw, 5.5rem);
+      --fs-h1:      clamp(2rem, 4vw, 3.5rem);
+      --fs-h2:      clamp(1.5rem, 2.5vw, 2.25rem);
+      --fs-h3:      clamp(1.125rem, 1.5vw, 1.375rem);
+      --fs-body:    1rem;
+      --fs-meta:    0.8125rem;
+
+      /* Radii */
+      --r-sm:  0.5rem;
+      --r-md:  0.75rem;
+      --r-lg:  1rem;
+      --r-xl:  1.5rem;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: var(--fs-body);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+
+    /* Aldhabi renders optically smaller than Latin type at 1:1 — scale 1.7× by default */
+    .ar { font-family: 'Aldhabi', serif; font-weight: normal; font-size: 100px; line-height: 1; vertical-align: baseline; }
+
+    /* =====================================================
+       BUTTONS
+    ===================================================== */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 2rem;
+      background: linear-gradient(135deg, var(--red-deep) 0%, var(--red) 100%);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      border-radius: var(--r-md);
+      box-shadow: 0 8px 24px rgba(40, 24, 1, 0.08);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(40, 24, 1, 0.12);
+      opacity: 0.96;
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 2rem;
+      background: var(--sand-deep);
+      color: var(--ink);
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      border-radius: var(--r-md);
+      transition: transform 0.25s ease, background 0.25s ease;
+    }
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      background: #ffd89a;
+    }
+
+    /* On dark (maroon) surfaces secondary flips to glassy cream */
+    .btn-secondary.on-dark {
+      background: rgba(255, 248, 244, 0.15);
+      color: #fff;
+      backdrop-filter: blur(12px);
+    }
+    .btn-secondary.on-dark:hover {
+      background: rgba(255, 248, 244, 0.25);
+    }
+
+    /* Heartbeat pulse — maroon on cream/light contexts */
+    @keyframes heartbeat-maroon {
+      0%   { box-shadow: 0 0 0 0 rgba(147, 0, 70, 0.6), 0 8px 24px rgba(40, 24, 1, 0.08); transform: scale(1); }
+      50%  { box-shadow: 0 0 0 14px rgba(147, 0, 70, 0), 0 10px 28px rgba(40, 24, 1, 0.1); transform: scale(1.03); }
+      100% { box-shadow: 0 0 0 0 rgba(147, 0, 70, 0), 0 8px 24px rgba(40, 24, 1, 0.08); transform: scale(1); }
+    }
+    .heartbeat { animation: heartbeat-maroon 1.6s infinite ease-in-out; }
+
+    /* Heartbeat pulse — gold on dark maroon context */
+    @keyframes heartbeat-gold {
+      0%   { box-shadow: 0 0 0 0 rgba(245, 200, 66, 0.6), 0 8px 24px rgba(40, 24, 1, 0.24); transform: scale(1); }
+      50%  { box-shadow: 0 0 0 14px rgba(245, 200, 66, 0), 0 10px 28px rgba(40, 24, 1, 0.3); transform: scale(1.03); }
+      100% { box-shadow: 0 0 0 0 rgba(245, 200, 66, 0), 0 8px 24px rgba(40, 24, 1, 0.24); transform: scale(1); }
+    }
+    .heartbeat.on-dark { animation-name: heartbeat-gold; }
+
+    /* =====================================================
+       NAV — glassmorphism on cream
+    ===================================================== */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 var(--pad);
+      background: rgba(255, 248, 244, 0.72);
+      backdrop-filter: blur(20px) saturate(1.2);
+      -webkit-backdrop-filter: blur(20px) saturate(1.2);
+      transition: background 0.35s ease;
+    }
+    .nav.scrolled {
+      background: rgba(255, 248, 244, 0.92);
+    }
+    .nav-logo img { height: 44px; width: auto; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--ink);
+      font-size: 0.88rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      transition: color 0.2s;
+      opacity: 0.78;
+    }
+    .nav-links a:hover { opacity: 1; color: var(--red-deep); }
+    .nav-links a.is-active {
+      opacity: 1;
+      color: var(--ink);
+      font-weight: 600;
+      position: relative;
+    }
+    .nav-links a.is-active::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0;
+      bottom: -8px;
+      height: 2px;
+      background: var(--gold-deep);
+      border-radius: 2px;
+    }
+
+    .nav-dropdown { position: relative; }
+    .nav-dropdown > a { display: flex; align-items: center; gap: 0.3rem; }
+    .nav-dropdown > a::after {
+      content: '▾';
+      font-size: 0.65rem;
+      opacity: 0.5;
+    }
+    .nav-dropdown-menu {
+      position: absolute;
+      top: calc(100% + 0.75rem);
+      left: 50%;
+      transform: translateX(-50%) translateY(6px);
+      min-width: 210px;
+      background: rgba(255, 248, 244, 0.96);
+      border-radius: var(--r-md);
+      padding: 0.5rem 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.2s ease;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 16px 40px rgba(40, 24, 1, 0.08);
+    }
+    .nav-dropdown:hover .nav-dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+    .nav-dropdown-menu a {
+      display: block;
+      padding: 0.65rem 1.2rem;
+      font-size: 0.88rem;
+      color: var(--ink);
+      opacity: 0.82;
+      transition: opacity 0.15s, background 0.15s;
+    }
+    .nav-dropdown-menu a:hover {
+      opacity: 1;
+      background: var(--sand);
+    }
+
+    .nav-cta { flex-shrink: 0; }
+    .nav-burger {
+      display: none;
+      color: var(--ink);
+      font-size: 1.5rem;
+      padding: 0.25rem;
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: var(--nav-h); left: 0; right: 0; bottom: 0;
+      background: var(--cream);
+      z-index: 99;
+      flex-direction: column;
+      padding: 2rem var(--pad);
+      gap: 0;
+      overflow-y: auto;
+    }
+    .mobile-menu.is-open { display: flex; }
+    .mobile-menu a {
+      color: var(--ink);
+      font-size: 1.1rem;
+      font-weight: 500;
+      padding: 1rem 0;
+    }
+    .mobile-menu a + a {
+      background-image: linear-gradient(to right, rgba(40,24,1,0.08) 50%, transparent 50%);
+      background-size: 4px 1px;
+      background-position: top;
+      background-repeat: repeat-x;
+    }
+    .mobile-menu .mobile-cta {
+      margin-top: 2rem;
+      align-self: flex-start;
+    }
+
+    /* =====================================================
+       HERO — per-page still image, warm maroon scrim
+    ===================================================== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      text-align: center;
+      overflow: hidden;
+      padding: calc(var(--nav-h) + 2rem) var(--pad) 3rem;
+      background-color: var(--maroon);
+    }
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('./assets/images/hero-home.webp');
+      background-size: cover;
+      background-position: center;
+      filter: saturate(1.05);
+    }
+    .hero__video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: saturate(1.08) contrast(1.02);
+    }
+    /* Warm maroon scrim — never pure black */
+    .hero__scrim {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(147, 0, 70, 0.55) 0%,
+        rgba(102, 0, 47, 0.45) 45%,
+        rgba(40, 24, 1, 0.72) 100%
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.1rem;
+      max-width: 880px;
+      width: 100%;
+    }
+
+    .hero-logo {
+      height: clamp(56px, 7vw, 86px);
+      width: auto;
+      filter: drop-shadow(0 6px 20px rgba(40, 24, 1, 0.35));
+    }
+
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.4rem;
+    }
+    .hero-pill {
+      padding: 0.35rem 0.95rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #fff;
+      background: rgba(255, 248, 244, 0.14);
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-headline {
+      font-family: 'Newsreader', serif;
+      font-weight: 400;
+      font-size: var(--fs-display);
+      line-height: 1.05;
+      color: #fff;
+      letter-spacing: -0.015em;
+    }
+    .hero-headline em {
+      font-style: italic;
+      font-weight: 300;
+      color: var(--sand-deep);
+    }
+    .hero-headline .ar-word {
+      font-family: 'Aldhabi', serif;
+      font-size: 1.7em;
+      color: var(--gold);
+      letter-spacing: 0;
+      font-weight: normal;
+      vertical-align: baseline;
+      line-height: 1;
+    }
+
+    .hero-sub {
+      font-size: clamp(0.98rem, 1.35vw, 1.12rem);
+      color: rgba(255, 248, 244, 0.85);
+      max-width: 620px;
+      line-height: 1.65;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.85rem;
+      margin-top: 0.4rem;
+    }
+
+    /* Countdown — warm typography on dark hero */
+    .hero-countdown {
+      display: flex;
+      gap: 0.5rem;
+      align-items: flex-end;
+      justify-content: center;
+      margin-top: 0.5rem;
+    }
+    .cd-unit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 64px;
+    }
+    .cd-num {
+      font-family: 'Newsreader', serif;
+      font-size: clamp(1.8rem, 3.8vw, 2.6rem);
+      font-weight: 500;
+      color: var(--gold);
+      line-height: 1;
+      letter-spacing: -0.01em;
+    }
+    .cd-label {
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255, 248, 244, 0.65);
+      margin-top: 0.4rem;
+    }
+    .cd-sep {
+      font-family: 'Newsreader', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      color: rgba(255, 248, 244, 0.35);
+      line-height: 1;
+      padding-bottom: 0.45rem;
+    }
+
+    /* Hero fan carousel */
+    .hero-strip {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      margin-top: 1.5rem;
+      padding-bottom: 0.5rem;
+    }
+    .hero-strip-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255, 248, 244, 0.55);
+      text-align: center;
+      margin-bottom: 0.75rem;
+    }
+    .hero-strip-label .ar {
+      color: var(--gold);
+      letter-spacing: 0;
+    }
+    .fan-stage {
+      position: relative;
+      width: 100%;
+      height: 360px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: visible;
+      perspective: 1200px;
+      user-select: none;
+      touch-action: none;
+      cursor: grab;
+    }
+    .fan-stage:active { cursor: grabbing; }
+    .fan-card {
+      position: absolute;
+      width: 200px;
+      height: 300px;
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      transform-origin: center center;
+      transition:
+        transform 0.55s cubic-bezier(0.34, 1.4, 0.64, 1),
+        opacity 0.4s ease,
+        filter 0.4s ease,
+        box-shadow 0.4s ease;
+      will-change: transform, filter, opacity;
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+      flex-shrink: 0;
+      box-shadow: 0 14px 36px -10px rgba(40, 24, 1, 0.55);
+      background: var(--maroon-ink);
+      pointer-events: none;
+    }
+    /* Alternate cards get heritage-tile corners */
+    .fan-card:nth-child(even) {
+      border-radius: var(--r-xl) var(--r-sm) var(--r-xl) var(--r-sm);
+    }
+    .fan-card.is-active {
+      pointer-events: auto;
+      box-shadow:
+        0 28px 68px -14px rgba(40, 24, 1, 0.6),
+        0 0 0 2px var(--gold-deep),
+        0 0 42px -6px rgba(245, 200, 66, 0.45);
+      z-index: 10 !important;
+    }
+    .fan-card.is-dragging {
+      transition: filter 0.15s ease, opacity 0.15s ease;
+    }
+    .fan-card .fc-img {
+      width: 100%;
+      flex: 1;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+      pointer-events: none;
+    }
+    .fan-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(40, 24, 1, 0.88) 0%,
+        rgba(102, 0, 47, 0.35) 40%,
+        rgba(102, 0, 47, 0.05) 70%,
+        rgba(40, 24, 1, 0.2) 100%
+      );
+      pointer-events: none;
+    }
+    .fan-card .fc-label {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 2.5rem 1rem 0.95rem;
+      transition: opacity 0.4s ease;
+      z-index: 2;
+    }
+    .fan-card .fc-ar {
+      font-family: 'Aldhabi', serif;
+      font-size: 1.87rem; /* 1.7× the 1.1rem Latin name below */
+      color: var(--gold);
+      direction: rtl;
+      margin: 0;
+      line-height: 1;
+    }
+    .fan-card .fc-en {
+      font-family: 'Newsreader', serif;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #fff;
+      margin: 0.15rem 0 0;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+    .fan-card .fc-meta {
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255, 248, 244, 0.7);
+      margin: 0.3rem 0 0;
+      font-weight: 500;
+    }
+    .fan-card.is-active .fc-label { opacity: 1; }
+    .fan-card:not(.is-active) .fc-label { opacity: 0.75; }
+    .fan-card.is-active .fc-cta {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 0.35rem;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+    }
+    .fan-card:not(.is-active) .fc-cta { display: none; }
+    .fan-hint {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: 'Newsreader', serif;
+      font-size: 1.7rem;
+      color: rgba(255, 248, 244, 0.3);
+      pointer-events: none;
+      transition: color 0.3s;
+      z-index: 20;
+    }
+    .fan-hint.left  { left:  clamp(0.5rem, 3vw, 2rem); }
+    .fan-hint.right { right: clamp(0.5rem, 3vw, 2rem); }
+    .fan-stage:hover .fan-hint { color: rgba(255, 248, 244, 0.6); }
+    .fan-dots {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    .fan-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 248, 244, 0.3);
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s, width 0.3s;
+      border: none;
+      padding: 0;
+      flex-shrink: 0;
+    }
+    .fan-dot.is-active {
+      background: var(--gold);
+      width: 24px;
+      border-radius: 4px;
+    }
+    .fan-dot:hover:not(.is-active) {
+      background: rgba(255, 248, 244, 0.7);
+      transform: scale(1.2);
+    }
+
+    /* =====================================================
+       THREE DAYS — cream base, sand cards
+    ===================================================== */
+    .three-days {
+      background: var(--cream);
+      padding: clamp(4.5rem, 8vw, 7rem) var(--pad);
+    }
+    .section-head {
+      max-width: var(--maxw);
+      margin: 0 auto 3.25rem;
+      text-align: center;
+    }
+    .section-head-left {
+      text-align: left;
+      max-width: var(--maxw);
+      margin: 0 auto 2.75rem;
+    }
+    .section-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      margin-bottom: 0.85rem;
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0.45rem;
+    }
+    .section-eyebrow .ar {
+      color: var(--maroon);
+      letter-spacing: 0;
+    }
+    .section-eyebrow--onmaroon {
+      color: rgba(255, 248, 244, 0.7);
+    }
+    .section-eyebrow--onmaroon .ar {
+      color: var(--gold);
+    }
+    .section-title {
+      font-family: 'Newsreader', serif;
+      font-weight: 400;
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--ink);
+      line-height: 1.1;
+      letter-spacing: -0.015em;
+      max-width: 24ch;
+      margin: 0 auto;
+    }
+    .section-title em {
+      font-style: italic;
+      font-weight: 300;
+      color: var(--maroon);
+    }
+    .section-title .ar-word {
+      font-family: 'Aldhabi', serif;
+      font-size: 1.7em;
+      color: var(--maroon);
+      vertical-align: baseline;
+      line-height: 1;
+      font-weight: normal;
+    }
+
+    /* Arabic stat counters */
+    .three-days-stats {
+      display: flex;
+      justify-content: center;
+      gap: clamp(3rem, 10vw, 8rem);
+      margin-bottom: 3.5rem;
+    }
+    .tds-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    .tds-num {
+      font-family: 'Aldhabi', serif;
+      font-size: clamp(4.5rem, 11vw, 7.5rem);
+      color: var(--maroon);
+      line-height: 1;
+      font-weight: normal;
+    }
+    .tds-label {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(0.85rem, 1.3vw, 1rem);
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+
+    .days-grid {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.75rem;
+    }
+    .day-card {
+      background: var(--sand);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    /* Saturday featured gets heritage-tile corners (organic asymmetry) */
+    .day-card.featured {
+      border-radius: var(--r-xl) var(--r-sm) var(--r-xl) var(--r-sm);
+      transform: translateY(-12px);
+      background: var(--sand-deep);
+    }
+    .day-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 48px -14px rgba(40, 24, 1, 0.16);
+    }
+    .day-card.featured:hover {
+      transform: translateY(-18px);
+    }
+    .day-card-head {
+      padding: 1.35rem 1.5rem 1.15rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.5rem;
+      /* tonal shift instead of 1px border */
+      background: linear-gradient(to bottom, transparent calc(100% - 2px), rgba(40, 24, 1, 0.08) calc(100% - 2px));
+    }
+    .day-card.featured .day-card-head {
+      background: var(--maroon);
+      color: #fff;
+    }
+    .day-name {
+      font-family: 'Newsreader', serif;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+    .day-date {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--ink-soft);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    .day-card.featured .day-name,
+    .day-card.featured .day-date { color: #fff; }
+    .day-card.featured .day-date { color: rgba(255, 248, 244, 0.78); }
+
+    .day-card-img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+    }
+    .day-card-body {
+      padding: 1.5rem 1.5rem 1.6rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+    .day-headliners {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+    .day-headliners .ar {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 2.04rem; /* 1.7× the 1.2rem Latin names row */
+      color: var(--maroon);
+      direction: rtl;
+      width: 100%;
+      gap: 0.4rem;
+      line-height: 1.1;
+    }
+    .day-card.featured .day-headliners .ar {
+      color: var(--maroon-ink);
+    }
+    .day-headliners .ar span {
+      flex: 1;
+      text-align: center;
+    }
+    .day-headliners .ar .dot-sep {
+      color: rgba(147, 0, 70, 0.35);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      flex: none;
+      align-self: center;
+    }
+    .day-headliners .en-names {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      gap: 0.4rem;
+      font-family: 'Newsreader', serif;
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--ink);
+      letter-spacing: -0.005em;
+    }
+    .day-headliners .en-names span {
+      flex: 1;
+      text-align: center;
+    }
+    .day-headliners .en-names .dot-sep {
+      color: rgba(40, 24, 1, 0.25);
+      font-size: 0.75rem;
+      flex: none;
+    }
+    .day-desc {
+      font-size: 0.92rem;
+      color: var(--ink-soft);
+      line-height: 1.65;
+    }
+    .day-stages {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: auto;
+      padding-top: 0.3rem;
+    }
+    .stage-pill {
+      padding: 0.28rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .stage-pill.pac  { background: rgba(147, 0, 70, 0.14); color: var(--maroon); }
+    .stage-pill.fest { background: rgba(220, 38, 38, 0.14); color: var(--red-deep); }
+    .stage-pill.ind  { background: rgba(40, 24, 1, 0.08);   color: var(--ink-soft); }
+    .day-card.featured .stage-pill.pac  { background: rgba(255, 248, 244, 0.35); color: var(--maroon-ink); }
+    .day-card.featured .stage-pill.fest { background: rgba(220, 38, 38, 0.2); color: var(--red-deep); }
+
+    .day-ticket-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--red-deep);
+      margin-top: 0.4rem;
+      transition: gap 0.25s ease;
+    }
+    .day-ticket-link:hover { gap: 0.7rem; }
+
+    /* =====================================================
+       EXPERIENCE — sand base (tonal step deeper than cream)
+    ===================================================== */
+    .experience {
+      background: var(--sand);
+      padding: clamp(4.5rem, 8vw, 7rem) var(--pad);
+    }
+    .exp-grid {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.75rem;
+    }
+    .exp-card {
+      background: var(--sand-deep);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      color: var(--ink);
+    }
+    .exp-card:nth-child(even) {
+      border-radius: var(--r-xl) var(--r-sm) var(--r-xl) var(--r-sm);
+    }
+    .exp-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 44px -14px rgba(40, 24, 1, 0.18);
+    }
+    .exp-img-placeholder {
+      height: 220px;
+      background-color: #f5d9a8;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      padding: 1rem 1.25rem;
+      font-family: 'Newsreader', serif;
+      font-style: italic;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .exp-img-placeholder::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(40,24,1,0) 40%, rgba(40,24,1,0.55) 100%);
+      pointer-events: none;
+    }
+    .exp-img-placeholder > span { position: relative; z-index: 1; }
+    .exp-body {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      flex: 1;
+    }
+    .exp-title {
+      font-family: 'Newsreader', serif;
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+    .exp-desc {
+      font-size: 0.92rem;
+      color: var(--ink-soft);
+      line-height: 1.65;
+    }
+    .exp-link {
+      display: inline-block;
+      margin-top: 0.5rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--maroon);
+      transition: letter-spacing 0.25s ease;
+    }
+    .exp-card:hover .exp-link { letter-spacing: 0.18em; }
+
+    /* =====================================================
+       WHAT IS MENA — deep maroon wash
+    ===================================================== */
+    .mena-section {
+      background: linear-gradient(135deg, var(--maroon) 0%, var(--maroon-ink) 100%);
+      padding: clamp(4.5rem, 8vw, 7rem) var(--pad);
+      position: relative;
+      overflow: hidden;
+    }
+    .mena-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 85% 15%, rgba(245, 200, 66, 0.14), transparent 55%);
+      pointer-events: none;
+    }
+    .mena-inner {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4.5rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .mena-copy .section-title {
+      color: #fff;
+      text-align: left;
+      margin: 0 0 1.5rem 0;
+    }
+    .mena-copy .section-title em {
+      color: var(--sand-deep);
+    }
+    .mena-copy .section-title .ar-word {
+      color: var(--gold);
+    }
+    .mena-copy p {
+      font-size: 1rem;
+      color: rgba(255, 248, 244, 0.82);
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+    .mena-visual {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.9rem;
+    }
+    .mena-stat {
+      background: rgba(255, 248, 244, 0.06);
+      border-radius: var(--r-lg);
+      padding: 1.6rem 1.35rem;
+      backdrop-filter: blur(8px);
+    }
+    .mena-stat:nth-child(even) {
+      border-radius: var(--r-xl) var(--r-sm) var(--r-xl) var(--r-sm);
+    }
+    .mena-stat-ar {
+      font-family: 'Aldhabi', serif;
+      font-size: 3.4rem; /* 1.7× the 2rem stat-num below */
+      color: var(--gold);
+      display: block;
+      line-height: 1;
+      margin-bottom: 0.35rem;
+      font-weight: normal;
+    }
+    .mena-stat-num {
+      font-family: 'Newsreader', serif;
+      font-size: 2rem;
+      font-weight: 500;
+      color: #fff;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+    .mena-stat-label {
+      font-size: 0.78rem;
+      color: rgba(255, 248, 244, 0.62);
+      margin-top: 0.5rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    /* MENA section uses cream-glass secondary CTA */
+    .mena-copy .btn-secondary {
+      background: rgba(255, 248, 244, 0.15);
+      color: #fff;
+      backdrop-filter: blur(12px);
+    }
+    .mena-copy .btn-secondary:hover {
+      background: rgba(255, 248, 244, 0.25);
+    }
+
+    /* =====================================================
+       SPONSORS — sand-deep warm well
+    ===================================================== */
+    .sponsors {
+      background: var(--sand-deep);
+      padding: clamp(4.5rem, 8vw, 6rem) var(--pad);
+      text-align: center;
+    }
+    .sponsor-grid {
+      max-width: var(--maxw);
+      margin: 0 auto 2.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .sponsor-slot {
+      width: 170px;
+      height: 84px;
+      background: var(--cream);
+      border-radius: var(--r-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      color: var(--ink-soft);
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      opacity: 0.72;
+      transition: opacity 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .sponsor-slot:nth-child(3n+2) {
+      border-radius: var(--r-xl) var(--r-sm) var(--r-xl) var(--r-sm);
+    }
+    .sponsor-slot:hover {
+      opacity: 1;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px -10px rgba(40, 24, 1, 0.2);
+    }
+
+    /* =====================================================
+       FOOTER — deep ink base, warm text
+    ===================================================== */
+    .footer {
+      background: var(--ink);
+      color: rgba(255, 248, 244, 0.78);
+      padding: 4.5rem var(--pad) 2rem;
+    }
+    .footer-inner { max-width: var(--maxw); margin: 0 auto; }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.4fr repeat(4, 1fr);
+      gap: 2.5rem;
+      padding-bottom: 2.5rem;
+      background: linear-gradient(to bottom, transparent calc(100% - 1px), rgba(255, 248, 244, 0.12) calc(100% - 1px));
+    }
+    .footer-brand img { height: 54px; width: auto; margin-bottom: 0.9rem; }
+    .footer-brand-ar {
+      display: block;
+      font-family: 'Aldhabi', serif;
+      font-size: 1.85rem;  /* 1.7× the ~1.1rem Latin tagline */
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 0.7rem;
+      font-weight: normal;
+    }
+    .footer-tagline {
+      font-size: 0.85rem;
+      color: rgba(255, 248, 244, 0.6);
+      line-height: 1.6;
+    }
+    .footer-col h4 {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+    .footer-col a {
+      display: block;
+      font-size: 0.88rem;
+      color: rgba(255, 248, 244, 0.68);
+      padding: 0.3rem 0;
+      transition: color 0.2s;
+    }
+    .footer-col a:hover { color: var(--gold); }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 1.5rem;
+      font-size: 0.78rem;
+      color: rgba(255, 248, 244, 0.5);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-social {
+      display: flex;
+      gap: 1.25rem;
+    }
+    .footer-social a {
+      color: rgba(255, 248, 244, 0.65);
+      font-size: 0.82rem;
+      transition: color 0.2s;
+    }
+    .footer-social a:hover { color: var(--gold); }
+
+    /* =====================================================
+       RESPONSIVE
+    ===================================================== */
+    @media (max-width: 960px) {
+      .nav-links { display: none; }
+      .nav-cta { display: none; }
+      .nav-burger { display: block; }
+
+      .days-grid { grid-template-columns: 1fr; max-width: 520px; margin-left: auto; margin-right: auto; }
+      .day-card.featured { transform: none; }
+      .day-card.featured:hover { transform: translateY(-6px); }
+
+      .exp-grid { grid-template-columns: 1fr; max-width: 520px; margin-left: auto; margin-right: auto; }
+
+      .mena-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .mena-visual { grid-template-columns: repeat(4, 1fr); }
+
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .footer-brand { grid-column: 1 / -1; }
+    }
+
+    @media (max-width: 640px) {
+      .hero-ctas { flex-direction: column; align-items: center; }
+      .hero-ctas .btn-primary,
+      .hero-ctas .btn-secondary { width: 100%; max-width: 280px; justify-content: center; }
+      .hero-countdown { gap: 0.3rem; }
+      .cd-unit { min-width: 52px; }
+
+      .three-days-stats { gap: 2rem; }
+
+      .mena-visual { grid-template-columns: 1fr 1fr; }
+      .footer-top { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- =========================================================
+     NAV
+========================================================= -->
+<header class="nav" id="mainNav">
+  <a class="nav-logo" href="./index.html">
+    <img src="./assets/images/Logo.webp" alt="OC MENA Festival">
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="./music-entertainment.html">Music &amp; Entertainment</a></li>
+    <li><a href="./schedule.html">Schedule</a></li>
+    <li><a href="./map.html">Map</a></li>
+    <li class="nav-dropdown">
+      <a href="#">Experience</a>
+      <div class="nav-dropdown-menu">
+        <a href="./experience-food-bazaar.html">Food &amp; Bazaar</a>
+        <a href="./experience-rides.html">Rides &amp; Family</a>
+        <a href="./experience-stages.html">Stages</a>
+      </div>
+    </li>
+    <li><a href="./about.html">About</a></li>
+    <li><a href="./info.html">Info</a></li>
+    <li class="nav-dropdown">
+      <a href="#">For Partners</a>
+      <div class="nav-dropdown-menu">
+        <a href="./sponsors.html">Sponsors</a>
+        <a href="./vendors.html">Vendors</a>
+        <a href="./partners.html">Partners &amp; Affiliates</a>
+      </div>
+    </li>
+    <li><a href="./contact.html">Contact</a></li>
+  </ul>
+
+  <a class="btn-primary nav-cta heartbeat" href="./tickets.html">Get Tickets</a>
+  <button class="nav-burger" id="navBurger" aria-label="Open menu">☰</button>
+</header>
+
+<nav class="mobile-menu" id="mobileMenu">
+  <a href="./music-entertainment.html">Music &amp; Entertainment</a>
+  <a href="./schedule.html">Schedule</a>
+  <a href="./map.html">Map</a>
+  <a href="./experience-food-bazaar.html">Food &amp; Bazaar</a>
+  <a href="./experience-rides.html">Rides &amp; Family</a>
+  <a href="./experience-stages.html">Stages</a>
+  <a href="./about.html">About</a>
+  <a href="./info.html">Info</a>
+  <a href="./sponsors.html">Sponsors</a>
+  <a href="./vendors.html">Vendors</a>
+  <a href="./contact.html">Contact</a>
+  <a class="btn-primary mobile-cta" href="./tickets.html">Get Tickets</a>
+</nav>
+
+
+<!-- =========================================================
+     HERO — per-page still image, warm maroon scrim
+========================================================= -->
+<section class="hero">
+  <div class="hero__bg"></div>
+  <video class="hero__video" autoplay muted loop playsinline preload="auto" poster="./assets/images/hero-home.webp">
+    <source src="./assets/hero-final.mp4" type="video/mp4">
+  </video>
+  <div class="hero__scrim"></div>
+
+  <div class="hero-content">
+    <img class="hero-logo" src="./assets/images/Logo.webp" alt="OC MENA Festival">
+
+    <div class="hero-pills">
+      <span class="hero-pill">June 19 · 20 · 21, 2026</span>
+      <span class="hero-pill">OC Fairgrounds</span>
+      <span class="hero-pill">Costa Mesa, CA</span>
+    </div>
+
+    <h1 class="hero-headline">
+      The voices of <span class="ar-word">الوطن</span>,<br>
+      <em>under the SoCal summer sky.</em>
+    </h1>
+
+    <p class="hero-sub">
+      Three days. Three stages. The music the Arab world grew up on,
+      and the sound it's building right now — live in Orange County.
+    </p>
+
+    <div class="hero-ctas">
+      <a class="btn-primary heartbeat on-dark" href="./tickets.html">Get Tickets</a>
+      <a class="btn-secondary on-dark" href="./sponsors.html">Become a Sponsor</a>
+    </div>
+
+    <!-- Countdown -->
+    <div class="hero-countdown" id="countdown">
+      <div class="cd-unit">
+        <span class="cd-num" id="cd-days">--</span>
+        <span class="cd-label">Days</span>
+      </div>
+      <span class="cd-sep">:</span>
+      <div class="cd-unit">
+        <span class="cd-num" id="cd-hours">--</span>
+        <span class="cd-label">Hours</span>
+      </div>
+      <span class="cd-sep">:</span>
+      <div class="cd-unit">
+        <span class="cd-num" id="cd-mins">--</span>
+        <span class="cd-label">Mins</span>
+      </div>
+      <span class="cd-sep">:</span>
+      <div class="cd-unit">
+        <span class="cd-num" id="cd-secs">--</span>
+        <span class="cd-label">Secs</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Artist fan carousel inside hero -->
+  <div class="hero-strip">
+    <p class="hero-strip-label">The Lineup &nbsp;·&nbsp; <span class="ar">الفنانون</span></p>
+    <div class="fan-stage" id="fanStage" aria-label="Artist carousel — drag or use dots to navigate">
+      <span class="fan-hint left" aria-hidden="true">‹</span>
+      <span class="fan-hint right" aria-hidden="true">›</span>
+
+      <a class="fan-card" href="./artist-ehab-tawfik.html" data-index="0">
+        <img class="fc-img" src="./assets/images/artist-ehab.webp" alt="Ehab Tawfik">
+        <div class="fc-label">
+          <p class="fc-ar">إيهاب توفيق</p>
+          <p class="fc-en">Ehab Tawfik</p>
+          <p class="fc-meta">Egypt · Festival Stage · Fri</p>
+          <span class="fc-cta">View artist →</span>
+        </div>
+      </a>
+
+      <a class="fan-card" href="./artist-anees.html" data-index="1">
+        <img class="fc-img" src="./assets/images/artist-anees.webp" alt="Anees">
+        <div class="fc-label">
+          <p class="fc-ar">أنيس</p>
+          <p class="fc-en">Anees</p>
+          <p class="fc-meta">USA · Festival Stage · Fri</p>
+          <span class="fc-cta">View artist →</span>
+        </div>
+      </a>
+
+      <a class="fan-card" href="./artist-lana-lubany.html" data-index="2">
+        <img class="fc-img" src="./assets/images/artist-Lana-Lubany.webp" alt="Lana Lubany">
+        <div class="fc-label">
+          <p class="fc-ar">لانا لوباني</p>
+          <p class="fc-en">Lana Lubany</p>
+          <p class="fc-meta">Palestine · Festival Stage · Fri</p>
+          <span class="fc-cta">View artist →</span>
+        </div>
+      </a>
+
+      <a class="fan-card" href="./artist-mc-abdul.html" data-index="3">
+        <img class="fc-img" src="./assets/images/artist-MC-Abdul.webp" alt="MC Abdul">
+        <div class="fc-label">
+          <p class="fc-ar">إم سي عبدول</p>
+          <p class="fc-en">MC Abdul</p>
+          <p class="fc-meta">Palestine · Festival Stage · Sat</p>
+          <span class="fc-cta">View artist →</span>
+        </div>
+      </a>
+
+      <a class="fan-card" href="./artist-norhan.html" data-index="4">
+        <img class="fc-img" src="./assets/images/artist-Norhan.webp" alt="Norhan">
+        <div class="fc-label">
+          <p class="fc-ar">نورهان</p>
+          <p class="fc-en">Norhan</p>
+          <p class="fc-meta">Egypt · Festival Stage · Sun</p>
+          <span class="fc-cta">View artist →</span>
+        </div>
+      </a>
+
+      <a class="fan-card" href="./comedian-saad-alessa.html" data-index="5">
+        <img class="fc-img" src="./assets/images/comedian-Saad-Alessa.webp" alt="Saad Alessa">
+        <div class="fc-label">
+          <p class="fc-ar">سعد العيسى</p>
+          <p class="fc-en">Saad Alessa</p>
+          <p class="fc-meta">Saudi Arabia · Indoor Stage · Fri</p>
+          <span class="fc-cta">View talent →</span>
+        </div>
+      </a>
+
+      <a class="fan-card" href="./comedian-nasser-al-rayess.html" data-index="6">
+        <img class="fc-img" src="./assets/images/comedian-Nasser-Al-Rayess.webp" alt="Nasser Al-Rayess">
+        <div class="fc-label">
+          <p class="fc-ar">ناصر الريّس</p>
+          <p class="fc-en">Nasser Al-Rayess</p>
+          <p class="fc-meta">Kuwait · Indoor Stage · Fri</p>
+          <span class="fc-cta">View talent →</span>
+        </div>
+      </a>
+
+      <a class="fan-card" href="./artist-gaidaa.html" data-index="7">
+        <img class="fc-img" src="./assets/images/artist-gaidaa.webp" alt="Gaidaa">
+        <div class="fc-label">
+          <p class="fc-ar">جيداء</p>
+          <p class="fc-en">Gaidaa</p>
+          <p class="fc-meta">Sudan · Festival Stage · Sat</p>
+          <span class="fc-cta">View artist →</span>
+        </div>
+      </a>
+
+      <a class="fan-card" href="./artist-dystinct.html" data-index="8">
+        <img class="fc-img" src="./assets/images/artist-Dystinct.webp" alt="Dystinct">
+        <div class="fc-label">
+          <p class="fc-ar">ديستينكت</p>
+          <p class="fc-en">Dystinct</p>
+          <p class="fc-meta">Morocco · PAC AMP · Sat</p>
+          <span class="fc-cta">View artist →</span>
+        </div>
+      </a>
+
+      <a class="fan-card" href="./artist-tul8te.html" data-index="9">
+        <img class="fc-img" src="./assets/images/artist-tul8te.webp" alt="Tul8te">
+        <div class="fc-label">
+          <p class="fc-ar">تولييت</p>
+          <p class="fc-en">Tul8te</p>
+          <p class="fc-meta">Egypt · PAC AMP · Sat</p>
+          <span class="fc-cta">View artist →</span>
+        </div>
+      </a>
+
+      <a class="fan-card" href="./artist-bayou.html" data-index="10">
+        <img class="fc-img" src="./assets/images/artist-Bayou.webp" alt="Bayou">
+        <div class="fc-label">
+          <p class="fc-ar">بيّو</p>
+          <p class="fc-en">Bayou</p>
+          <p class="fc-meta">Egypt · PAC AMP · Sat</p>
+          <span class="fc-cta">View artist →</span>
+        </div>
+      </a>
+
+      <a class="fan-card" href="./artist-mohammed-assaf.html" data-index="11">
+        <img class="fc-img" src="./assets/images/artist-assaf.webp" alt="Mohammed Assaf">
+        <div class="fc-label">
+          <p class="fc-ar">محمد عساف</p>
+          <p class="fc-en">Mohammed Assaf</p>
+          <p class="fc-meta">Palestine · PAC AMP · Sun</p>
+          <span class="fc-cta">View artist →</span>
+        </div>
+      </a>
+
+      <a class="fan-card" href="./artist-dana-salah.html" data-index="12">
+        <img class="fc-img" src="./assets/images/artist-Dana-Salah.webp" alt="Dana Salah">
+        <div class="fc-label">
+          <p class="fc-ar">دانا صلاح</p>
+          <p class="fc-en">Dana Salah</p>
+          <p class="fc-meta">Jordan · PAC AMP · Sun</p>
+          <span class="fc-cta">View artist →</span>
+        </div>
+      </a>
+
+      <a class="fan-card" href="./artist-issam-alnajjar.html" data-index="13">
+        <img class="fc-img" src="./assets/images/artist-Issam-Alnajjar.webp" alt="Issam Alnajjar">
+        <div class="fc-label">
+          <p class="fc-ar">عصام النجار</p>
+          <p class="fc-en">Issam Alnajjar</p>
+          <p class="fc-meta">Jordan · PAC AMP · Sun</p>
+          <span class="fc-cta">View artist →</span>
+        </div>
+      </a>
+
+    </div><!-- /fan-stage -->
+    <div class="fan-dots" id="fanDots" role="tablist" aria-label="Select artist"></div>
+  </div><!-- /hero-strip -->
+</section><!-- /hero -->
+
+
+<!-- =========================================================
+     THREE DAYS
+========================================================= -->
+<section class="three-days">
+  <div class="section-head">
+    <p class="section-eyebrow">All Weekend · <span class="ar" style="font-size: 50px">ثلاثة أيام</span></p>
+    <div class="three-days-stats">
+      <div class="tds-item">
+        <span class="tds-num">٣</span>
+        <span class="tds-label">Days</span>
+      </div>
+      <div class="tds-item">
+        <span class="tds-num">٢</span>
+        <span class="tds-label">Stages</span>
+      </div>
+      <div class="tds-item">
+        <span class="tds-num">١</span>
+        <span class="tds-label">Region</span>
+      </div>
+    </div>
+    <h2 class="section-title">One weekend, <em>one</em> <span class="ar-word">وطن</span>.</h2>
+  </div>
+
+  <div class="days-grid">
+
+    <!-- Friday -->
+    <article class="day-card">
+      <div class="day-card-head">
+        <span class="day-name">Friday</span>
+        <span class="day-date">June 19</span>
+      </div>
+      <img class="day-card-img" src="./assets/images/friday-artists.webp" alt="Ehab Tawfik, Anees, Lana Lubany — Friday June 19">
+      <div class="day-card-body">
+        <div class="day-headliners">
+          <div class="ar">
+            <span>لانا لوباني</span><span class="dot-sep">·</span><span>أنيس</span><span class="dot-sep">·</span><span>إيهاب توفيق</span>
+          </div>
+          <div class="en-names"><span>Ehab Tawfik</span><span class="dot-sep">·</span><span>Anees</span><span class="dot-sep">·</span><span>Lana Lubany</span></div>
+        </div>
+        <p class="day-desc">Opening night on the Festival Stage. Two decades of Egyptian pop, Arab-American alt-soul, and Palestinian-American indie — all in one night. Indoor Stage lights up at sundown.</p>
+        <div class="day-stages">
+          <span class="stage-pill fest">Festival Stage</span>
+          <span class="stage-pill ind">Indoor Stage</span>
+        </div>
+        <a class="day-ticket-link" href="./tickets.html">Friday tickets →</a>
+      </div>
+    </article>
+
+    <!-- Saturday — Featured -->
+    <article class="day-card featured">
+      <div class="day-card-head">
+        <span class="day-name">Saturday</span>
+        <span class="day-date">June 20</span>
+      </div>
+      <img class="day-card-img" src="./assets/images/saturday-artists.webp" alt="Dystinct, Tul8te, Bayou — Saturday June 20">
+      <div class="day-card-body">
+        <div class="day-headliners">
+          <div class="ar">
+            <span>بيّو</span><span class="dot-sep">·</span><span>تولييت</span><span class="dot-sep">·</span><span>ديستينكت</span>
+          </div>
+          <div class="en-names"><span>Dystinct</span><span class="dot-sep">·</span><span>Tul8te</span><span class="dot-sep">·</span><span>Bayou</span></div>
+        </div>
+        <p class="day-desc">Dystinct. Tul8te. Bayou. Pacific Amphitheatre headliners with full festival access included. The heaviest night on the grounds — plus Gaidaa on the Festival Stage.</p>
+        <div class="day-stages">
+          <span class="stage-pill pac">PAC Amphitheatre</span>
+          <span class="stage-pill fest">Festival Stage</span>
+        </div>
+        <a class="day-ticket-link" href="./tickets.html">Saturday tickets →</a>
+      </div>
+    </article>
+
+    <!-- Sunday -->
+    <article class="day-card">
+      <div class="day-card-head">
+        <span class="day-name">Sunday</span>
+        <span class="day-date">June 21</span>
+      </div>
+      <img class="day-card-img" src="./assets/images/sunday-artists.webp" alt="Mohammed Assaf, Dana Salah, Issam Alnajjar — Sunday June 21">
+      <div class="day-card-body">
+        <div class="day-headliners">
+          <div class="ar">
+            <span>عصام النجار</span><span class="dot-sep">·</span><span>دانا صلاح</span><span class="dot-sep">·</span><span>محمد عساف</span>
+          </div>
+          <div class="en-names"><span>Mohammed Assaf</span><span class="dot-sep">·</span><span>Dana Salah</span><span class="dot-sep">·</span><span>Issam Alnajjar</span></div>
+        </div>
+        <p class="day-desc">Mohammed Assaf. Dana Salah. Issam Alnajjar. The closer. From Arab Idol's crowned voice to viral Jordanian pop — a finale built to echo.</p>
+        <div class="day-stages">
+          <span class="stage-pill pac">PAC Amphitheatre</span>
+          <span class="stage-pill fest">Festival Stage</span>
+        </div>
+        <a class="day-ticket-link" href="./tickets.html">Sunday tickets →</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+
+<!-- =========================================================
+     THE EXPERIENCE
+========================================================= -->
+<section class="experience">
+  <div class="section-head-left">
+    <p class="section-eyebrow">The Experience · <span class="ar" style="font-size: 50px">التجربة</span></p>
+    <h2 class="section-title" style="text-align:left; margin:0; max-width: 20ch;">More than a concert. <em style="font-family: Aldhabi">A هرجان weekend inside the culture.</em></h2>
+  </div>
+
+  <div class="exp-grid">
+
+    <a class="exp-card" href="./experience-food-bazaar.html">
+      <div class="exp-img-placeholder" style="background-image: url('./assets/images/hero-food-bazaar.webp');"><span>Food &amp; Bazaar</span></div>
+      <div class="exp-body">
+        <h3 class="exp-title">Food &amp; Bazaar</h3>
+        <p class="exp-desc">Lebanese mezze. Moroccan tagine. Egyptian koshari. Yemeni mandi. Palestinian knafeh. Over 100 vendors across the grounds.</p>
+        <span class="exp-link">Explore →</span>
+      </div>
+    </a>
+
+    <a class="exp-card" href="./experience-rides.html">
+      <div class="exp-img-placeholder" style="background-image: url('./assets/images/hero-rides.webp');"><span>Rides &amp; Family</span></div>
+      <div class="exp-body">
+        <h3 class="exp-title">Rides &amp; Family</h3>
+        <p class="exp-desc">Carnival rides, kids zone, family lounge. All ages welcome — children 3 and under are free. This is a festival built for Teta too.</p>
+        <span class="exp-link">Explore →</span>
+      </div>
+    </a>
+
+    <a class="exp-card" href="./experience-stages.html">
+      <div class="exp-img-placeholder" style="background-image: url('./assets/images/hero-stages.webp');"><span>Three Stages</span></div>
+      <div class="exp-body">
+        <h3 class="exp-title">Three Stages</h3>
+        <p class="exp-desc">Pacific Amphitheatre for the headliners. Festival Stage for the outdoor energy. Indoor Stage for emerging voices.</p>
+        <span class="exp-link">Explore →</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+
+<!-- =========================================================
+     WHAT IS MENA
+========================================================= -->
+<section class="mena-section">
+  <div class="mena-inner">
+    <div class="mena-copy">
+      <p class="section-eyebrow section-eyebrow--onmaroon">What is MENA · <span class="ar">ماذا يعني مينا</span></p>
+      <h2 class="section-title">From Morocco to the Gulf — <em>one</em> <span class="ar-word">وطن</span>.</h2>
+      <p>MENA is the Middle East and North Africa. Twenty-two countries. Hundreds of dialects. One of the oldest musical traditions on earth — and one of the most alive right now. This festival brings it home to Orange County.</p>
+      <a class="btn-secondary" href="./what-is-mena.html">Explore the region</a>
+    </div>
+
+    <div class="mena-visual">
+      <div class="mena-stat">
+        <span class="mena-stat-ar">٢٢</span>
+        <span class="mena-stat-num">22</span>
+        <p class="mena-stat-label">Countries represented</p>
+      </div>
+      <div class="mena-stat">
+        <span class="mena-stat-ar">٣</span>
+        <span class="mena-stat-num">3</span>
+        <p class="mena-stat-label">Days of music</p>
+      </div>
+      <div class="mena-stat">
+        <span class="mena-stat-ar">٣</span>
+        <span class="mena-stat-num">3</span>
+        <p class="mena-stat-label">World-class stages</p>
+      </div>
+      <div class="mena-stat">
+        <span class="mena-stat-ar">+١٠٠</span>
+        <span class="mena-stat-num">100+</span>
+        <p class="mena-stat-label">Food &amp; bazaar vendors</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- =========================================================
+     SPONSORS
+========================================================= -->
+<section class="sponsors">
+  <div class="section-head">
+    <p class="section-eyebrow">Partners · <span class="ar">شركاء</span></p>
+    <h2 class="section-title">The brands making <em>this summer</em> possible.</h2>
+  </div>
+
+  <div class="sponsor-grid">
+    <div class="sponsor-slot">Diamond Sponsor</div>
+    <div class="sponsor-slot">Platinum Sponsor</div>
+    <div class="sponsor-slot">Platinum Sponsor</div>
+    <div class="sponsor-slot">Gold Sponsor</div>
+    <div class="sponsor-slot">Gold Sponsor</div>
+    <div class="sponsor-slot">Gold Sponsor</div>
+    <div class="sponsor-slot">Community Partner</div>
+    <div class="sponsor-slot">Community Partner</div>
+  </div>
+
+  <a class="btn-primary" href="./sponsors.html">Become a sponsor</a>
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="./assets/images/Logo.webp" alt="OC MENA Festival">
+        <span class="footer-brand-ar">مهرجان أورنج كاونتي</span>
+        <p class="footer-tagline">June 19–21, 2026<br>OC Fairgrounds, Costa Mesa CA</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Event</h4>
+        <a href="./music-entertainment.html">Music &amp; Entertainment</a>
+        <a href="./schedule.html">Schedule</a>
+        <a href="./map.html">Map</a>
+        <a href="./tickets.html">Tickets</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Experience</h4>
+        <a href="./experience-food-bazaar.html">Food &amp; Bazaar</a>
+        <a href="./experience-rides.html">Rides &amp; Family</a>
+        <a href="./experience-stages.html">Stages</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>About</h4>
+        <a href="./about.html">Our Story</a>
+        <a href="./what-is-mena.html">What is MENA</a>
+        <a href="./info.html">Festival Info</a>
+        <a href="./faq.html">FAQ</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Business</h4>
+        <a href="./sponsors.html">Sponsors</a>
+        <a href="./vendors.html">Vendors</a>
+        <a href="./partners.html">Partners &amp; Affiliates</a>
+        <a href="./contact.html">Contact</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 OC MENA Festival. All rights reserved.</span>
+      <div class="footer-social">
+        <a href="https://instagram.com/ocmenafestival" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://tiktok.com/@ocmenafestival" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://twitter.com/ocmenafestival" target="_blank" rel="noopener">X / Twitter</a>
+        <a href="https://facebook.com/ocmenafestival" target="_blank" rel="noopener">Facebook</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- =========================================================
+     SCRIPTS
+========================================================= -->
+<script>
+  // --- Nav scroll behavior ---
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  // --- Mobile menu ---
+  const burger = document.getElementById('navBurger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  burger.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('is-open');
+    burger.textContent = open ? '✕' : '☰';
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+
+  // --- Countdown to June 19, 2026 5:00 PM PDT ---
+  const target = new Date('2026-06-19T17:00:00-07:00').getTime();
+  const cdDays  = document.getElementById('cd-days');
+  const cdHours = document.getElementById('cd-hours');
+  const cdMins  = document.getElementById('cd-mins');
+  const cdSecs  = document.getElementById('cd-secs');
+
+  function pad(n) { return String(n).padStart(2, '0'); }
+
+  function tick() {
+    const now  = Date.now();
+    const diff = target - now;
+    if (diff <= 0) {
+      cdDays.textContent = cdHours.textContent = cdMins.textContent = cdSecs.textContent = '00';
+      return;
+    }
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    cdDays.textContent  = pad(d);
+    cdHours.textContent = pad(h);
+    cdMins.textContent  = pad(m);
+    cdSecs.textContent  = pad(s);
+  }
+  tick();
+  setInterval(tick, 1000);
+
+  // --- Fan carousel ---
+  (function() {
+    const stage = document.getElementById('fanStage');
+    const dotsContainer = document.getElementById('fanDots');
+    if (!stage) return;
+
+    const cards = Array.from(stage.querySelectorAll('.fan-card'));
+    const N = cards.length;
+
+    const SPREAD_DEG     = 8;
+    const DEPTH_PX       = 20;
+    const ACTIVE_LIFT    = 22;
+    const ACTIVE_SCALE   = 1.06;
+    const INACTIVE_SCALE = 0.88;
+    const DIM_FILTER     = 'brightness(0.5) saturate(0.7)';
+    const BRIGHT_FILTER  = 'brightness(1) saturate(1.05)';
+
+    function getVisibleSides() {
+      if (window.innerWidth >= 1200) return 4;
+      if (window.innerWidth >= 900)  return 3;
+      return 2;
+    }
+
+    function getCardSpacing() {
+      const sides = getVisibleSides();
+      const halfVW = window.innerWidth / 2;
+      const cardHalfW = (200 * ACTIVE_SCALE) / 2;
+      return Math.max(70, (halfVW - cardHalfW * 1.1) / sides);
+    }
+
+    const AUTO_INTERVAL_MS = 3000;
+    let active = 0;
+    let autoInterval = null;
+    let drag = null;
+
+    cards.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'fan-dot';
+      dot.setAttribute('role', 'tab');
+      dot.setAttribute('aria-label', cards[i].querySelector('.fc-en').textContent);
+      dot.addEventListener('click', () => goTo(i));
+      dotsContainer.appendChild(dot);
+    });
+    const dots = Array.from(dotsContainer.querySelectorAll('.fan-dot'));
+
+    function wrap(i) { return ((i % N) + N) % N; }
+
+    function signedOffset(i, act) {
+      let off = i - act;
+      if (off > N / 2)  off -= N;
+      if (off < -N / 2) off += N;
+      return off;
+    }
+
+    function render() {
+      const CARD_SPACING = getCardSpacing();
+      const VISIBLE_SIDES = getVisibleSides();
+      cards.forEach((card, i) => {
+        const off = signedOffset(i, active);
+        const abs = Math.abs(off);
+        const isActive = (off === 0);
+        const visible = abs <= VISIBLE_SIDES;
+        card.style.opacity = visible ? '1' : '0';
+        card.style.pointerEvents = visible ? 'auto' : 'none';
+        card.classList.toggle('is-active', isActive);
+        if (!visible) { card.style.zIndex = '0'; return; }
+        const rotZ   = off * SPREAD_DEG;
+        const transX = off * CARD_SPACING;
+        const transY = isActive ? -ACTIVE_LIFT : (abs * 4);
+        const transZ = -abs * DEPTH_PX;
+        const scale  = isActive ? ACTIVE_SCALE : Math.max(INACTIVE_SCALE, 1 - abs * 0.04);
+        const zIndex = isActive ? 100 : (VISIBLE_SIDES - abs + 1);
+        card.style.transform = [
+          `translateX(${transX}px)`,
+          `translateY(${transY}px)`,
+          `translateZ(${transZ}px)`,
+          `rotateZ(${rotZ}deg)`,
+          `scale(${scale})`
+        ].join(' ');
+        card.style.zIndex = String(zIndex);
+        card.style.filter = isActive ? BRIGHT_FILTER : DIM_FILTER;
+      });
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('is-active', i === active);
+        dot.setAttribute('aria-selected', i === active);
+      });
+    }
+
+    function goTo(index) { active = wrap(index); render(); resetAuto(); }
+
+    function startAuto() {
+      stopAuto();
+      autoInterval = setInterval(() => { active = wrap(active + 1); render(); }, AUTO_INTERVAL_MS);
+    }
+    function stopAuto()  { clearInterval(autoInterval); autoInterval = null; }
+    function resetAuto() { stopAuto(); startAuto(); }
+
+    const SNAP_THRESHOLD = Math.max(30, getCardSpacing() * 0.35);
+
+    function onPointerDown(e) {
+      if (e.pointerType === 'mouse' && e.button !== 0) return;
+      stopAuto();
+      drag = { dragging: true, startX: e.clientX, startY: e.clientY, cumulative: 0,
+               lastSnap: active, startTime: Date.now(), didMove: false,
+               directionLocked: false, isHorizontal: true };
+      stage.setPointerCapture(e.pointerId);
+      e.preventDefault();
+    }
+
+    function onPointerMove(e) {
+      if (!drag || !drag.dragging) return;
+      const dx = e.clientX - drag.startX;
+      const dy = e.clientY - drag.startY;
+      if (!drag.directionLocked && (Math.abs(dx) > 8 || Math.abs(dy) > 8)) {
+        drag.directionLocked = true;
+        drag.isHorizontal = Math.abs(dx) >= Math.abs(dy);
+      }
+      if (drag.directionLocked && !drag.isHorizontal) {
+        drag.dragging = false;
+        stage.releasePointerCapture(e.pointerId);
+        return;
+      }
+      if (Math.abs(dx) > 5) drag.didMove = true;
+      if (drag.directionLocked && drag.isHorizontal) e.preventDefault();
+      drag.cumulative = dx;
+      const moved = Math.round(-dx / SNAP_THRESHOLD);
+      const next = wrap(drag.lastSnap + moved);
+      if (next !== active) { active = next; render(); }
+    }
+
+    function onPointerUp(e) {
+      if (!drag) return;
+      const ds = drag; drag = null;
+      if (!ds.didMove) {
+        // Pure click — let the <a> tag's native navigation handle it.
+        resetAuto();
+        return;
+      }
+      // This was a drag — suppress the click that's about to fire on whichever card
+      // the pointer is over, so we don't accidentally navigate.
+      const el = document.elementFromPoint(e.clientX, e.clientY);
+      const cardEl = el && el.closest('.fan-card');
+      if (cardEl) cardEl._suppressClick = true;
+
+      if (Date.now() - ds.startTime < 300 && Math.abs(ds.cumulative) > 15) {
+        active = wrap(active + (ds.cumulative > 0 ? -1 : 1));
+        render();
+      }
+      resetAuto();
+    }
+
+    // Suppress native anchor clicks after a drag so the drag doesn't trigger navigation.
+    // Pure (non-drag) clicks still navigate via the browser default.
+    cards.forEach((card) => {
+      card.addEventListener('click', (e) => {
+        if (card._suppressClick) {
+          e.preventDefault();
+          card._suppressClick = false;
+        }
+      });
+    });
+
+    stage.setAttribute('tabindex', '0');
+    stage.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft')  { goTo(active - 1); e.preventDefault(); }
+      if (e.key === 'ArrowRight') { goTo(active + 1); e.preventDefault(); }
+    });
+    stage.addEventListener('pointerdown',   onPointerDown);
+    stage.addEventListener('pointermove',   onPointerMove);
+    stage.addEventListener('pointerup',     onPointerUp);
+    stage.addEventListener('pointercancel', () => { drag = null; resetAuto(); });
+    stage.addEventListener('mouseenter', stopAuto);
+    stage.addEventListener('mouseleave', resetAuto);
+    window.addEventListener('resize', () => render());
+
+    render();
+    startAuto();
+  })();
+</script>
+
+</body>
+</html>

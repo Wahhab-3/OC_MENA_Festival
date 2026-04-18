@@ -1,0 +1,1028 @@
+<!DOCTYPE html><html lang="en"><head>
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Internal Design System · OC MENA Festival</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Newsreader:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;display=swap" rel="stylesheet">
+<style>
+@font-face {
+  font-family: 'Aldhabi';
+  src: url('./assets/fonts/aldhabi.ttf') format('truetype');
+  font-display: swap;
+}
+:root {
+  --cream: #fff8f4;
+  --sand: #fff1e4;
+  --sand-deep: #ffe4c2;
+  --ink: #281801;
+  --ink-soft: #5c403c;
+  --red: #dc2626;
+  --red-deep: #b70011;
+  --maroon: #930046;
+  --maroon-ink: #66002f;
+  --gold: #f5c842;
+  --gold-deep: #d0a61e;
+  --gold-soft: #ffd560;
+  --maxw: 1200px;
+  --pad: clamp(1.25rem, 5vw, 3rem);
+  --r-sm: 0.5rem;
+  --r-md: 0.75rem;
+  --r-lg: 1rem;
+  --r-xl: 1.5rem;
+  --shadow-warm: 0 8px 24px rgba(40,24,1,0.06);
+  --fs-display: clamp(2.75rem, 6vw, 5.5rem);
+  --fs-h1: clamp(2rem, 4vw, 3.5rem);
+  --fs-h2: clamp(1.5rem, 2.5vw, 2.25rem);
+  --fs-h3: clamp(1.125rem, 1.5vw, 1.375rem);
+  --fs-body: 1rem;
+  --fs-meta: 0.8125rem;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'Inter', sans-serif;
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.ar { font-family: 'Aldhabi', serif; font-size: 1.7em; line-height: 1; direction: rtl; }
+
+/* shell */
+.ds-top {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(255,248,244,0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+.ds-top-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 1rem var(--pad);
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 2rem;
+}
+.ds-brand {
+  font-family: 'Newsreader', serif; font-weight: 500; font-size: 1.35rem;
+  display: flex; align-items: center; gap: 0.75rem;
+}
+.ds-brand .dot {
+  width: 12px; height: 12px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--red-deep), var(--gold));
+}
+.ds-nav { display: flex; gap: 1.5rem; flex-wrap: wrap; font-size: 0.875rem; font-weight: 500; }
+.ds-nav a { color: var(--ink-soft); text-decoration: none; }
+.ds-nav a:hover { color: var(--maroon); }
+
+/* hero */
+.ds-hero {
+  padding: clamp(4rem, 7vw, 6rem) var(--pad) clamp(3rem, 5vw, 4rem);
+  max-width: var(--maxw); margin: 0 auto;
+  display: grid; grid-template-columns: 1fr; gap: 1.25rem;
+}
+.ds-eyebrow {
+  font-size: var(--fs-meta);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--maroon);
+  display: flex; align-items: center; gap: 0.6rem;
+}
+.ds-eyebrow .ar { font-size: 1.45em; color: var(--gold-deep); }
+.ds-hero h1 {
+  font-family: 'Newsreader', serif;
+  font-weight: 300;
+  font-size: var(--fs-display);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  margin: 0;
+  text-wrap: pretty;
+}
+.ds-hero h1 em { font-style: italic; color: var(--maroon); }
+.ds-hero h1 .ar { color: var(--gold-deep); vertical-align: -0.08em; }
+.ds-hero .lede {
+  font-size: 1.125rem;
+  color: var(--ink-soft);
+  max-width: 62ch;
+}
+.ds-hero .rules {
+  display: grid; gap: 0.5rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--sand);
+  border-radius: var(--r-lg);
+  font-size: 0.9375rem;
+  max-width: 62ch;
+  margin-top: 0.5rem;
+}
+.ds-hero .rules strong { color: var(--maroon); font-weight: 600; }
+
+/* section wrapper */
+section.ds {
+  padding: clamp(3rem, 5vw, 4.5rem) var(--pad);
+}
+section.ds.sand { background: var(--sand); }
+section.ds.sand-deep { background: var(--sand-deep); }
+section.ds-inner { max-width: var(--maxw); margin: 0 auto; }
+.section-head {
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: 1.5rem; flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+.section-head h2 {
+  font-family: 'Newsreader', serif;
+  font-weight: 500;
+  font-size: var(--fs-h2);
+  margin: 0;
+  letter-spacing: -0.015em;
+}
+.section-head h2 .ar { color: var(--gold-deep); }
+.section-head p {
+  margin: 0.4rem 0 0;
+  color: var(--ink-soft);
+  max-width: 54ch;
+  font-size: 0.9375rem;
+}
+
+/* ------- color swatches ------- */
+.palette { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; }
+.swatch {
+  border-radius: var(--r-lg);
+  padding: 1.25rem;
+  min-height: 140px;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  gap: 0.35rem;
+  position: relative;
+  overflow: hidden;
+}
+.swatch.lite { box-shadow: inset 0 0 0 1px rgba(40,24,1,0.08); }
+.swatch .hex {
+  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+  font-size: 0.8125rem; opacity: 0.85;
+}
+.swatch .tok { font-weight: 600; font-size: 0.9375rem; }
+.swatch .role { font-size: 0.75rem; opacity: 0.75; letter-spacing: 0.04em; text-transform: uppercase; }
+
+/* ------- type spec ------- */
+.type-grid { display: grid; gap: 1.5rem; }
+.type-row {
+  display: grid;
+  grid-template-columns: 160px 1fr auto;
+  gap: 1.5rem;
+  align-items: baseline;
+  padding: 1.25rem 0;
+  border-bottom: 1px dashed rgba(40,24,1,0.10);
+}
+.type-row:last-child { border-bottom: 0; }
+.type-label {
+  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+.type-label small { display:block; font-size: 0.68rem; opacity:0.65; text-transform: none; letter-spacing: 0.02em; margin-top: 0.2rem; }
+.type-meta {
+  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+  font-size: 0.75rem; color: var(--ink-soft);
+  white-space: nowrap;
+}
+.type-sample.display { font-family: 'Newsreader', serif; font-weight: 300; font-size: var(--fs-display); line-height: 1.02; letter-spacing: -0.02em; }
+.type-sample.h1 { font-family: 'Newsreader', serif; font-weight: 400; font-size: var(--fs-h1); line-height: 1.08; letter-spacing: -0.015em; }
+.type-sample.h2 { font-family: 'Newsreader', serif; font-weight: 500; font-size: var(--fs-h2); }
+.type-sample.h3 { font-family: 'Inter', sans-serif; font-weight: 600; font-size: var(--fs-h3); }
+.type-sample.body { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 1rem; color: var(--ink-soft); max-width: 54ch; }
+.type-sample.meta { font-family: 'Inter', sans-serif; font-weight: 500; font-size: var(--fs-meta); letter-spacing: 0.04em; text-transform: uppercase; }
+
+/* Aldhabi demo block */
+.aldhabi-demo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(147,0,70,0.92), rgba(102,0,47,0.95)), radial-gradient(circle at 30% 20%, rgba(245,200,66,0.2), transparent 60%);
+  color: var(--cream);
+  border-radius: var(--r-xl);
+  margin-top: 1.5rem;
+}
+.aldhabi-demo .col { min-width: 0; }
+.aldhabi-demo .col-label {
+  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+  font-size: 0.75rem; letter-spacing: 0.1em;
+  opacity: 0.65; text-transform: uppercase;
+  margin-bottom: 0.85rem;
+}
+.aldhabi-demo .headline-latin,
+.aldhabi-demo .headline-both {
+  font-family: 'Newsreader', serif;
+  font-weight: 300; font-size: 2.5rem; line-height: 1.05;
+  margin: 0;
+}
+.aldhabi-demo .headline-both .ar { color: var(--gold); }
+.aldhabi-demo .headline-both em { color: #ffc8a8; font-style: italic; }
+.aldhabi-demo .note {
+  font-size: 0.8125rem;
+  color: rgba(255,248,244,0.7);
+  margin-top: 1rem;
+  max-width: 40ch;
+}
+.aldhabi-demo .rule-chip {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: rgba(245,200,66,0.15);
+  color: var(--gold);
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--r-sm);
+  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  margin-top: 0.85rem;
+}
+
+@media (max-width: 720px) {
+  .type-row { grid-template-columns: 1fr; gap: 0.5rem; }
+  .aldhabi-demo { grid-template-columns: 1fr; }
+}
+
+/* ------- component specimens ------- */
+.comp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+.comp {
+  background: var(--cream);
+  border-radius: var(--r-lg);
+  padding: 1.5rem;
+}
+section.ds.sand .comp { background: var(--sand-deep); }
+section.ds.sand-deep .comp { background: var(--cream); }
+.comp h3 {
+  margin: 0 0 0.25rem;
+  font-family: 'Newsreader', serif;
+  font-weight: 500;
+  font-size: 1.3rem;
+}
+.comp .comp-sub {
+  font-size: 0.8125rem; color: var(--ink-soft);
+  margin: 0 0 1.25rem;
+}
+.comp .comp-canvas {
+  margin: 1.25rem 0 0.75rem;
+  padding: 1.5rem;
+  background: var(--sand);
+  border-radius: var(--r-md);
+  display: flex; flex-direction: column; gap: 1rem;
+  align-items: flex-start;
+}
+section.ds.sand .comp .comp-canvas { background: var(--cream); }
+.comp .comp-canvas.dark {
+  background: linear-gradient(135deg, var(--maroon), var(--maroon-ink));
+  color: var(--cream);
+}
+.comp .comp-code {
+  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+  background: rgba(40,24,1,0.04);
+  padding: 0.65rem 0.85rem;
+  border-radius: var(--r-sm);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* button specimens */
+.btn-primary {
+  background: linear-gradient(135deg, var(--red-deep), var(--red));
+  color: var(--cream);
+  font-family: 'Inter', sans-serif; font-weight: 600;
+  padding: 0.85rem 2rem;
+  border-radius: var(--r-md);
+  border: 0;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: var(--shadow-warm);
+}
+.btn-primary:hover { transform: translateY(-2px); }
+.btn-secondary {
+  background: var(--sand-deep);
+  color: var(--ink);
+  font-family: 'Inter', sans-serif; font-weight: 600;
+  padding: 0.85rem 2rem;
+  border-radius: var(--r-md);
+  border: 0; cursor: pointer;
+  transition: transform 0.25s ease;
+}
+.btn-secondary:hover { transform: translateY(-2px); }
+.btn-secondary.glass { background: rgba(255,248,244,0.15); color: var(--cream); }
+.btn-tertiary {
+  background: transparent; border: 0;
+  color: var(--red); font-weight: 600; font-family: 'Inter', sans-serif;
+  padding: 0.85rem 0; cursor: pointer;
+}
+.btn-tertiary:hover { text-decoration: underline; }
+
+.heartbeat { position: relative; }
+.heartbeat::before {
+  content: ''; position: absolute; inset: -4px;
+  border-radius: calc(var(--r-md) + 4px);
+  box-shadow: 0 0 0 0 rgba(147,0,70,0.5);
+  animation: heartbeat-maroon 1.6s infinite ease-in-out;
+  pointer-events: none;
+}
+.comp-canvas.dark .heartbeat::before { animation-name: heartbeat-gold; }
+@keyframes heartbeat-maroon {
+  0%,100% { box-shadow: 0 0 0 0 rgba(147,0,70,0.45); }
+  50%     { box-shadow: 0 0 0 10px rgba(147,0,70,0); }
+}
+@keyframes heartbeat-gold {
+  0%,100% { box-shadow: 0 0 0 0 rgba(245,200,66,0.55); }
+  50%     { box-shadow: 0 0 0 12px rgba(245,200,66,0); }
+}
+
+/* filter pill */
+.filter-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.filter-btn {
+  font-family: 'Inter', sans-serif;
+  font-size: var(--fs-meta);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.55rem 1rem;
+  border: 0; border-radius: var(--r-sm);
+  background: rgba(40,24,1,0.05);
+  color: var(--ink);
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+.filter-btn.is-active { background: var(--maroon); color: var(--cream); }
+.filter-btn:hover { background: rgba(40,24,1,0.1); }
+.filter-btn.is-active:hover { background: var(--maroon-ink); }
+
+/* heritage tile */
+.heritage-tile-demo {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem;
+  width: 100%;
+}
+.heritage-tile-demo .tile {
+  aspect-ratio: 4 / 5;
+  background: linear-gradient(135deg, var(--maroon), var(--maroon-ink));
+  border-radius: var(--r-xl) var(--r-sm) var(--r-xl) var(--r-sm);
+  position: relative; overflow: hidden;
+  display: flex; align-items: flex-end;
+  padding: 0.75rem;
+}
+.heritage-tile-demo .tile:nth-child(even) {
+  border-radius: var(--r-sm) var(--r-xl) var(--r-sm) var(--r-xl);
+  background: linear-gradient(135deg, #b03a1a, #66002f);
+}
+.heritage-tile-demo .tile::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(circle at 30% 20%, rgba(245,200,66,0.25), transparent 55%);
+}
+.heritage-tile-demo .tile .lbl {
+  position: relative;
+  font-family: 'Aldhabi', serif;
+  font-size: 1.5rem;
+  color: var(--gold);
+  line-height: 1;
+}
+
+/* day badges */
+.badge-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.day-badge {
+  display: inline-block; padding: 0.35rem 0.75rem;
+  border-radius: var(--r-sm);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+}
+.day-badge.fri { background: var(--red); color: var(--cream); }
+.day-badge.sat { background: var(--maroon); color: var(--cream); }
+.day-badge.sun { background: #755b00; color: var(--cream); }
+.day-badge.comedy { background: var(--gold); color: var(--ink); }
+
+.stage-pill {
+  padding: 0.3rem 0.7rem;
+  background: rgba(255,248,244,0.92);
+  color: var(--ink);
+  border-radius: var(--r-sm);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem; font-weight: 600;
+  letter-spacing: 0.06em; text-transform: uppercase;
+}
+
+/* artist card mini */
+.artist-card-mini {
+  display: block;
+  width: 100%;
+  max-width: 260px;
+  background: var(--sand-deep);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.artist-card-mini:hover { transform: translateY(-2px); box-shadow: var(--shadow-warm); }
+.artist-card-mini .ac-media {
+  aspect-ratio: 4 / 5;
+  background:
+    linear-gradient(180deg, transparent 45%, rgba(147,0,70,0.7) 100%),
+    linear-gradient(135deg, #a84a0e, #4a0f28);
+  position: relative;
+  padding: 0.85rem;
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+.artist-card-mini .ac-body { padding: 0.85rem 1rem 1rem; }
+.artist-card-mini .ac-ar {
+  font-family: 'Aldhabi', serif; font-size: 2.2rem; line-height: 1; color: var(--gold); direction: rtl;
+}
+.artist-card-mini .ac-name {
+  font-family: 'Newsreader', serif; font-weight: 500;
+  font-size: 1.3rem; margin: 0.25rem 0 0.1rem; color: var(--cream);
+}
+.artist-card-mini .ac-country {
+  font-size: 0.7rem; color: rgba(255,248,244,0.85);
+  letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600;
+}
+.artist-card-mini .ac-bio {
+  font-size: 0.8125rem; color: var(--ink-soft);
+}
+
+/* info card */
+.info-card {
+  background: var(--cream);
+  padding: 1.25rem;
+  border-radius: var(--r-xl) var(--r-sm) var(--r-xl) var(--r-sm);
+  width: 100%;
+}
+.info-card .eye {
+  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+  font-size: 0.7rem; letter-spacing: 0.12em;
+  color: var(--gold-deep); text-transform: uppercase;
+  margin-bottom: 0.45rem;
+}
+.info-card h4 {
+  font-family: 'Newsreader', serif; font-weight: 500;
+  margin: 0 0 0.4rem; font-size: 1.15rem;
+}
+.info-card p { margin: 0; font-size: 0.875rem; color: var(--ink-soft); }
+
+/* stat counter */
+.stat-counter {
+  display: inline-flex; flex-direction: column; align-items: flex-start;
+  gap: 0.15rem;
+}
+.stat-counter .num {
+  font-family: 'Aldhabi', serif;
+  font-size: 4rem;
+  color: var(--gold);
+  line-height: 1; direction: rtl;
+}
+.stat-counter .lbl {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600; font-size: 0.75rem;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* radii demo */
+.radii { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; }
+.rad-swatch {
+  aspect-ratio: 5 / 4;
+  background: var(--sand-deep);
+  display: flex; align-items: flex-end;
+  padding: 0.75rem;
+  color: var(--ink-soft);
+  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+}
+.rad-swatch strong { color: var(--ink); font-weight: 600; }
+
+/* QA known-issues drawer */
+.qa-block {
+  background: var(--cream);
+  border-radius: var(--r-lg);
+  padding: 1.5rem;
+  max-width: var(--maxw);
+  margin: 0 auto;
+}
+.qa-block h3 {
+  font-family: 'Newsreader', serif;
+  font-weight: 500; font-size: 1.5rem;
+  margin: 0 0 0.25rem;
+}
+.qa-block p { color: var(--ink-soft); margin: 0 0 1rem; font-size: 0.9375rem; }
+.qa-list { display: grid; gap: 0.75rem; }
+.qa-item {
+  display: grid; grid-template-columns: auto 1fr auto; gap: 1rem;
+  align-items: center;
+  padding: 0.85rem 1rem;
+  background: var(--sand);
+  border-radius: var(--r-md);
+}
+.qa-item.crit { background: linear-gradient(90deg, rgba(220,38,38,0.08), rgba(220,38,38,0.02)); }
+.qa-flag {
+  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+  font-size: 0.65rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 0.3rem 0.55rem;
+  border-radius: var(--r-sm);
+  background: var(--sand-deep);
+  color: var(--ink);
+}
+.qa-item.crit .qa-flag { background: var(--red); color: var(--cream); }
+.qa-text { font-size: 0.875rem; }
+.qa-text strong { color: var(--ink); }
+.qa-text em { color: var(--ink-soft); font-style: normal; font-size: 0.8125rem; display: block; margin-top: 0.15rem; }
+.qa-status {
+  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+  font-size: 0.7rem; color: var(--ink-soft);
+  white-space: nowrap;
+}
+
+/* page directory */
+.page-dir { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 0.5rem; }
+.page-link {
+  display: block;
+  padding: 0.6rem 0.85rem;
+  background: var(--cream);
+  border-radius: var(--r-sm);
+  text-decoration: none;
+  color: var(--ink);
+  font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+  font-size: 0.75rem;
+  transition: all 0.25s ease;
+}
+.page-link:hover {
+  background: var(--maroon); color: var(--cream);
+  transform: translateY(-1px);
+}
+.page-link .hint { display: block; font-size: 0.65rem; opacity: 0.6; margin-top: 0.15rem; font-family: 'Inter', sans-serif; letter-spacing: 0.04em; }
+
+footer.ds-foot {
+  padding: 3rem var(--pad);
+  background: var(--ink);
+  color: rgba(255,248,244,0.6);
+  font-size: 0.8125rem;
+  text-align: center;
+}
+footer.ds-foot .ar { color: var(--gold); font-size: 1.85rem; display: block; margin-bottom: 0.6rem; }
+</style>
+</head>
+<body data-cc-id="cc-1" style="cursor: crosshair;">
+
+<div class="ds-top">
+  <div class="ds-top-inner">
+    <div class="ds-brand"><span class="dot"></span>Internal Design System</div>
+    <nav class="ds-nav">
+      <a href="#tokens">Tokens</a>
+      <a href="#type">Type</a>
+      <a href="#aldhabi">Aldhabi</a>
+      <a href="#components">Components</a>
+      <a href="#qa">Known issues</a>
+      <a href="#pages">Pages</a>
+      <a href="index.html">↗ Site</a>
+    </nav>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="ds-hero">
+  <div class="ds-eyebrow"><span class="ar">نظام</span> · SYSTEM · V1.0</div>
+  <h1>Internal design <em>system</em>. <span class="ar">نظام</span></h1>
+  <p class="lede">The working token set + component inventory for the OC MENA Festival site. Every screen on the festival build is composed from these primitives. Three rules override everything; the rest is atmosphere.</p>
+  <div class="rules">
+    <div><strong>Rule 1.</strong> No pure black — ever. <code>--ink (#281801)</code> is the deepest tone on the site.</div>
+    <div><strong>Rule 2.</strong> No 1px borders. Sections separate by tonal shift in the background, not lines.</div>
+    <div><strong>Rule 3.</strong> Aldhabi always renders at <strong>1.7× the Latin neighbor</strong>. Non-negotiable.</div>
+  </div>
+</div>
+
+<!-- TOKENS -->
+<section class="ds sand" id="tokens">
+  <div class="section-head" style="max-width: var(--maxw); margin: 0 auto 2rem;">
+    <div>
+      <h2>Color <span class="ar">لون</span></h2>
+      <p>The page stacks cream → sand → sand-deep for depth. Red is energy, maroon is heritage, gold is punctuation — never a surface.</p>
+    </div>
+  </div>
+  <div class="section-inner" style="max-width: var(--maxw); margin: 0 auto;">
+    <div class="palette">
+      <div class="swatch lite" style="background: #fff8f4; color: var(--ink);">
+        <span class="role">Page base</span><span class="tok">--cream</span><span class="hex">#fff8f4</span>
+      </div>
+      <div class="swatch lite" style="background: #fff1e4; color: var(--ink);">
+        <span class="role">Nested section</span><span class="tok">--sand</span><span class="hex">#fff1e4</span>
+      </div>
+      <div class="swatch lite" style="background: #ffe4c2; color: var(--ink);">
+        <span class="role">Card well</span><span class="tok">--sand-deep</span><span class="hex">#ffe4c2</span>
+      </div>
+      <div class="swatch" style="background: #281801; color: var(--cream);">
+        <span class="role">Primary text</span><span class="tok">--ink</span><span class="hex">#281801</span>
+      </div>
+      <div class="swatch" style="background: #5c403c; color: var(--cream);">
+        <span class="role">Secondary text</span><span class="tok">--ink-soft</span><span class="hex">#5c403c</span>
+      </div>
+      <div class="swatch" style="background: #dc2626; color: var(--cream);">
+        <span class="role">Energy / CTA</span><span class="tok">--red</span><span class="hex">#dc2626</span>
+      </div>
+      <div class="swatch" style="background: #b70011; color: var(--cream);">
+        <span class="role">CTA gradient start</span><span class="tok">--red-deep</span><span class="hex">#b70011</span>
+      </div>
+      <div class="swatch" style="background: #930046; color: var(--cream);">
+        <span class="role">Heritage depth</span><span class="tok">--maroon</span><span class="hex">#930046</span>
+      </div>
+      <div class="swatch" style="background: #66002f; color: var(--cream);">
+        <span class="role">Hover / pressed</span><span class="tok">--maroon-ink</span><span class="hex">#66002f</span>
+      </div>
+      <div class="swatch" style="background: #f5c842; color: var(--ink);">
+        <span class="role">Accent only</span><span class="tok">--gold</span><span class="hex">#f5c842</span>
+      </div>
+      <div class="swatch" style="background: #d0a61e; color: var(--ink);">
+        <span class="role">Gold on warm bg</span><span class="tok">--gold-deep</span><span class="hex">#d0a61e</span>
+      </div>
+      <div class="swatch lite" style="background: #ffd560; color: var(--ink);">
+        <span class="role">Hover state (soft)</span><span class="tok">--gold-soft</span><span class="hex">#ffd560</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TYPE -->
+<section class="ds" id="type">
+  <div class="section-inner" style="max-width: var(--maxw); margin: 0 auto;">
+    <div class="section-head">
+      <div>
+        <h2>Type scale <span class="ar">حرف</span></h2>
+        <p>Newsreader for editorial weight, Inter for the workhorse, Aldhabi strictly for Arabic. All display sizes clamp(); no fixed px.</p>
+      </div>
+    </div>
+    <div class="type-grid">
+      <div class="type-row">
+        <div class="type-label">Display<small>Newsreader 300</small></div>
+        <div class="type-sample display">Three days. <em>One heartbeat.</em></div>
+        <div class="type-meta">clamp(2.75rem, 6vw, 5.5rem)</div>
+      </div>
+      <div class="type-row">
+        <div class="type-label">H1<small>Newsreader 400</small></div>
+        <div class="type-sample h1">The <em>Lineup</em>.</div>
+        <div class="type-meta">clamp(2rem, 4vw, 3.5rem)</div>
+      </div>
+      <div class="type-row">
+        <div class="type-label">H2<small>Newsreader 500</small></div>
+        <div class="type-sample h2">Friday · Festival Grounds</div>
+        <div class="type-meta">clamp(1.5rem, 2.5vw, 2.25rem)</div>
+      </div>
+      <div class="type-row">
+        <div class="type-label">H3<small>Inter 600</small></div>
+        <div class="type-sample h3">A 600-foot stretch of food</div>
+        <div class="type-meta">clamp(1.125rem, 1.5vw, 1.375rem)</div>
+      </div>
+      <div class="type-row">
+        <div class="type-label">Body<small>Inter 400</small></div>
+        <div class="type-sample body">Body text sets at 1rem, line-height 1.6. Long-form reads at up to 62ch. Pair secondary ink tone for captions and metadata blocks.</div>
+        <div class="type-meta">1rem</div>
+      </div>
+      <div class="type-row">
+        <div class="type-label">Meta / pill<small>Inter 500 +0.04em</small></div>
+        <div class="type-sample meta">JUNE 19–21 · 2026</div>
+        <div class="type-meta">0.8125rem</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ALDHABI RULE -->
+<section class="ds sand-deep" id="aldhabi">
+  <div class="section-inner" style="max-width: var(--maxw); margin: 0 auto;">
+    <div class="section-head">
+      <div>
+        <h2>The Aldhabi <span class="ar">١٫٧×</span> rule</h2>
+        <p>Aldhabi glyphs render optically smaller than their nominal em-size. Every Aldhabi instance ships at 1.7× the size of its Latin neighbor. The <code>.ar</code> utility class bakes this in.</p>
+      </div>
+    </div>
+
+    <div class="aldhabi-demo">
+      <div class="col">
+        <div class="col-label">Without rule — broken</div>
+        <h3 class="headline-latin" style="font-size: 2.5rem; margin:0;">Three days. <span style="font-family:'Aldhabi',serif; font-size: 1em;">الوطن</span></h3>
+        <div class="note">Arabic glyph renders at the same nominal size as the Latin — visually 40% smaller, unreadable, looks like a font-fallback bug.</div>
+      </div>
+      <div class="col">
+        <div class="col-label">With 1.7× rule — correct</div>
+        <h3 class="headline-both">Three days. <span class="ar">الوطن</span></h3>
+        <div class="rule-chip">font-size: 1.7em · line-height: 1</div>
+        <div class="note">Aldhabi paired with Newsreader at 1.7× — visually matches the Latin weight and earns its place beside it.</div>
+      </div>
+    </div>
+
+    <div style="margin-top: 1.25rem; font-size: 0.8125rem; color: var(--ink-soft); max-width: 60ch; font-family: ui-monospace, 'SF Mono', Menlo, monospace;">
+      &lt;h2&gt;The <em>Lineup</em> · &lt;span class="ar"&gt;الوطن&lt;/span&gt;&lt;/h2&gt;
+    </div>
+  </div>
+</section>
+
+<!-- COMPONENTS -->
+<section class="ds" id="components">
+  <div class="section-inner" style="max-width: var(--maxw); margin: 0 auto;">
+    <div class="section-head">
+      <div>
+        <h2>Component inventory</h2>
+        <p>Live specimens pulled from the shipped CSS. Every page on the site is composed from these.</p>
+      </div>
+    </div>
+
+    <div class="comp-grid">
+
+      <!-- BUTTONS -->
+      <div class="comp">
+        <h3>Buttons</h3>
+        <p class="comp-sub">Primary = red-deep → red gradient. Secondary = sand-deep on cream / glass on dark. Tertiary = text-only red.</p>
+        <div class="comp-canvas">
+          <button class="btn-primary">Get Tickets</button>
+          <button class="btn-secondary">See the schedule</button>
+          <button class="btn-tertiary">Read artist page →</button>
+        </div>
+        <div class="comp-canvas dark">
+          <button class="btn-primary heartbeat">Get Tickets</button>
+          <button class="btn-secondary glass">Meet the lineup</button>
+          <div style="font-size: 0.7rem; color: rgba(255,248,244,0.55); font-family: ui-monospace, monospace; letter-spacing: 0.04em;">↳ closing-CTA variant · maroon scrim</div>
+        </div>
+      </div>
+
+      <!-- HEARTBEAT -->
+      <div class="comp">
+        <h3>Heartbeat pulse</h3>
+        <p class="comp-sub">Maroon ring on light bg · gold ring on dark closing-CTA bg. Reserved for the Get Tickets CTA only.</p>
+        <div class="comp-canvas" style="flex-direction: row; gap: 2rem;">
+          <button class="btn-primary heartbeat">Get Tickets</button>
+        </div>
+        <div class="comp-code">.heartbeat → 1.6s infinite ease-in-out · maroon or gold tuned to bg</div>
+      </div>
+
+      <!-- FILTER PILL -->
+      <div class="comp">
+        <h3>Filter pills</h3>
+        <p class="comp-sub">Lineup page day + stage filters. Active = maroon fill. Combines state across groups.</p>
+        <div class="comp-canvas">
+          <div style="font-size: 0.7rem; font-weight:600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft);">DAY</div>
+          <div class="filter-row">
+            <button class="filter-btn is-active">All</button>
+            <button class="filter-btn">Friday</button>
+            <button class="filter-btn">Saturday</button>
+            <button class="filter-btn">Sunday</button>
+          </div>
+          <div style="font-size: 0.7rem; font-weight:600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); margin-top:0.5rem;">STAGE</div>
+          <div class="filter-row">
+            <button class="filter-btn is-active">All</button>
+            <button class="filter-btn">Pacific</button>
+            <button class="filter-btn">Festival</button>
+            <button class="filter-btn">Indoor</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY BADGE -->
+      <div class="comp">
+        <h3>Day badges + stage pills</h3>
+        <p class="comp-sub">Day = fri red · sat maroon · sun olive-gold · comedy gold-on-ink. Stage pill is glass-on-image.</p>
+        <div class="comp-canvas">
+          <div class="badge-row">
+            <span class="day-badge fri">Fri · Jun 19</span>
+            <span class="day-badge sat">Sat · Jun 20</span>
+            <span class="day-badge sun">Sun · Jun 21</span>
+            <span class="day-badge comedy">Comedy</span>
+          </div>
+          <div class="badge-row" style="margin-top:0.75rem;">
+            <span class="stage-pill">Pacific</span>
+            <span class="stage-pill">Festival</span>
+            <span class="stage-pill">Indoor</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- HERITAGE TILE -->
+      <div class="comp">
+        <h3>Heritage tile</h3>
+        <p class="comp-sub">Alternating-corner radii. Every even child mirrors the shape. Applied to gallery / artist / bazaar imagery.</p>
+        <div class="comp-canvas">
+          <div class="heritage-tile-demo">
+            <div class="tile"><span class="lbl">موسيقى</span></div>
+            <div class="tile"><span class="lbl">سوق</span></div>
+            <div class="tile"><span class="lbl">وطن</span></div>
+            <div class="tile"><span class="lbl">الوطن</span></div>
+          </div>
+        </div>
+        <div class="comp-code">border-radius: var(--r-xl) var(--r-sm) var(--r-xl) var(--r-sm);</div>
+      </div>
+
+      <!-- ARTIST CARD -->
+      <div class="comp">
+        <h3>Artist card</h3>
+        <p class="comp-sub">4:5 photo with maroon scrim, day badge top-left, Aldhabi name over Latin name, country + stage pill.</p>
+        <div class="comp-canvas">
+          <a class="artist-card-mini">
+            <div class="ac-media">
+              <span class="day-badge fri">Fri · Jun 19</span>
+              <div>
+                <div class="ac-ar">موسيقى</div>
+                <h4 class="ac-name">Artist Name</h4>
+                <div class="ac-country" style="display: flex; justify-content: space-between; align-items: center;">
+                  <span>Palestine</span>
+                  <span class="stage-pill">Pacific</span>
+                </div>
+              </div>
+            </div>
+            <div class="ac-body">
+              <div class="ac-bio">One-line bio — what they sound like, why they matter, who they bring. Two lines max in the collapsed state.</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- INFO CARD -->
+      <div class="comp">
+        <h3>Info card</h3>
+        <p class="comp-sub">Tonal sand card for info / FAQ. Every 4th gets heritage-tile corners for rhythm.</p>
+        <div class="comp-canvas">
+          <div class="info-card">
+            <div class="eye">PARKING · مواقف</div>
+            <h4>Where to park</h4>
+            <p>Fairgrounds lots 1–4 open 3 hours before gates. Overflow on Fairview St. ADA at Lot 1.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- STAT COUNTER -->
+      <div class="comp">
+        <h3>Stat counter</h3>
+        <p class="comp-sub">Big Aldhabi numeral + Inter label. Used on the homepage and the what-is-mena page.</p>
+        <div class="comp-canvas" style="flex-direction: row; gap: 2.5rem; flex-wrap: wrap;">
+          <div class="stat-counter"><div class="num">٣</div><div class="lbl">Days</div></div>
+          <div class="stat-counter"><div class="num">٢٢</div><div class="lbl">Countries</div></div>
+          <div class="stat-counter"><div class="num">٤٠٠م+</div><div class="lbl">Diaspora</div></div>
+        </div>
+      </div>
+
+      <!-- RADII -->
+      <div class="comp">
+        <h3>Radii</h3>
+        <p class="comp-sub">Five shape tokens — the heritage tile is computed per component.</p>
+        <div class="comp-canvas">
+          <div class="radii" style="width:100%;">
+            <div class="rad-swatch" style="border-radius: 0.5rem;"><span><strong>--r-sm</strong><br>0.5rem</span></div>
+            <div class="rad-swatch" style="border-radius: 0.75rem;"><span><strong>--r-md</strong><br>0.75rem</span></div>
+            <div class="rad-swatch" style="border-radius: 1rem;"><span><strong>--r-lg</strong><br>1rem</span></div>
+            <div class="rad-swatch" style="border-radius: 1.5rem;"><span><strong>--r-xl</strong><br>1.5rem</span></div>
+            <div class="rad-swatch" style="border-radius: 1.5rem 0.25rem 1.5rem 0.25rem;"><span><strong>heritage</strong><br>tile</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- QA KNOWN ISSUES -->
+<section class="ds sand" id="qa">
+  <div class="qa-block">
+    <h3>Known issues — flagged, not auto-fixed</h3>
+    <p>Synthesized from QA_REVIEW.md. Left in place intentionally so you can address each one deliberately. Click the hint to jump to the source page.</p>
+
+    <div style="margin:1rem 0 0.75rem; font-size: 0.7rem; font-weight:600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--red-deep);">Critical — blockers</div>
+    <div class="qa-list">
+      <div class="qa-item crit">
+        <span class="qa-flag">Aldhabi</span>
+        <span class="qa-text"><strong>experience-food-bazaar.html</strong> — «سوق» inside <code>.page-sub</code> renders in Inter, not Aldhabi. <em>Tiny mid-paragraph glyph, looks like a fallback bug.</em></span>
+        <a class="qa-status" href="experience-food-bazaar.html">→ page</a>
+      </div>
+      <div class="qa-item crit">
+        <span class="qa-flag">Wrap</span>
+        <span class="qa-text"><strong>experience-rides.html</strong> — desktop hero "Bring العيلة." line breaks between "Bring" and the Arabic. <em>Mobile is fine; desktop reads snapped in half.</em></span>
+        <a class="qa-status" href="experience-rides.html">→ page</a>
+      </div>
+      <div class="qa-item crit">
+        <span class="qa-flag">Flags</span>
+        <span class="qa-text"><strong>what-is-mena.html</strong> — 20 country flag emojis tofu on headless/older browsers. <em>Renders on user's Mac; not on all viewer systems.</em></span>
+        <a class="qa-status" href="what-is-mena.html">→ page</a>
+      </div>
+      <div class="qa-item crit">
+        <span class="qa-flag">Nav</span>
+        <span class="qa-text"><strong>faq.html</strong> — "Info" is marked <code>is-active</code> in the top nav, not FAQ. <em>Cheap bug, bad optics.</em></span>
+        <a class="qa-status" href="faq.html">→ page</a>
+      </div>
+      <div class="qa-item crit">
+        <span class="qa-flag">404</span>
+        <span class="qa-text"><strong>tickets / schedule / map</strong> — all three stubs missing. Every "Get Tickets" CTA resolves to a raw server 404. <em>Backend track; not in this repo.</em></span>
+        <span class="qa-status">deferred</span>
+      </div>
+    </div>
+
+    <div style="margin:1.5rem 0 0.75rem; font-size: 0.7rem; font-weight:600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--maroon);">Visual / brand</div>
+    <div class="qa-list">
+      <div class="qa-item">
+        <span class="qa-flag">Aldhabi</span>
+        <span class="qa-text">9 additional <code>.section-head-eyebrow</code> + <code>.page-pill</code> Arabic fallbacks across food-bazaar / rides. <em>One consolidated CSS rule fixes all of them.</em></span>
+        <span class="qa-status">css sweep</span>
+      </div>
+      <div class="qa-item">
+        <span class="qa-flag">Italic</span>
+        <span class="qa-text"><code>&lt;em&gt;</code> tags wrapping Arabic on experience-stages render Inter-italic. <em>Three instances: وطن ×2, كلمة ×1.</em></span>
+        <a class="qa-status" href="experience-stages.html">→ page</a>
+      </div>
+      <div class="qa-item">
+        <span class="qa-flag">Uncanny</span>
+        <span class="qa-text">Palm-silhouette composites on Mohammed Assaf / Tul8te artist heroes read as clipart against the photo. <em>Reduce opacity or swap for heritage tile motif.</em></span>
+        <span class="qa-status">art direction</span>
+      </div>
+      <div class="qa-item">
+        <span class="qa-flag">Density</span>
+        <span class="qa-text">Sponsors tier cards have no visual weight — four pale panels, Presenting's <code>is-active</code> not reading. Partners page is 24 "LOGO" placeholders.</span>
+        <span class="qa-status">content</span>
+      </div>
+    </div>
+
+    <div style="margin:1.5rem 0 0.75rem; font-size: 0.7rem; font-weight:600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft);">Content / pending</div>
+    <div class="qa-list">
+      <div class="qa-item">
+        <span class="qa-flag">Heroes</span>
+        <span class="qa-text">All hero images now in place as <code>.webp</code> across every page (about, contact, experiences, FAQ, home, info, music, partners, sponsors, vendors, what-is-MENA). SVG fallbacks removed. <em>Home page hero is a looping MP4 video (<code>hero-final.mp4</code>, 8.7MB, H.264, muted).</em></span>
+        <span class="qa-status">done</span>
+      </div>
+      <div class="qa-item">
+        <span class="qa-flag">Portraits</span>
+        <span class="qa-text">12 artist / comedian portraits are AI placeholders. <em>Day-themed composites, not final shoots.</em></span>
+        <span class="qa-status">shoot</span>
+      </div>
+      <div class="qa-item">
+        <span class="qa-flag">Spelling</span>
+        <span class="qa-text">Tul8te Arabic — pitch used <code>تووليت</code>; site standardized on <code>تلاتة</code>. Confirm canonical.</span>
+        <span class="qa-status">client</span>
+      </div>
+      <div class="qa-item">
+        <span class="qa-flag">Capacity</span>
+        <span class="qa-text">Pacific Amphitheatre 8,500 vs 8,000+ · Indoor stage 400 vs 1,200 · pitch/site mismatch.</span>
+        <span class="qa-status">client</span>
+      </div>
+      <div class="qa-item">
+        <span class="qa-flag">Gold soft</span>
+        <span class="qa-text">All 13 artist pages use raw hex <code>#ffd560</code> for gold hover. Added <code>--gold-soft</code> token to this panel; not yet wired into the pages.</span>
+        <span class="qa-status">refactor</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE DIRECTORY -->
+<section class="ds sand-deep" id="pages">
+  <div class="section-inner" style="max-width: var(--maxw); margin: 0 auto;">
+    <div class="section-head">
+      <div>
+        <h2>All pages · 26</h2>
+        <p>Direct links into the imported site. Every page is live, editable, and uses the tokens above.</p>
+      </div>
+    </div>
+    <div class="page-dir">
+      <a class="page-link" href="index.html">index<span class="hint">home</span></a>
+      <a class="page-link" href="music-entertainment.html">music-entertainment<span class="hint">lineup</span></a>
+      <a class="page-link" href="experience-food-bazaar.html">experience-food-bazaar<span class="hint">souq</span></a>
+      <a class="page-link" href="experience-rides.html">experience-rides<span class="hint">twilight joy</span></a>
+      <a class="page-link" href="experience-stages.html">experience-stages<span class="hint">3 stages</span></a>
+      <a class="page-link" href="about.html">about<span class="hint">our story</span></a>
+      <a class="page-link" href="what-is-mena.html">what-is-mena<span class="hint">22 countries</span></a>
+      <a class="page-link" href="info.html">info<span class="hint">location, parking</span></a>
+      <a class="page-link" href="faq.html">faq<span class="hint">30 questions</span></a>
+      <a class="page-link" href="sponsors.html">sponsors<span class="hint">4 tiers</span></a>
+      <a class="page-link" href="vendors.html">vendors<span class="hint">6 types</span></a>
+      <a class="page-link" href="partners.html">partners<span class="hint">community · media</span></a>
+      <a class="page-link" href="contact.html">contact<span class="hint">6 inboxes</span></a>
+      <a class="page-link" href="artist-template.html">artist-template<span class="hint">{{TOKEN}}</span></a>
+      <a class="page-link" href="artist-anees.html">artist-anees</a>
+      <a class="page-link" href="artist-bayou.html">artist-bayou</a>
+      <a class="page-link" href="artist-dana-salah.html">artist-dana-salah</a>
+      <a class="page-link" href="artist-dystinct.html">artist-dystinct</a>
+      <a class="page-link" href="artist-ehab-tawfik.html">artist-ehab-tawfik</a>
+      <a class="page-link" href="artist-gaidaa.html">artist-gaidaa</a>
+      <a class="page-link" href="artist-issam-alnajjar.html">artist-issam-alnajjar</a>
+      <a class="page-link" href="artist-lana-lubany.html">artist-lana-lubany</a>
+      <a class="page-link" href="artist-mohammed-assaf.html">artist-mohammed-assaf</a>
+      <a class="page-link" href="artist-tul8te.html">artist-tul8te</a>
+      <a class="page-link" href="comedian-nasser-al-rayess.html">comedian-nasser-al-rayess</a>
+      <a class="page-link" href="comedian-saad-alessa.html">comedian-saad-alessa</a>
+    </div>
+  </div>
+</section>
+
+<footer class="ds-foot">
+  <span class="ar">مهرجان أورنج كاونتي</span>
+  OC MENA Festival · June 19–21 · 2026 · Costa Mesa
+</footer>
+
+
+
+</body></html>

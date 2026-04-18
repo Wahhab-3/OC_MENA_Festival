@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tickets — OC MENA Festival</title>
+  <meta name="description" content="OC MENA Festival tickets drop soon. Sign up to be first in line. June 19–21, 2026 · OC Fairgrounds, Costa Mesa CA.">
+  <link rel="icon" type="image/png" href="./assets/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Aldhabi';
+      src: url('./assets/fonts/aldhabi.ttf') format('truetype');
+      font-weight: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --cream:      #fff8f4;
+      --sand:       #fff1e4;
+      --sand-deep:  #ffe4c2;
+      --ink:        #281801;
+      --ink-soft:   #5c403c;
+      --red:        #dc2626;
+      --red-deep:   #b70011;
+      --maroon:     #930046;
+      --maroon-ink: #66002f;
+      --gold:       #f5c842;
+      --gold-deep:  #d0a61e;
+
+      --maxw:   1200px;
+      --pad:    clamp(1.25rem, 5vw, 3rem);
+      --nav-h:  72px;
+
+      --fs-display: clamp(2.75rem, 6vw, 5.5rem);
+      --fs-h1:      clamp(2rem, 4vw, 3.5rem);
+      --fs-h2:      clamp(1.5rem, 2.5vw, 2.25rem);
+      --fs-h3:      clamp(1.125rem, 1.5vw, 1.375rem);
+      --fs-body:    1rem;
+      --fs-meta:    0.8125rem;
+
+      --r-sm:  0.5rem;
+      --r-md:  0.75rem;
+      --r-lg:  1rem;
+      --r-xl:  1.5rem;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: var(--fs-body);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+
+    .ar { font-family: 'Aldhabi', serif; font-weight: normal; font-size: 1.7em; line-height: 1; vertical-align: baseline; }
+    .ar-word { font-family: 'Aldhabi', serif; font-weight: normal; font-size: 1.7em; line-height: 1; vertical-align: baseline; font-style: normal; }
+
+    /* ===== BUTTONS ===== */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--maroon);
+      color: var(--cream);
+      padding: 0.75rem 1.4rem;
+      border-radius: var(--r-xl) var(--r-sm);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      box-shadow: 0 6px 16px -8px rgba(102, 0, 47, 0.6);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+    .btn-primary:hover {
+      background: var(--maroon-ink);
+      transform: translateY(-1px);
+      box-shadow: 0 10px 22px -8px rgba(102, 0, 47, 0.7);
+    }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: transparent;
+      color: var(--ink);
+      padding: 0.7rem 1.3rem;
+      border-radius: var(--r-xl) var(--r-sm);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      box-shadow: inset 0 0 0 1.5px var(--ink);
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+    .btn-secondary:hover { background: var(--ink); color: var(--cream); }
+
+    /* Heartbeat — gold pulse on dark hero */
+    @keyframes heartbeat-gold {
+      0%, 100% { box-shadow: 0 6px 16px -8px rgba(245, 200, 66, 0.6), 0 0 0 0 rgba(245, 200, 66, 0.45); }
+      50%      { box-shadow: 0 6px 16px -8px rgba(245, 200, 66, 0.8), 0 0 0 14px rgba(245, 200, 66, 0); }
+    }
+    .heartbeat-gold { animation: heartbeat-gold 2.4s ease-in-out infinite; }
+
+    /* ===== NAV ===== */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      display: flex; align-items: center;
+      padding: 0 var(--pad);
+      gap: 1.5rem;
+      background: rgba(255, 248, 244, 0.86);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 1px 0 rgba(40, 24, 1, 0.06);
+      z-index: 100;
+      transition: box-shadow 0.2s ease, background 0.2s ease;
+    }
+    .nav.scrolled { box-shadow: 0 6px 24px -12px rgba(40, 24, 1, 0.18); }
+    .nav-logo { display: flex; align-items: center; }
+    .nav-links {
+      display: flex; gap: 1.5rem;
+      list-style: none;
+      flex: 1;
+      align-items: center;
+    }
+    .nav-links a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--ink);
+      padding: 0.5rem 0;
+      position: relative;
+      transition: color 0.2s ease;
+    }
+    .nav-links a:hover { color: var(--maroon); }
+    .nav-links a.is-active { color: var(--maroon); font-weight: 600; }
+    .nav-links a.is-active::after {
+      content: '';
+      position: absolute; left: 0; right: 0; bottom: -2px;
+      height: 2px;
+      background: var(--maroon);
+      border-radius: 2px;
+    }
+    .nav-dropdown { position: relative; }
+    .nav-dropdown-menu {
+      position: absolute; top: 100%; left: -0.75rem;
+      background: var(--cream);
+      border-radius: var(--r-md);
+      padding: 0.5rem;
+      box-shadow: 0 12px 32px -10px rgba(40, 24, 1, 0.22);
+      min-width: 200px;
+      opacity: 0; pointer-events: none;
+      transform: translateY(-6px);
+      transition: opacity 0.18s ease, transform 0.18s ease;
+    }
+    .nav-dropdown:hover .nav-dropdown-menu { opacity: 1; pointer-events: auto; transform: translateY(0); }
+    .nav-dropdown-menu a {
+      display: block; padding: 0.5rem 0.75rem;
+      border-radius: var(--r-sm);
+      font-size: 0.875rem;
+    }
+    .nav-dropdown-menu a:hover { background: var(--sand); }
+    .nav-cta { font-size: 0.875rem; padding: 0.55rem 1rem; }
+    .nav-burger { display: none; font-size: 1.5rem; padding: 0.25rem 0.5rem; }
+    .mobile-menu {
+      display: none;
+      position: fixed; top: var(--nav-h); left: 0; right: 0;
+      background: var(--cream);
+      padding: 1.5rem var(--pad) 2rem;
+      flex-direction: column;
+      gap: 0.25rem;
+      z-index: 99;
+      box-shadow: 0 12px 32px -12px rgba(40, 24, 1, 0.22);
+    }
+    .mobile-menu.is-open { display: flex; }
+    .mobile-menu a {
+      padding: 0.85rem 0.5rem;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+    .mobile-cta { margin-top: 1rem; justify-content: center; }
+
+    @media (max-width: 900px) {
+      .nav-links, .nav-cta { display: none; }
+      .nav-burger { display: inline-flex; }
+    }
+
+    /* ===== MAIN — Coming Soon ===== */
+    main {
+      flex: 1;
+      padding-top: var(--nav-h);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cs-hero {
+      flex: 1;
+      position: relative;
+      padding: clamp(3rem, 8vw, 6rem) var(--pad);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      isolation: isolate;
+    }
+    .cs-hero__bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 30% 20%, rgba(245, 200, 66, 0.18), transparent 55%),
+        radial-gradient(ellipse at 75% 80%, rgba(220, 38, 38, 0.22), transparent 55%),
+        linear-gradient(160deg, var(--maroon-ink) 0%, var(--maroon) 55%, #7a003a 100%);
+      z-index: -2;
+    }
+    .cs-hero__grain {
+      position: absolute; inset: 0;
+      background-image:
+        repeating-linear-gradient(45deg, rgba(255, 248, 244, 0.025) 0 1px, transparent 1px 8px),
+        repeating-linear-gradient(-45deg, rgba(40, 24, 1, 0.04) 0 1px, transparent 1px 8px);
+      z-index: -1;
+      opacity: 0.6;
+    }
+
+    .cs-card {
+      max-width: 720px;
+      width: 100%;
+      background: rgba(255, 248, 244, 0.06);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-radius: var(--r-xl) var(--r-sm) var(--r-xl) var(--r-sm);
+      padding: clamp(2rem, 5vw, 3.5rem);
+      box-shadow:
+        inset 0 0 0 1.5px rgba(245, 200, 66, 0.35),
+        0 24px 60px -20px rgba(0, 0, 0, 0.4);
+      text-align: center;
+      color: var(--cream);
+    }
+
+    .cs-eyebrow {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.35rem;
+      margin-bottom: 1.5rem;
+    }
+    .cs-eyebrow-ar {
+      font-family: 'Aldhabi', serif;
+      font-weight: normal;
+      color: var(--gold);
+      line-height: 1;
+      font-size: clamp(4rem, 10vw, 100px);
+    }
+    .cs-eyebrow-en {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: rgba(255, 248, 244, 0.78);
+    }
+
+    .cs-title {
+      font-family: 'Newsreader', serif;
+      font-size: clamp(2.25rem, 5vw, 3.75rem);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.25rem;
+    }
+    .cs-title em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .cs-sub {
+      font-size: clamp(1rem, 1.5vw, 1.15rem);
+      line-height: 1.65;
+      color: rgba(255, 248, 244, 0.88);
+      margin-bottom: 2rem;
+      max-width: 540px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cs-meta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-bottom: 2rem;
+    }
+    .cs-pill {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      padding: 0.45rem 0.95rem;
+      border-radius: 999px;
+      box-shadow: inset 0 0 0 1.5px rgba(245, 200, 66, 0.45);
+    }
+
+    .cs-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.85rem;
+    }
+    .cs-actions .btn-primary {
+      background: var(--gold);
+      color: var(--maroon-ink);
+    }
+    .cs-actions .btn-primary:hover {
+      background: var(--gold-deep);
+      color: var(--maroon-ink);
+    }
+    .cs-actions .btn-secondary {
+      color: var(--cream);
+      box-shadow: inset 0 0 0 1.5px rgba(255, 248, 244, 0.5);
+    }
+    .cs-actions .btn-secondary:hover {
+      background: rgba(255, 248, 244, 0.1);
+      color: var(--cream);
+    }
+
+    .cs-divider {
+      margin: 2rem auto;
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      border-radius: 999px;
+    }
+
+    .cs-form {
+      display: flex;
+      gap: 0.6rem;
+      max-width: 440px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .cs-form input[type="email"] {
+      flex: 1;
+      min-width: 220px;
+      padding: 0.75rem 1rem;
+      border-radius: var(--r-md);
+      border: none;
+      background: rgba(255, 248, 244, 0.95);
+      color: var(--ink);
+      font: inherit;
+      font-size: 0.95rem;
+      box-shadow: inset 0 0 0 1.5px rgba(245, 200, 66, 0.3);
+    }
+    .cs-form input[type="email"]::placeholder { color: var(--ink-soft); }
+    .cs-form input[type="email"]:focus {
+      outline: none;
+      box-shadow: inset 0 0 0 2px var(--gold);
+    }
+    .cs-form button {
+      background: var(--gold);
+      color: var(--maroon-ink);
+      padding: 0.75rem 1.4rem;
+      border-radius: var(--r-md);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      transition: background 0.2s ease;
+    }
+    .cs-form button:hover { background: var(--gold-deep); }
+
+    .cs-fineprint {
+      margin-top: 1rem;
+      font-size: 0.78rem;
+      color: rgba(255, 248, 244, 0.55);
+      letter-spacing: 0.04em;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--ink);
+      color: var(--cream);
+      padding: clamp(2.5rem, 5vw, 4rem) var(--pad) 2rem;
+    }
+    .footer-inner { max-width: var(--maxw); margin: 0 auto; }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.4fr repeat(4, 1fr);
+      gap: 2.5rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1.5px solid rgba(255, 248, 244, 0.12);
+    }
+    @media (max-width: 900px) {
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    }
+    @media (max-width: 560px) {
+      .footer-top { grid-template-columns: 1fr; }
+    }
+    .footer-brand img { width: 64px; height: 64px; margin-bottom: 0.75rem; }
+    .footer-brand-ar {
+      font-family: 'Aldhabi', serif;
+      font-size: 1.85rem;
+      color: var(--gold);
+      display: block;
+      line-height: 1;
+      margin-bottom: 0.6rem;
+    }
+    .footer-tagline {
+      font-size: 0.85rem;
+      color: rgba(255, 248, 244, 0.7);
+      line-height: 1.5;
+    }
+    .footer-col h4 {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .footer-col a {
+      display: block;
+      font-size: 0.9rem;
+      color: rgba(255, 248, 244, 0.78);
+      padding: 0.3rem 0;
+      transition: color 0.2s ease;
+    }
+    .footer-col a:hover { color: var(--cream); }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 1.5rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.82rem;
+      color: rgba(255, 248, 244, 0.55);
+    }
+    .footer-social { display: flex; gap: 1.25rem; }
+    .footer-social a { color: rgba(255, 248, 244, 0.7); transition: color 0.2s ease; }
+    .footer-social a:hover { color: var(--gold); }
+  </style>
+</head>
+
+<body>
+
+<!-- =========================================================
+     NAV
+========================================================= -->
+<header class="nav" id="mainNav">
+  <a class="nav-logo" href="./index.html">
+    <img src="./assets/images/Logo.webp" alt="OC MENA Festival" style="width: 66px; height: 66px">
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="./music-entertainment.html">Music &amp; Entertainment</a></li>
+    <li><a href="./schedule.html">Schedule</a></li>
+    <li><a href="./map.html">Map</a></li>
+    <li class="nav-dropdown">
+      <a href="#">Experience</a>
+      <div class="nav-dropdown-menu">
+        <a href="./experience-food-bazaar.html">Food &amp; Bazaar</a>
+        <a href="./experience-rides.html">Rides &amp; Family</a>
+        <a href="./experience-stages.html">Stages</a>
+      </div>
+    </li>
+    <li><a href="./about.html">About</a></li>
+    <li><a href="./info.html">Info</a></li>
+    <li class="nav-dropdown">
+      <a href="#">For Partners</a>
+      <div class="nav-dropdown-menu">
+        <a href="./sponsors.html">Sponsors</a>
+        <a href="./vendors.html">Vendors</a>
+        <a href="./partners.html">Partners &amp; Affiliates</a>
+      </div>
+    </li>
+    <li><a href="./contact.html">Contact</a></li>
+  </ul>
+
+  <a class="btn-primary nav-cta is-active" href="./tickets.html">Get Tickets</a>
+  <button class="nav-burger" id="navBurger" aria-label="Open menu">☰</button>
+</header>
+
+<nav class="mobile-menu" id="mobileMenu">
+  <a href="./music-entertainment.html">Music &amp; Entertainment</a>
+  <a href="./schedule.html">Schedule</a>
+  <a href="./map.html">Map</a>
+  <a href="./experience-food-bazaar.html">Food &amp; Bazaar</a>
+  <a href="./experience-rides.html">Rides &amp; Family</a>
+  <a href="./experience-stages.html">Stages</a>
+  <a href="./about.html">About</a>
+  <a href="./info.html">Info</a>
+  <a href="./sponsors.html">Sponsors</a>
+  <a href="./vendors.html">Vendors</a>
+  <a href="./contact.html">Contact</a>
+  <a class="btn-primary mobile-cta" href="./tickets.html">Get Tickets</a>
+</nav>
+
+
+<!-- =========================================================
+     COMING SOON HERO
+========================================================= -->
+<main>
+  <section class="cs-hero">
+    <div class="cs-hero__bg"></div>
+    <div class="cs-hero__grain"></div>
+
+    <div class="cs-card">
+      <div class="cs-eyebrow">
+        <span class="cs-eyebrow-ar">تذاكر</span>
+        <span class="cs-eyebrow-en">Tickets</span>
+      </div>
+
+      <h1 class="cs-title">
+        The drop is <em>almost here.</em>
+      </h1>
+
+      <p class="cs-sub">
+        Three-day passes, single-day tickets, family bundles, and VIP suites for the Pacific Amphitheatre go on sale soon. Be the first to know — leave your email and we'll send the link the moment the gates open.
+      </p>
+
+      <div class="cs-meta">
+        <span class="cs-pill">June 19 · 20 · 21, 2026</span>
+        <span class="cs-pill">Costa Mesa, CA</span>
+      </div>
+
+      <div class="cs-divider"></div>
+
+      <form class="cs-form" id="notifyForm">
+        <input type="email" placeholder="your@email.com" required aria-label="Email address">
+        <button type="submit" class="heartbeat-gold">Notify me</button>
+      </form>
+      <p class="cs-fineprint">No spam. One email when tickets go live, then quiet until the festival.</p>
+    </div>
+  </section>
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="./assets/images/Logo.webp" alt="OC MENA Festival">
+        <span class="footer-brand-ar">مهرجان أورنج كاونتي</span>
+        <p class="footer-tagline">June 19–21, 2026<br>OC Fairgrounds, Costa Mesa CA</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Event</h4>
+        <a href="./music-entertainment.html">Music &amp; Entertainment</a>
+        <a href="./schedule.html">Schedule</a>
+        <a href="./map.html">Map</a>
+        <a href="./tickets.html">Tickets</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Experience</h4>
+        <a href="./experience-food-bazaar.html">Food &amp; Bazaar</a>
+        <a href="./experience-rides.html">Rides &amp; Family</a>
+        <a href="./experience-stages.html">Stages</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>About</h4>
+        <a href="./about.html">Our Story</a>
+        <a href="./what-is-mena.html">What is MENA</a>
+        <a href="./info.html">Festival Info</a>
+        <a href="./faq.html">FAQ</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Business</h4>
+        <a href="./sponsors.html">Sponsors</a>
+        <a href="./vendors.html">Vendors</a>
+        <a href="./partners.html">Partners &amp; Affiliates</a>
+        <a href="./contact.html">Contact</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 OC MENA Festival. All rights reserved.</span>
+      <div class="footer-social">
+        <a href="https://instagram.com/ocmenafestival" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://tiktok.com/@ocmenafestival" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://twitter.com/ocmenafestival" target="_blank" rel="noopener">X / Twitter</a>
+        <a href="https://facebook.com/ocmenafestival" target="_blank" rel="noopener">Facebook</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- =========================================================
+     SCRIPTS
+========================================================= -->
+<script>
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  const burger = document.getElementById('navBurger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  burger.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('is-open');
+    burger.textContent = open ? '✕' : '☰';
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+
+  // Notify form — placeholder handler (no backend yet)
+  const notifyForm = document.getElementById('notifyForm');
+  if (notifyForm) {
+    notifyForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const btn = notifyForm.querySelector('button');
+      const input = notifyForm.querySelector('input');
+      btn.textContent = "You're on the list ✓";
+      btn.disabled = true;
+      input.value = '';
+    });
+  }
+</script>
+
+</body>
+</html>
