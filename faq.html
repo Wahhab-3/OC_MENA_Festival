@@ -1,1146 +1,358 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Frequently Asked — OC MENA Festival</title>
-  <meta name="description" content="Answers to the questions we actually get — tickets, on-site, food, family, accessibility, artists, and vendors. June 19–21, 2026, OC Fairgrounds.">
-  <link rel="icon" type="image/png" href="./assets/images/favicon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
-  <style>
-    /* =====================================================
-       OC MENA FESTIVAL — Frequently Asked
-       Heritage Hearth — editorial accordion, reading-paper
-    ===================================================== */
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    @font-face {
-      font-family: 'Aldhabi';
-      src: url('./assets/fonts/aldhabi.ttf') format('truetype');
-      font-weight: normal;
-      font-display: swap;
-    }
+<title>FAQ — OC MENA Festival 2026</title>
+<meta name="description" content="Frequently asked questions about OC MENA Festival 2026 — tickets, food, parking, accessibility, kids, and more.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#DC2F3F">
+<link rel="canonical" href="https://ocmenafestival.com/faq.html">
 
-    :root {
-      --cream:      #fff8f4;
-      --sand:       #fff1e4;
-      --sand-deep:  #ffe4c2;
-      --ink:        #281801;
-      --ink-soft:   #5c403c;
-      --red:        #dc2626;
-      --red-deep:   #b70011;
-      --maroon:     #930046;
-      --maroon-ink: #66002f;
-      --gold:       #f5c842;
-      --gold-deep:  #d0a61e;
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="./assets/images/favicon.png">
+<link rel="apple-touch-icon" href="./assets/images/favicon.png">
 
-      --maxw:   1200px;
-      --maxw-read: 780px;
-      --pad:    clamp(1.25rem, 5vw, 3rem);
-      --nav-h:  72px;
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="OC MENA Festival">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://ocmenafestival.com/faq.html">
+<meta property="og:title" content="FAQ — OC MENA Festival 2026">
+<meta property="og:description" content="Frequently asked questions about OC MENA Festival 2026 — tickets, food, parking, accessibility, kids, and more.">
+<meta property="og:image" content="https://ocmenafestival.com/assets/images/hero-crowd.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="OC MENA Festival — June 19–21, 2026, Orange County, CA">
 
-      --fs-display: clamp(2.75rem, 6vw, 5.5rem);
-      --fs-h2:      clamp(1.5rem, 2.5vw, 2.25rem);
-      --fs-body:    1rem;
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FAQ — OC MENA Festival 2026">
+<meta name="twitter:description" content="Frequently asked questions about OC MENA Festival 2026 — tickets, food, parking, accessibility, kids, and more.">
+<meta name="twitter:image" content="https://ocmenafestival.com/assets/images/hero-crowd.webp">
+<meta name="twitter:image:alt" content="OC MENA Festival — June 19–21, 2026, Orange County, CA">
 
-      --r-sm:  0.5rem;
-      --r-md:  0.75rem;
-      --r-lg:  1rem;
-      --r-xl:  1.5rem;
-    }
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      background: var(--cream); color: var(--ink);
-      font-family: 'Inter', system-ui, sans-serif;
-      font-size: var(--fs-body); line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-    }
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-    button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+<!-- Styles -->
+<link rel="stylesheet" href="./assets/css/site.css?v=ship-20260422-fontfix">
 
-    .ar { font-family: 'Aldhabi', serif; font-weight: normal; font-size: 1.7em; line-height: 1; vertical-align: baseline; }
-
-    /* BUTTONS */
-    .btn-primary {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      padding: 0.85rem 2rem;
-      background: linear-gradient(135deg, var(--red-deep) 0%, var(--red) 100%);
-      color: #fff; font-weight: 600; font-size: 0.95rem; letter-spacing: 0.02em;
-      border-radius: var(--r-md);
-      box-shadow: 0 8px 24px rgba(40, 24, 1, 0.08);
-      transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
-    }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(40, 24, 1, 0.12); opacity: 0.96; }
-    .btn-secondary {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      padding: 0.85rem 2rem;
-      background: var(--sand-deep); color: var(--ink);
-      font-weight: 600; font-size: 0.95rem; letter-spacing: 0.02em;
-      border-radius: var(--r-md);
-      transition: transform 0.25s ease, background 0.25s ease;
-    }
-    .btn-secondary:hover { transform: translateY(-2px); background: #ffd89a; }
-
-    @keyframes heartbeat-maroon {
-      0%   { box-shadow: 0 0 0 0 rgba(147, 0, 70, 0.6), 0 8px 24px rgba(40, 24, 1, 0.08); transform: scale(1); }
-      50%  { box-shadow: 0 0 0 14px rgba(147, 0, 70, 0), 0 10px 28px rgba(40, 24, 1, 0.1); transform: scale(1.03); }
-      100% { box-shadow: 0 0 0 0 rgba(147, 0, 70, 0), 0 8px 24px rgba(40, 24, 1, 0.08); transform: scale(1); }
-    }
-    .heartbeat { animation: heartbeat-maroon 1.6s infinite ease-in-out; }
-
-    /* NAV (pattern parity) */
-    .nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      height: var(--nav-h);
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 var(--pad);
-      background: rgba(255, 248, 244, 0.72);
-      backdrop-filter: blur(20px) saturate(1.2);
-      -webkit-backdrop-filter: blur(20px) saturate(1.2);
-      transition: background 0.35s ease;
-    }
-    .nav.scrolled { background: rgba(255, 248, 244, 0.92); }
-    .nav-logo img { height: 44px; width: auto; }
-    .nav-links { display: flex; align-items: center; gap: 1.75rem; list-style: none; }
-    .nav-links a { color: var(--ink); font-size: 0.88rem; font-weight: 500; letter-spacing: 0.01em; transition: color 0.2s; opacity: 0.78; }
-    .nav-links a:hover { opacity: 1; color: var(--red-deep); }
-    .nav-links a.is-active { opacity: 1; color: var(--ink); font-weight: 600; position: relative; }
-    .nav-links a.is-active::after { content: ''; position: absolute; left: 0; right: 0; bottom: -8px; height: 2px; background: var(--gold-deep); border-radius: 2px; }
-    .nav-dropdown { position: relative; }
-    .nav-dropdown > a { display: flex; align-items: center; gap: 0.3rem; }
-    .nav-dropdown > a::after { content: '▾'; font-size: 0.65rem; opacity: 0.5; }
-    .nav-dropdown-menu { position: absolute; top: calc(100% + 0.75rem); left: 50%; transform: translateX(-50%) translateY(6px); min-width: 210px; background: rgba(255, 248, 244, 0.96); border-radius: var(--r-md); padding: 0.5rem 0; opacity: 0; visibility: hidden; transition: all 0.2s ease; backdrop-filter: blur(14px); box-shadow: 0 16px 40px rgba(40, 24, 1, 0.08); }
-    .nav-dropdown:hover .nav-dropdown-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
-    .nav-dropdown-menu a { display: block; padding: 0.65rem 1.2rem; font-size: 0.88rem; color: var(--ink); opacity: 0.82; transition: opacity 0.15s, background 0.15s; }
-    .nav-dropdown-menu a:hover { opacity: 1; background: var(--sand); }
-    .nav-cta { flex-shrink: 0; }
-    .nav-burger { display: none; color: var(--ink); font-size: 1.5rem; padding: 0.25rem; }
-    .mobile-menu { display: none; position: fixed; top: var(--nav-h); left: 0; right: 0; bottom: 0; background: var(--cream); z-index: 99; flex-direction: column; padding: 2rem var(--pad); gap: 0; overflow-y: auto; }
-    .mobile-menu.is-open { display: flex; }
-    .mobile-menu a { color: var(--ink); font-size: 1.1rem; font-weight: 500; padding: 1rem 0; }
-    .mobile-menu a + a { background-image: linear-gradient(to right, rgba(40,24,1,0.08) 50%, transparent 50%); background-size: 4px 1px; background-position: top; background-repeat: repeat-x; }
-    .mobile-menu .mobile-cta { margin-top: 2rem; align-self: flex-start; }
-
-    /* PAGE HEADER */
-    .page-head {
-      position: relative; min-height: 54vh;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      text-align: center;
-      padding: calc(var(--nav-h) + 3.5rem) var(--pad) 3.5rem;
-      overflow: hidden; background-color: var(--maroon);
-    }
-    .page-head__bg {
-      position: absolute; inset: 0;
-      background-image: url('./assets/images/hero-faq.webp');
-      background-size: cover; background-position: center;
-      filter: saturate(1.05);
-    }
-    .page-head__scrim {
-      position: absolute; inset: 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(147, 0, 70, 0.55) 0%,
-        rgba(102, 0, 47, 0.45) 50%,
-        rgba(40, 24, 1, 0.72) 100%
-      );
-    }
-    .page-head-inner {
-      position: relative; z-index: 2; max-width: 920px; width: 100%;
-      display: flex; flex-direction: column; gap: 1rem; align-items: center;
-    }
-    .page-eyebrow { display: flex; flex-direction: column; align-items: center; gap: 0.3rem; }
-    .page-eyebrow-ar { color: var(--gold); line-height: 1; font-size: clamp(4rem, 10vw, 100px); }
-    .page-eyebrow-en { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(255, 248, 244, 0.78); }
-    .page-title {
-      font-family: 'Newsreader', serif; font-weight: 400;
-      font-size: var(--fs-display); line-height: 1.05;
-      color: #fff; letter-spacing: -0.015em;
-    }
-    .page-title em { font-style: italic; font-weight: 300; color: var(--sand-deep); }
-    .page-sub {
-      font-size: clamp(1rem, 1.35vw, 1.12rem);
-      color: rgba(255, 248, 244, 0.85);
-      max-width: 620px; line-height: 1.65;
-      font-family: 'Newsreader', serif; font-weight: 400; font-style: italic;
-    }
-
-    /* CATEGORY TOC — sticky pill nav */
-    .faq-toc {
-      position: sticky;
-      top: var(--nav-h);
-      z-index: 40;
-      background: rgba(255, 241, 228, 0.92);
-      backdrop-filter: blur(18px) saturate(1.1);
-      -webkit-backdrop-filter: blur(18px) saturate(1.1);
-      padding: 1rem var(--pad);
-    }
-    .faq-toc-inner {
-      max-width: var(--maxw); margin: 0 auto;
-      display: flex; flex-wrap: wrap; justify-content: center;
-      gap: 0.5rem 0.6rem;
-    }
-    .faq-toc a {
-      padding: 0.4rem 0.95rem;
-      background: var(--cream);
-      color: var(--ink);
-      font-size: 0.78rem; font-weight: 500; letter-spacing: 0.02em;
-      border-radius: 999px;
-      opacity: 0.82;
-      transition: background 0.2s, opacity 0.2s, color 0.2s;
-    }
-    .faq-toc a:hover { opacity: 1; background: var(--sand-deep); color: var(--maroon-ink); }
-
-    /* FAQ BODY */
-    .faq-body {
-      padding: clamp(3rem, 6vw, 5rem) var(--pad) clamp(3rem, 6vw, 5rem);
-      background: var(--cream);
-    }
-    .faq-inner { max-width: var(--maxw-read); margin: 0 auto; }
-
-    .faq-category { margin-bottom: 3.5rem; scroll-margin-top: calc(var(--nav-h) + 80px); }
-    .faq-category:last-child { margin-bottom: 0; }
-
-    .faq-category-head {
-      display: flex; flex-direction: column; gap: 0.35rem;
-      padding-bottom: 1.2rem; margin-bottom: 1.25rem;
-      background: linear-gradient(to bottom, transparent calc(100% - 2px), var(--sand-deep) calc(100% - 2px));
-    }
-    .faq-category-eyebrow {
-      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.22em;
-      text-transform: uppercase; color: var(--maroon);
-      display: inline-flex; align-items: center; gap: 0.65rem;
-    }
-    .faq-category-eyebrow .ar {
-      color: var(--maroon); line-height: 1;
-    }
-    .faq-category-title {
-      font-family: 'Newsreader', serif; font-weight: 500;
-      font-size: clamp(1.6rem, 2.8vw, 2.1rem);
-      color: var(--ink); line-height: 1.2; letter-spacing: -0.01em;
-    }
-    .faq-category-title em { font-style: italic; color: var(--maroon); font-weight: 400; }
-
-    /* FAQ ACCORDION — <details> + <summary> */
-    .faq-item {
-      background: var(--sand);
-      border-radius: var(--r-lg);
-      margin-bottom: 0.75rem;
-      overflow: hidden;
-      transition: background 0.2s ease;
-    }
-    .faq-item[open] {
-      background: var(--sand-deep);
-    }
-    .faq-item:nth-child(3n+2) {
-      border-radius: var(--r-xl) var(--r-sm) var(--r-xl) var(--r-sm);
-    }
-
-    .faq-item summary {
-      list-style: none;
-      padding: 1.1rem 1.4rem;
-      display: flex; align-items: flex-start; justify-content: space-between;
-      gap: 1.25rem;
-      cursor: pointer;
-      font-family: 'Newsreader', serif;
-      font-weight: 500;
-      font-size: clamp(1.05rem, 1.5vw, 1.18rem);
-      color: var(--ink);
-      line-height: 1.35;
-      letter-spacing: -0.005em;
-      transition: color 0.2s ease;
-    }
-    .faq-item summary::-webkit-details-marker { display: none; }
-    .faq-item summary::before { display: none; }
-    .faq-item summary:hover { color: var(--maroon); }
-
-    .faq-marker {
-      flex-shrink: 0;
-      width: 1.75rem; height: 1.75rem;
-      display: inline-flex; align-items: center; justify-content: center;
-      border-radius: 999px;
-      background: rgba(147, 0, 70, 0.08);
-      color: var(--maroon);
-      font-family: 'Inter', sans-serif;
-      font-weight: 500; font-size: 1.15rem;
-      line-height: 1;
-      margin-top: 0.15rem;
-      transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
-    }
-    .faq-item[open] .faq-marker {
-      transform: rotate(45deg);
-      background: var(--maroon);
-      color: var(--gold);
-    }
-
-    .faq-answer {
-      padding: 0 1.4rem 1.4rem calc(1.4rem + 1.75rem + 1.25rem);
-      font-size: 1rem; line-height: 1.7;
-      color: var(--ink-soft);
-    }
-    .faq-answer p + p { margin-top: 0.7rem; }
-    .faq-answer strong { color: var(--maroon-ink); font-weight: 600; }
-    .faq-answer a.inline {
-      color: var(--maroon);
-      text-decoration: underline;
-      text-decoration-color: var(--gold-deep);
-      text-underline-offset: 3px;
-      text-decoration-thickness: 2px;
-      transition: color 0.2s ease;
-    }
-    .faq-answer a.inline:hover { color: var(--maroon-ink); }
-    .faq-answer ul {
-      list-style: none; padding: 0; display: grid; gap: 0.4rem;
-      margin-top: 0.6rem;
-    }
-    .faq-answer ul li {
-      padding-left: 1.25rem; position: relative;
-      font-size: 0.95rem; line-height: 1.6;
-    }
-    .faq-answer ul li::before {
-      content: ''; position: absolute; left: 0; top: 0.65em;
-      width: 6px; height: 6px; border-radius: 50%;
-      background: var(--gold-deep);
-    }
-
-    /* still-have-a-question editorial block */
-    .faq-coda {
-      margin-top: 4rem;
-      padding: 2.5rem 2rem;
-      background: linear-gradient(135deg, var(--sand-deep) 0%, var(--sand) 100%);
-      border-radius: var(--r-xl) var(--r-sm) var(--r-xl) var(--r-sm);
-      text-align: center;
-    }
-    .faq-coda-ar {
-      font-family: 'Aldhabi', serif; font-size: 3rem;
-      color: var(--maroon); line-height: 1; display: block;
-      margin-bottom: 0.35rem;
-    }
-    .faq-coda-title {
-      font-family: 'Newsreader', serif; font-weight: 500;
-      font-size: clamp(1.35rem, 2.2vw, 1.7rem);
-      color: var(--ink); line-height: 1.25;
-      letter-spacing: -0.01em;
-      margin-bottom: 0.6rem;
-    }
-    .faq-coda-sub {
-      color: var(--ink-soft); max-width: 480px; margin: 0 auto 1.25rem;
-      font-size: 0.95rem; line-height: 1.65;
-    }
-
-    /* =====================================================
-       CLOSING CTA
-    ===================================================== */
-    .closing-cta {
-      padding: 5.5rem var(--pad);
-      background: linear-gradient(135deg, var(--maroon) 0%, var(--maroon-ink) 100%);
-      text-align: center; position: relative; overflow: hidden;
-    }
-    .closing-cta::before {
-      content: ''; position: absolute; inset: 0;
-      background: radial-gradient(circle at 80% 20%, rgba(245, 200, 66, 0.18), transparent 50%);
-      pointer-events: none;
-    }
-    .closing-inner {
-      max-width: 720px; margin: 0 auto;
-      display: flex; flex-direction: column; gap: 1rem;
-      align-items: center; position: relative; z-index: 1;
-    }
-    .closing-eyebrow {
-      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.22em;
-      text-transform: uppercase; color: rgba(255, 248, 244, 0.72);
-    }
-    .closing-title {
-      font-family: 'Newsreader', serif; font-weight: 400;
-      font-size: clamp(2rem, 4.2vw, 3.1rem);
-      color: #fff; line-height: 1.15; letter-spacing: -0.015em;
-    }
-    .closing-title em { font-style: italic; color: var(--sand-deep); font-weight: 300; }
-    .closing-title .ar-word {
-      font-family: 'Aldhabi', serif; font-size: 1.7em;
-      color: var(--gold); font-weight: normal; vertical-align: baseline; line-height: 1;
-    }
-    .closing-sub { color: rgba(255, 248, 244, 0.82); line-height: 1.65; max-width: 540px; }
-    .closing-ctas { display: flex; flex-wrap: wrap; gap: 0.85rem; justify-content: center; margin-top: 1rem; }
-    .closing-ctas .heartbeat { animation-name: heartbeat-gold; }
-    @keyframes heartbeat-gold {
-      0%   { box-shadow: 0 0 0 0 rgba(245, 200, 66, 0.6), 0 8px 24px rgba(40, 24, 1, 0.24); transform: scale(1); }
-      50%  { box-shadow: 0 0 0 14px rgba(245, 200, 66, 0), 0 10px 28px rgba(40, 24, 1, 0.3); transform: scale(1.03); }
-      100% { box-shadow: 0 0 0 0 rgba(245, 200, 66, 0), 0 8px 24px rgba(40, 24, 1, 0.24); transform: scale(1); }
-    }
-    .closing-ctas .btn-secondary { background: rgba(255, 248, 244, 0.15); color: #fff; backdrop-filter: blur(12px); }
-    .closing-ctas .btn-secondary:hover { background: rgba(255, 248, 244, 0.25); }
-
-    /* FOOTER */
-    .footer { background: var(--ink); color: rgba(255, 248, 244, 0.78); padding: 4.5rem var(--pad) 2rem; }
-    .footer-inner { max-width: var(--maxw); margin: 0 auto; }
-    .footer-top { display: grid; grid-template-columns: 1.4fr repeat(4, 1fr); gap: 2.5rem; padding-bottom: 2.5rem; background: linear-gradient(to bottom, transparent calc(100% - 1px), rgba(255, 248, 244, 0.12) calc(100% - 1px)); }
-    .footer-brand img { height: 54px; width: auto; margin-bottom: 0.9rem; }
-    .footer-brand-ar { display: block; font-family: 'Aldhabi', serif; font-size: 1.85rem; color: var(--gold); line-height: 1; margin-bottom: 0.7rem; }
-    .footer-tagline { font-size: 0.85rem; color: rgba(255, 248, 244, 0.6); line-height: 1.6; }
-    .footer-col h4 { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #fff; margin-bottom: 1rem; }
-    .footer-col a { display: block; font-size: 0.88rem; color: rgba(255, 248, 244, 0.68); padding: 0.3rem 0; transition: color 0.2s; }
-    .footer-col a:hover { color: var(--gold); }
-    .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 1.5rem; font-size: 0.78rem; color: rgba(255, 248, 244, 0.5); flex-wrap: wrap; gap: 1rem; }
-    .footer-social { display: flex; gap: 1.25rem; }
-    .footer-social a { color: rgba(255, 248, 244, 0.65); font-size: 0.82rem; transition: color 0.2s; }
-    .footer-social a:hover { color: var(--gold); }
-
-    @media (max-width: 960px) {
-      .nav-links { display: none; }
-      .nav-cta { display: none; }
-      .nav-burger { display: block; }
-      .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
-      .footer-brand { grid-column: 1 / -1; }
-      .faq-answer { padding-left: 1.4rem; }
-    }
-    @media (max-width: 640px) {
-      .footer-top { grid-template-columns: 1fr; }
-      .footer-bottom { flex-direction: column; align-items: flex-start; }
-      .faq-item summary { gap: 0.85rem; font-size: 1.02rem; padding: 0.95rem 1.1rem; }
-      .faq-marker { width: 1.5rem; height: 1.5rem; font-size: 1rem; }
-      .faq-answer { padding: 0 1.1rem 1.2rem 1.1rem; }
-    }
-  </style>
+<!-- Structured data -->
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "FAQ at OC MENA Festival", "url": "https://ocmenafestival.com/faq.html", "description": "Frequently asked questions about OC MENA Festival 2026 — tickets, food, parking, accessibility, kids, and more.", "isPartOf": {"@type": "WebSite", "name": "OC MENA Festival", "url": "https://ocmenafestival.com/"}}</script>
 </head>
+<body data-nav="light">
 
-<body>
+<!-- FIXED VIDEO BACKGROUND -->
+<div class="video-bg-fixed">
+  <video autoplay muted loop playsinline preload="auto">
+    <source src="./assets/hero-final.mp4" type="video/mp4">
+  </video>
+</div>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="nav-announcement">June 19-21, 2026 &mdash; OC Fairgrounds &mdash; Middle East &amp; North Africa (MENA) Festival!</div>
 
 <!-- NAV -->
-<header class="nav" id="mainNav">
-  <a class="nav-logo" href="./index.html">
-    <img src="./assets/images/Logo.webp" alt="OC MENA Festival">
-  </a>
-  <ul class="nav-links">
-    <li><a href="./music-entertainment.html">Music &amp; Entertainment</a></li>
-    <li><a href="./schedule.html">Schedule</a></li>
-    <li><a href="./map.html">Map</a></li>
-    <li class="nav-dropdown">
-      <a href="#">Experience</a>
-      <div class="nav-dropdown-menu">
-        <a href="./experience-food-bazaar.html">Food &amp; Bazaar</a>
-        <a href="./experience-rides.html">Rides &amp; Family</a>
-        <a href="./experience-stages.html">Stages</a>
+<header class="nav">
+  <a class="brand" href="./index.html"><img class="brand-logo" src="./assets/images/Logo.webp" alt="OC MENA Festival"></a>
+  <nav class="nav-links">
+    <div class="nav-drop">
+      <a href="#">Festival <span class="caret">&#9662;</span></a>
+      <div class="nav-drop-menu">
+        <a href="./about.html">About</a>
+        <a href="./info.html">Festival Info</a>
+        <a href="./map.html">Map</a>
+        <a href="./schedule.html">Schedule</a>
       </div>
-    </li>
-    <li><a href="./about.html">About</a></li>
-    <li><a href="./info.html">Info</a></li>
-    <li class="nav-dropdown">
-      <a href="#">For Partners</a>
-      <div class="nav-dropdown-menu">
-        <a href="./sponsors.html">Sponsors</a>
-        <a href="./vendors.html">Vendors</a>
-        <a href="./partners.html">Partners &amp; Affiliates</a>
-      </div>
-    </li>
-    <li><a href="./contact.html">Contact</a></li>
-  </ul>
-  <a class="btn-primary nav-cta heartbeat" href="./tickets.html">Get Tickets</a>
-  <button class="nav-burger" id="navBurger" aria-label="Open menu">☰</button>
+    </div>
+    <a href="./lineup.html">Music &amp; Entertainment</a>
+    <a href="./vendors.html">Vendors</a>
+    <a href="./sponsors.html">Sponsors</a>
+    <a href="./faq.html">FAQ</a>
+    <a href="./contact.html">Contact</a>
+  </nav>
+  <a class="nav-cta nav-cta-ghost" href="./sponsors.html">Become a Sponsor</a>
+  <a class="nav-cta" href="./tickets.html">Get Tickets</a>
+  <div class="nav-icons">
+    <a class="nav-icon" href="#" aria-label="Account">&#9786;</a>
+    <a class="nav-icon" href="#" aria-label="Cart">&#128722;<span class="badge">0</span></a>
+  </div>
+  <button class="nav-burger" aria-label="Menu">&#9776;</button>
 </header>
 
-<nav class="mobile-menu" id="mobileMenu">
-  <a href="./music-entertainment.html">Music &amp; Entertainment</a>
-  <a href="./schedule.html">Schedule</a>
-  <a href="./map.html">Map</a>
-  <a href="./experience-food-bazaar.html">Food &amp; Bazaar</a>
-  <a href="./experience-rides.html">Rides &amp; Family</a>
-  <a href="./experience-stages.html">Stages</a>
-  <a href="./about.html">About</a>
-  <a href="./info.html">Info</a>
-  <a href="./contact.html">Contact</a>
-  <a class="btn-primary mobile-cta" href="./tickets.html">Get Tickets</a>
-</nav>
-
-
-<!-- PAGE HEADER -->
-<section class="page-head">
-  <div class="page-head__bg"></div>
-  <div class="page-head__scrim"></div>
-  <div class="page-head-inner">
-    <div class="page-eyebrow">
-      <span class="ar page-eyebrow-ar">أسئلة متكررة</span>
-      <span class="page-eyebrow-en">Frequently Asked</span>
-    </div>
-    <h1 class="page-title">
-      The questions we <em>actually get.</em>
-    </h1>
-    <p class="page-sub">
-      Straight answers to the things that matter most — ticketing, getting on
-      the grounds, food, family, accessibility, and how to get involved.
-    </p>
-  </div>
+<!-- PAGE HEAD sits on video, no plate -->
+<section class="page-head page-hero-on-video">
+  <p class="page-eyebrow on-video">FAQ <span class="ar-small">· الأسئلة الشائعة</span></p>
+  <h1 class="page-title on-video">
+    <span class="pt-ar">اسألنا</span>
+    <span class="pt-en">Everything you're probably wondering.</span>
+  </h1>
+  <p class="page-lede on-video">The answers below cover 90% of what we get in our inbox. If yours isn't here, <a href="./contact.html">send us a note</a> and we'll add it.</p>
 </section>
 
+<!-- WHITE CARD STARTS HERE -->
+<div class="page-container">
 
-<!-- CATEGORY TOC -->
-<nav class="faq-toc">
-  <div class="faq-toc-inner">
-    <a href="#tickets">Tickets</a>
-    <a href="#onsite">On-site</a>
+<div class="faq-layout">
+  <aside class="faq-toc">
+    <a href="#tickets">Tickets &amp; Entry</a>
+    <a href="#logistics">Getting There</a>
     <a href="#food">Food &amp; Drink</a>
-    <a href="#family">Family</a>
+    <a href="#family">Family &amp; Kids</a>
     <a href="#accessibility">Accessibility</a>
-    <a href="#artists">Artists</a>
-    <a href="#vendors">Vendors</a>
-  </div>
-</nav>
+    <a href="#culture">Culture &amp; Community</a>
+    <a href="#music">Music &amp; Stages</a>
+    <a href="#policies">Policies</a>
+  </aside>
 
+  <main>
 
-<!-- FAQ BODY -->
-<section class="faq-body">
-  <div class="faq-inner">
-
-
-    <!-- TICKETS -->
-    <div class="faq-category" id="tickets">
-      <div class="faq-category-head">
-        <span class="faq-category-eyebrow">
-          Category · 01 <span class="ar">التذاكر</span>
-        </span>
-        <h2 class="faq-category-title">Tickets &amp; <em>entry</em></h2>
-      </div>
+    <div class="faq-section" id="tickets">
+      <h2>Tickets &amp; Entry</h2>
 
       <details class="faq-item">
-        <summary>
-          <span>When do tickets go on sale, and how does pricing work?</span>
-          <span class="faq-marker" aria-hidden="true">+</span>
-        </summary>
-        <div class="faq-answer">
-          <p>
-            Presale opens in <strong>early 2026</strong> for our newsletter list — join at
-            <a class="inline" href="./index.html#newsletter">the signup form</a> to get first access.
-            General on-sale follows a few weeks later. Pricing is tiered: single-day, three-day,
-            and VIP each priced to stay accessible; a limited early-bird tranche is the cheapest
-            the tickets will ever be.
-          </p>
-        </div>
+        <summary class="faq-q">How much are tickets?</summary>
+        <div class="faq-a"><p>Pricing is listed on the <a href="./tickets.html">tickets page</a>. Single-day, 3-day weekend, family bundle, and amphitheatre upgrade tiers are all available.</p></div>
       </details>
 
       <details class="faq-item">
-        <summary>
-          <span>Are tickets physical, or just on my phone?</span>
-          <span class="faq-marker" aria-hidden="true">+</span>
-        </summary>
-        <div class="faq-answer">
-          <p>
-            Tickets are <strong>digital</strong> — delivered as a QR code to your email and mobile
-            wallet. Screenshots work if your service cuts out at the gate. At entry you'll swap
-            the QR for a wristband, which is your pass for the day (and re-entry).
-          </p>
-        </div>
+        <summary class="faq-q">Do I need a separate ticket for the headliners?</summary>
+        <div class="faq-a"><p>Yes. The Pacific Amphitheatre shows (Saturday + Sunday night headliners) are reserved seating and require a separate ticket or an "Amphitheatre Upgrade" add-on to your festival pass. Friday's headliner (Ehab Tawfik) is on the open Festival Stage and is included with your festival ticket.</p></div>
       </details>
 
       <details class="faq-item">
-        <summary>
-          <span>Can I transfer or resell a ticket I can't use?</span>
-          <span class="faq-marker" aria-hidden="true">+</span>
-        </summary>
-        <div class="faq-answer">
-          <p>
-            Yes — transfers run through our ticketing partner and are <strong>free</strong>. Please
-            don't sell on third-party resale sites: scalped tickets are the easiest way to end up with
-            a bad QR at the gate, and we can't honor them.
-          </p>
-          <p>
-            If you're stuck, reach out through the <a class="inline" href="./contact.html">contact page</a>
-            before transferring — we can often help.
-          </p>
-        </div>
+        <summary class="faq-q">Is there an in-and-out privilege?</summary>
+        <div class="faq-a"><p>Yes, unlimited. Get your hand stamped at any exit gate.</p></div>
       </details>
 
       <details class="faq-item">
-        <summary>
-          <span>What's included with VIP?</span>
-          <span class="faq-marker" aria-hidden="true">+</span>
-        </summary>
-        <div class="faq-answer">
-          <p>VIP includes:</p>
-          <ul>
-            <li>Express entry at both gates</li>
-            <li>Raised viewing platform at Festival Stage</li>
-            <li>Reserved seating section at the Pacific Amphitheatre</li>
-            <li>Dedicated VIP restrooms and shaded lounge</li>
-            <li>One complimentary drink per day (alcoholic or non-alcoholic)</li>
-            <li>A festival tote with a small surprise from our food vendors</li>
-          </ul>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>
-          <span>What's the refund policy?</span>
-          <span class="faq-marker" aria-hidden="true">+</span>
-        </summary>
-        <div class="faq-answer">
-          <p>
-            The festival is <strong>rain or shine</strong>, so tickets are generally non-refundable
-            once purchased. If we cancel or reschedule a day due to conditions outside our control,
-            you'll get a refund or rollover credit, your choice. Most concerns are best solved by a
-            transfer — see the transfer question above.
-          </p>
-        </div>
+        <summary class="faq-q">What ID do I need?</summary>
+        <div class="faq-a"><p>18+ for the Indoor Stage after 11 PM — valid government ID required. Everywhere else on the grounds, no ID needed unless you're buying alcohol.</p></div>
       </details>
     </div>
 
-
-    <!-- ON-SITE -->
-    <div class="faq-category" id="onsite">
-      <div class="faq-category-head">
-        <span class="faq-category-eyebrow">
-          Category · 02 <span class="ar">في الموقع</span>
-        </span>
-        <h2 class="faq-category-title">On-site &amp; <em>getting in</em></h2>
-      </div>
+    <div class="faq-section" id="logistics">
+      <h2>Getting There</h2>
 
       <details class="faq-item">
-        <summary>
-          <span>What time do gates open, and what if I arrive late?</span>
-          <span class="faq-marker" aria-hidden="true">+</span>
-        </summary>
-        <div class="faq-answer">
-          <p>
-            Gates open at <strong>5:00 PM on Friday</strong> and <strong>2:00 PM on Saturday and Sunday</strong>.
-            Last entry each night is 10:00 PM. Arriving after 6 PM on Saturday is fine — there's a
-            rideshare drop right at the south gate and the line usually moves in under fifteen minutes.
-          </p>
-          <p>
-            Full hours (plus stage timing) live on the <a class="inline" href="./info.html#dates">Info page</a>.
-          </p>
-        </div>
+        <summary class="faq-q">Where is it?</summary>
+        <div class="faq-a"><p>OC Fair &amp; Event Center, 88 Fair Drive, Costa Mesa, CA. Exit 405 at Fairview, follow signs.</p></div>
       </details>
 
       <details class="faq-item">
-        <summary>
-          <span>Can I leave and come back the same day?</span>
-          <span class="faq-marker" aria-hidden="true">+</span>
-        </summary>
-        <div class="faq-answer">
-          <p>
-            <strong>Yes</strong> — same-day re-entry is allowed as long as your wristband is intact.
-            Don't cut it off, don't lose it. Your wristband is your pass.
-          </p>
-        </div>
+        <summary class="faq-q">Is there parking?</summary>
+        <div class="faq-a"><p>Yes — on-site parking is $20 per day, available day-of. We strongly recommend rideshare on Saturday night, when the area gets busy.</p></div>
       </details>
 
       <details class="faq-item">
-        <summary>
-          <span>Where do I park, and how much is it?</span>
-          <span class="faq-marker" aria-hidden="true">+</span>
-        </summary>
-        <div class="faq-answer">
-          <p>
-            On-site parking is <strong>$20 per day</strong>, cashless, available day-of. Lots open
-            90 minutes before gates. Overflow goes to the adjacent Fairview lot. If you'd rather
-            skip the lot entirely, there's a dedicated Uber/Lyft zone at the south gate — easily the
-            fastest way out after Saturday's PAC headliner.
-          </p>
-        </div>
+        <summary class="faq-q">Is there a rideshare zone?</summary>
+        <div class="faq-a"><p>Yes, dedicated Uber/Lyft pick-up and drop-off zone on Fair Drive, south gate. It's the fastest way in and out on peak nights.</p></div>
       </details>
 
       <details class="faq-item">
-        <summary>
-          <span>What can I bring in — and what gets turned away at the gate?</span>
-          <span class="faq-marker" aria-hidden="true">+</span>
-        </summary>
-        <div class="faq-answer">
-          <p>
-            The short version: <strong>small clear bags, empty water bottles, sunscreen, phone
-            chargers, a light layer for later.</strong> Not allowed: weapons of any kind, glass
-            containers, outside food and drink (with medical/dietary exceptions), professional
-            cameras with detachable lenses, drones, hookah, and anything sharp or flammable.
-          </p>
-          <p>
-            The full list — allowed and prohibited — is on the
-            <a class="inline" href="./info.html#bring">Info page</a>.
-          </p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>
-          <span>Is there a place to pray?</span>
-          <span class="faq-marker" aria-hidden="true">+</span>
-        </summary>
-        <div class="faq-answer">
-          <p>
-            Yes. A dedicated <strong>prayer room</strong> is open throughout festival hours with
-            wudu facilities, prayer mats, and qibla direction provided. <strong>Jummah on Friday
-            at 1:00 PM</strong> is led by a local imam and open to all.
-          </p>
-        </div>
+        <summary class="faq-q">Any hotel recommendations?</summary>
+        <div class="faq-a"><p>We have partner rates at three nearby hotels — see the <a href="./info.html">info page</a> for booking codes.</p></div>
       </details>
     </div>
 
-
-    <!-- FOOD & DRINK -->
-    <div class="faq-category" id="food">
-      <div class="faq-category-head">
-        <span class="faq-category-eyebrow">
-          Category · 03 <span class="ar">المأكولات</span>
-        </span>
-        <h2 class="faq-category-title">Food &amp; <em>drink</em></h2>
-      </div>
+    <div class="faq-section" id="food">
+      <h2>Food &amp; Drink</h2>
 
       <details class="faq-item">
-        <summary>
-          <span>What kind of food will be there?</span>
-          <span class="faq-marker" aria-hidden="true">+</span>
-        </summary>
-        <div class="faq-answer">
-          <p>
-            The Souq runs across the grounds and spans the region: <strong>Levantine mezze,
-            Yemeni mandi, Moroccan tajine, Egyptian koshari, Palestinian musakhan, Iraqi masgouf,
-            Persian kebab, Somali sambusa, Sudanese ful</strong>, plus coffee from half a dozen
-            traditions and sweets for days. Most dishes are made by family-run vendors — the
-            people you'd normally have to drive an hour to eat with.
-          </p>
-          <p>
-            Full vendor list goes live a few weeks before the festival on the
-            <a class="inline" href="./experience-food-bazaar.html">Food &amp; Bazaar page</a>.
-          </p>
-        </div>
+        <summary class="faq-q">Is the food halal?</summary>
+        <div class="faq-a"><p>Every meat vendor on the grounds is halal-certified. A handful of vendors serve pork or non-halal items — those stalls are clearly labeled at the stall and on the map.</p></div>
       </details>
 
       <details class="faq-item">
-        <summary>
-          <span>Are there vegan, vegetarian, and gluten-free options?</span>
-          <span class="faq-marker" aria-hidden="true">+</span>
-        </summary>
-        <div class="faq-answer">
-          <p>
-            Yes — MENA food is <strong>naturally plant-forward</strong> (hummus, baba ghanoush,
-            fatteh, mujadara, moutabal, tabbouleh, falafel, and stuffed grape leaves are the
-            opening act, not an afterthought). Every vendor labels menu items, and we ensure
-            each dietary category has strong options at multiple booths.
-          </p>
-        </div>
+        <summary class="faq-q">Are there vegetarian and vegan options?</summary>
+        <div class="faq-a"><p>Yes, at nearly every stall. MENA cuisine has deep vegetarian roots — mezze, falafel, mujadara, ful, moutabal, and dozens more are naturally meatless.</p></div>
       </details>
 
       <details class="faq-item">
-        <summary>
-          <span>Is everything halal?</span>
-          <span class="faq-marker" aria-hidden="true">+</span>
-        </summary>
-        <div class="faq-answer">
-          <p>
-            All meat served on the grounds is <strong>halal-certified</strong> or sourced from
-            halal-only vendors. If you have a specific question about a dish's preparation, our
-            vendor staff are happy to walk you through it.
-          </p>
-        </div>
+        <summary class="faq-q">Is alcohol served?</summary>
+        <div class="faq-a"><p>Yes, at a dedicated wine &amp; beer garden on the west side of the grounds. 21+ only. The bazaar and food court are otherwise alcohol-free to keep the festival family-friendly.</p></div>
       </details>
 
       <details class="faq-item">
-        <summary>
-          <span>Is there alcohol?</span>
-          <span class="faq-marker" aria-hidden="true">+</span>
-        </summary>
-        <div class="faq-answer">
-          <p>
-            There's a <strong>21+ wine &amp; beer garden</strong> on the west side of the grounds.
-            The rest of the festival is alcohol-free by design — this is a family event first,
-            and we want kids, elders, and people who don't drink to feel at home everywhere else.
-          </p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>
-          <span>Can I bring outside food or drink?</span>
-          <span class="faq-marker" aria-hidden="true">+</span>
-        </summary>
-        <div class="faq-answer">
-          <p>
-            <strong>Empty water bottles: yes</strong> — refill stations are everywhere. Outside
-            food and drink otherwise: no. We do make exceptions for <strong>medical and dietary
-            needs</strong> (infant formula, allergy-safe meals, etc.) — just tell a gate staffer
-            when you arrive.
-          </p>
-        </div>
+        <summary class="faq-q">Can I bring my own food or water?</summary>
+        <div class="faq-a"><p>Outside food is not allowed. Sealed water bottles (up to 1 liter) are permitted, and free refill stations are available at every corner of the grounds.</p></div>
       </details>
     </div>
 
-
-    <!-- FAMILY -->
-    <div class="faq-category" id="family">
-      <div class="faq-category-head">
-        <span class="faq-category-eyebrow">
-          Category · 04 <span class="ar">العائلة</span>
-        </span>
-        <h2 class="faq-category-title">Family &amp; <em>kids</em></h2>
-      </div>
+    <div class="faq-section" id="family">
+      <h2>Family &amp; Kids</h2>
 
       <details class="faq-item">
-        <summary>
-          <span>Is this really family-friendly? Can I bring my kids, my mom, my uncle?</span>
-          <span class="faq-marker" aria-hidden="true">+</span>
-        </summary>
-        <div class="faq-answer">
-          <p>
-            <strong>Yes — that's the whole point.</strong> The festival is built to be enjoyed by
-            three generations at the same time. There's a dedicated family zone (Twilight Joy),
-            rides and carnival games for kids, seated spaces for elders, prayer rooms, stroller
-            parking, and food every member of your family will recognize.
-          </p>
-        </div>
+        <summary class="faq-q">Is this a kid-friendly event?</summary>
+        <div class="faq-a"><p>Yes. Kids under 10 are free with a ticketed adult, and we run a full kids' programming line (crafts, storytelling, carnival rides) all weekend. Bring them.</p></div>
       </details>
 
       <details class="faq-item">
-        <summary>
-          <span>How old do my kids have to be to get in, and is there a kids' ticket?</span>
-          <span class="faq-marker" aria-hidden="true">+</span>
-        </summary>
-        <div class="faq-answer">
-          <p>
-            Children <strong>three and under are free</strong>. Under 10 are free with a ticketed
-            adult. Kids 10+ need their own ticket. The grounds are all-ages until 10 PM; after
-            11 PM the Indoor Stage becomes 18+.
-          </p>
-        </div>
+        <summary class="faq-q">Is there a nursing room?</summary>
+        <div class="faq-a"><p>Yes — private, air-conditioned, with changing tables, inside the Family Services building.</p></div>
       </details>
 
       <details class="faq-item">
-        <summary>
-          <span>What is there for kids to actually do?</span>
-          <span class="faq-marker" aria-hidden="true">+</span>
-        </summary>
-        <div class="faq-answer">
-          <p>
-            Rides, carnival games, face painting, a henna station, storytelling hours, craft
-            workshops, and a petting zoo rotate through the <strong>Twilight Joy</strong> family
-            zone across all three days.
-          </p>
-          <p>
-            Details on the <a class="inline" href="./experience-rides.html">Rides &amp; Family page</a>.
-          </p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>
-          <span>Can I bring a stroller?</span>
-          <span class="faq-marker" aria-hidden="true">+</span>
-        </summary>
-        <div class="faq-answer">
-          <p>
-            Yes — strollers and wagons are <strong>welcome and free</strong>. There's dedicated
-            stroller parking at the East entry. The grounds are fully paved; pathways stay wide.
-          </p>
-        </div>
+        <summary class="faq-q">What time is too late for kids?</summary>
+        <div class="faq-a"><p>The grounds stay family-friendly until around 10 PM. After that, the Indoor Stage goes 18+ and the bazaar winds down. The midway rides run until 11 PM.</p></div>
       </details>
     </div>
 
-
-    <!-- ACCESSIBILITY -->
-    <div class="faq-category" id="accessibility">
-      <div class="faq-category-head">
-        <span class="faq-category-eyebrow">
-          Category · 05 <span class="ar">الوصول للجميع</span>
-        </span>
-        <h2 class="faq-category-title">Accessibility &amp; <em>comfort</em></h2>
-      </div>
+    <div class="faq-section" id="accessibility">
+      <h2>Accessibility</h2>
 
       <details class="faq-item">
-        <summary>
-          <span>Is the festival wheelchair accessible?</span>
-          <span class="faq-marker" aria-hidden="true">+</span>
-        </summary>
-        <div class="faq-answer">
-          <p>
-            Yes. All paths are <strong>paved and wide</strong>. ADA restrooms are at every amenity
-            node. There are reserved ADA seating zones at the Pacific Amphitheatre and Festival
-            Stage, and continuous ADA cart service runs from 5 PM to midnight. Use the
-            <strong>Arlington (ADA / Family) gate</strong> for the most accessible entry.
-          </p>
-        </div>
+        <summary class="faq-q">Is the festival wheelchair accessible?</summary>
+        <div class="faq-a"><p>Fully. Paved paths throughout, reserved seating sections at every stage, accessible parking, ADA restrooms, and complimentary mobility scooter rental on request.</p></div>
       </details>
 
       <details class="faq-item">
-        <summary>
-          <span>Do you offer companion tickets or ASL interpretation?</span>
-          <span class="faq-marker" aria-hidden="true">+</span>
-        </summary>
-        <div class="faq-answer">
-          <p>
-            <strong>Yes to both.</strong> A companion ticket is available at no additional charge —
-            request it through the contact form after you buy your ticket. ASL interpretation is
-            provided at Pacific Amphitheatre headliner sets with <strong>72-hour notice</strong>
-            via the <a class="inline" href="./contact.html">contact form</a>.
-          </p>
-        </div>
+        <summary class="faq-q">Is there sign language interpretation?</summary>
+        <div class="faq-a"><p>Yes, at every headliner set at the Pacific Amphitheatre and the Festival Stage. Request it at least 72 hours ahead via the contact form and we'll make sure interpreters are on your stage.</p></div>
       </details>
 
       <details class="faq-item">
-        <summary>
-          <span>Is there a quiet / sensory-friendly space?</span>
-          <span class="faq-marker" aria-hidden="true">+</span>
-        </summary>
-        <div class="faq-answer">
-          <p>
-            Yes — a <strong>sensory-friendly quiet room</strong> is open through festival hours
-            at the First Aid node, separate from the prayer room. Lower lighting, softer sound,
-            clear signage. For anyone — kids, adults, anyone who just needs a minute.
-          </p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>
-          <span>Can I bring my service animal?</span>
-          <span class="faq-marker" aria-hidden="true">+</span>
-        </summary>
-        <div class="faq-answer">
-          <p>
-            <strong>Yes</strong>, with handler documentation. Please note: pets (including emotional
-            support animals that aren't task-trained service animals) are not permitted — the
-            grounds will be hot, loud, and crowded.
-          </p>
-        </div>
+        <summary class="faq-q">Do you have a sensory-friendly hour?</summary>
+        <div class="faq-a"><p>Yes. Sunday 11 AM – noon. Rides running at reduced speed, volume lowered on the Festival Stage, low-crowd access times for sensory-sensitive kids and families.</p></div>
       </details>
     </div>
 
-
-    <!-- ARTISTS -->
-    <div class="faq-category" id="artists">
-      <div class="faq-category-head">
-        <span class="faq-category-eyebrow">
-          Category · 06 <span class="ar">الفنانون</span>
-        </span>
-        <h2 class="faq-category-title">Artists &amp; <em>programming</em></h2>
-      </div>
+    <div class="faq-section" id="culture">
+      <h2>Culture &amp; Community</h2>
 
       <details class="faq-item">
-        <summary>
-          <span>Who's playing, and when is the full lineup announced?</span>
-          <span class="faq-marker" aria-hidden="true">+</span>
-        </summary>
-        <div class="faq-answer">
-          <p>
-            The first wave is on the <a class="inline" href="./music-entertainment.html">Music &amp;
-            Entertainment page</a> — a mix of headline Arab-pop legends, rising diaspora voices,
-            and cross-over artists redrawing the sound. <strong>Second-wave announcements</strong>
-            roll out in the months leading up, with the full day-by-day schedule published about
-            six weeks out.
-          </p>
-        </div>
+        <summary class="faq-q">I'm not from the MENA region — am I welcome?</summary>
+        <div class="faq-a"><p>Yes. Everyone is welcome. This festival was built for MENA families in Southern California, but it's not closed — it's a celebration. Come with curiosity, leave with a few new favorite dishes.</p></div>
       </details>
 
       <details class="faq-item">
-        <summary>
-          <span>How do I pitch myself or my band to play?</span>
-          <span class="faq-marker" aria-hidden="true">+</span>
-        </summary>
-        <div class="faq-answer">
-          <p>
-            We're actively looking for <strong>emerging MENA and MENA-diaspora artists</strong> —
-            especially ones who don't usually get main-stage treatment. Send EPK, music links,
-            and a short note through the
-            <a class="inline" href="./contact.html">contact page</a>, subject line "Artist
-            submission." We read everything.
-          </p>
-        </div>
+        <summary class="faq-q">Are there prayer facilities?</summary>
+        <div class="faq-a"><p>Yes — two quiet prayer rooms with wudu stations near the bazaar center. Open all day. Jummah at 1 PM Friday, led by a local imam.</p></div>
       </details>
 
       <details class="faq-item">
-        <summary>
-          <span>Will there be DJs or after-hours sets?</span>
-          <span class="faq-marker" aria-hidden="true">+</span>
-        </summary>
-        <div class="faq-answer">
-          <p>
-            Yes — the <strong>Indoor Stage</strong> runs later than the outdoor stages, with DJ
-            sets and curated diaspora club nights Friday and Saturday. Saturday goes until 2 AM.
-            It turns 18+ after 11 PM.
-          </p>
-        </div>
+        <summary class="faq-q">Is there a dress code?</summary>
+        <div class="faq-a"><p>None. Come as you are. Modest dress, festival fits, kaftans, thobes, shorts, hijab, no hijab — all welcome. This is a come-as-you-are event.</p></div>
       </details>
     </div>
 
-
-    <!-- VENDORS -->
-    <div class="faq-category" id="vendors">
-      <div class="faq-category-head">
-        <span class="faq-category-eyebrow">
-          Category · 07 <span class="ar">الشركاء</span>
-        </span>
-        <h2 class="faq-category-title">Vendors, sponsors &amp; <em>getting involved</em></h2>
-      </div>
+    <div class="faq-section" id="music">
+      <h2>Music &amp; Stages</h2>
 
       <details class="faq-item">
-        <summary>
-          <span>How do I apply to vend food or retail?</span>
-          <span class="faq-marker" aria-hidden="true">+</span>
-        </summary>
-        <div class="faq-answer">
-          <p>
-            Vendor applications are open on the <a class="inline" href="./vendors.html">Vendors
-            page</a>. We prioritize <strong>MENA family-run operators, first-time festival vendors,
-            and businesses that couldn't easily afford a premium-festival booth fee</strong> — our
-            tiered pricing is designed to reflect that.
-          </p>
-          <p>
-            For specific questions, <strong>Razan Kesbeh</strong> runs vendor relations — reach her
-            through the <a class="inline" href="./contact.html">contact page</a>.
-          </p>
-        </div>
+        <summary class="faq-q">How many stages are there?</summary>
+        <div class="faq-a"><p>Three. The Pacific Amphitheatre (reserved seating, headliners), the Festival Stage (outdoor, all-day, included with festival pass), and the Indoor Stage (club-dark, emerging artists + late-night DJs).</p></div>
       </details>
 
       <details class="faq-item">
-        <summary>
-          <span>How does sponsorship work?</span>
-          <span class="faq-marker" aria-hidden="true">+</span>
-        </summary>
-        <div class="faq-answer">
-          <p>
-            Sponsorship tiers and activation options are on the
-            <a class="inline" href="./sponsors.html">Sponsors page</a>. We build custom packages
-            for brands who want to show up authentically — not logo-slap a stage. <strong>Osama
-            Aresheh</strong> leads sponsorships; reach him through the contact page, subject line
-            "Sponsorship."
-          </p>
-        </div>
+        <summary class="faq-q">Can I see the full schedule?</summary>
+        <div class="faq-a"><p>Yes — <a href="./schedule.html">here</a>. Set times drop in full six weeks before the festival.</p></div>
       </details>
 
       <details class="faq-item">
-        <summary>
-          <span>Can I volunteer or work the festival?</span>
-          <span class="faq-marker" aria-hidden="true">+</span>
-        </summary>
-        <div class="faq-answer">
-          <p>
-            Yes. We open <strong>volunteer and paid crew applications</strong> in early 2026.
-            Volunteers get a daily wristband, crew meals, and a festival tote; paid roles include
-            production, hospitality, ADA support, and vendor runners. Sign up on the
-            <a class="inline" href="./partners.html">Partners page</a> to be notified when
-            applications open.
-          </p>
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>
-          <span>How can I support without being a vendor or sponsor?</span>
-          <span class="faq-marker" aria-hidden="true">+</span>
-        </summary>
-        <div class="faq-answer">
-          <p>
-            Buy a ticket. Bring your family. <strong>Tell your neighbor.</strong> Post a photo and
-            tag us. Sign up for the newsletter so the second-wave artist announcements reach you
-            first. The festival is being built by community — showing up is the contribution.
-          </p>
-        </div>
+        <summary class="faq-q">Will artists do meet &amp; greets?</summary>
+        <div class="faq-a"><p>Some — we'll announce which ones when set times are finalized. VIP ticket holders get priority access.</p></div>
       </details>
     </div>
 
+    <div class="faq-section" id="policies">
+      <h2>Policies</h2>
 
-    <!-- CODA -->
-    <div class="faq-coda">
-      <span class="faq-coda-ar">أي سؤال آخر؟</span>
-      <h2 class="faq-coda-title">Still have a question?</h2>
-      <p class="faq-coda-sub">
-        We update this page as new questions come in. If yours isn't here yet, send a
-        note — we'll answer you directly and probably add it.
-      </p>
-      <a class="btn-primary heartbeat" href="./contact.html">Ask us directly</a>
+      <details class="faq-item">
+        <summary class="faq-q">Refund policy?</summary>
+        <div class="faq-a"><p>All sales are final. We cannot offer refunds for missed sets, changes in lineup, or weather (this is Southern California in June — we'll be fine).</p></div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">Can I transfer my ticket?</summary>
+        <div class="faq-a"><p>Yes, up to 48 hours before the festival. Log into your ticket account and transfer to another email.</p></div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">What's not allowed?</summary>
+        <div class="faq-a"><p>Outside food, glass, weapons, professional cameras (without a media pass), drones, pets (service animals welcome). Standard festival rules.</p></div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">Are strollers allowed?</summary>
+        <div class="faq-a"><p>Yes. Free stroller and wagon parking at the East Entry. Wagons available to rent for $10/day if you forgot yours at home.</p></div>
+      </details>
     </div>
 
+  </main>
+</div>
 
-  </div>
-</section>
-
-
-<!-- CLOSING CTA -->
-<section class="closing-cta">
-  <div class="closing-inner">
-    <div class="closing-eyebrow">The only thing left to do</div>
-    <h2 class="closing-title">
-      Get your <em>wristband</em> — we'll see you at the <span class="ar-word">بوابة</span>.
-    </h2>
-    <p class="closing-sub">
-      Three days, four stages, twenty-something countries on one plate.
-      Costa Mesa · June 19–21, 2026.
-    </p>
-    <div class="closing-ctas">
-      <a class="btn-primary heartbeat" href="./tickets.html">Get Tickets</a>
-      <a class="btn-secondary" href="./music-entertainment.html">See the Lineup</a>
-    </div>
-  </div>
-</section>
-
-
-<!-- FOOTER -->
 <footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <img src="./assets/images/Logo.webp" alt="OC MENA Festival">
-        <span class="footer-brand-ar">مهرجان أورنج كاونتي</span>
-        <p class="footer-tagline">June 19–21, 2026<br>OC Fairgrounds, Costa Mesa CA</p>
+  <div class="footer-cta-strip">
+    <p class="footer-cta-text">Want your brand in front of 60,000+ fans this summer?</p>
+    <div class="footer-cta-actions">
+      <a class="btn btn-red" href="./tickets.html">Buy Tickets</a>
+      <a class="btn btn-red-ghost" href="./sponsors.html">Become a Sponsor</a>
+    </div>
+  </div>
+  <div class="footer-cols">
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="./about.html">About</a>
+      <a href="./what-is-mena.html">What is MENA?</a>
+      <a href="./faq.html">FAQ</a>
+      <a href="#">My Account</a>
+      <a href="./contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Event Info</h4>
+      <a href="./lineup.html">Festival</a>
+      <a href="./lineup.html">Music &amp; Entertainment</a>
+      <a href="./sponsors.html">Sponsors</a>
+      <a href="./partners.html">Partners</a>
+      <a href="./vendors.html">Vendors</a>
+      <a href="./map.html">Maps &amp; Directions</a>
+      <a href="./map.html">Event Map</a>
+      <a href="./schedule.html">Event Schedule</a>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="#">Privacy Policy</a>
+      <a href="#">CA Privacy Policy</a>
+      <a href="#">Accessibility / ADA</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">Ticket Terms</a>
+    </div>
+    <div class="footer-col">
+      <h4>Follow Us</h4>
+      <div class="footer-social-icons">
+        <a href="#" aria-label="Instagram">&#x1F4F7;</a>
+        <a href="#" aria-label="TikTok">&#x266B;</a>
+        <a href="#" aria-label="YouTube">&#x25B6;</a>
+        <a href="#" aria-label="Facebook">&#x1F426;</a>
+        <a href="#" aria-label="X">&#x2715;</a>
+        <a href="#" aria-label="Snapchat">&#x1F47B;</a>
       </div>
-
-      <div class="footer-col">
-        <h4>Event</h4>
-        <a href="./music-entertainment.html">Music &amp; Entertainment</a>
-        <a href="./schedule.html">Schedule</a>
-        <a href="./map.html">Map</a>
-        <a href="./tickets.html">Tickets</a>
-      </div>
-
-      <div class="footer-col">
-        <h4>Experience</h4>
-        <a href="./experience-food-bazaar.html">Food &amp; Bazaar</a>
-        <a href="./experience-rides.html">Rides &amp; Family</a>
-        <a href="./experience-stages.html">Stages</a>
-      </div>
-
-      <div class="footer-col">
-        <h4>About</h4>
-        <a href="./about.html">Our Story</a>
-        <a href="./what-is-mena.html">What is MENA</a>
-        <a href="./info.html">Festival Info</a>
-        <a href="./faq.html">FAQ</a>
-      </div>
-
-      <div class="footer-col">
-        <h4>Business</h4>
-        <a href="./sponsors.html">Sponsors</a>
-        <a href="./vendors.html">Vendors</a>
-        <a href="./partners.html">Partners &amp; Affiliates</a>
-        <a href="./contact.html">Contact</a>
+      <div class="footer-newsletter">
+        <p>Join our newsletter and stay informed!</p>
+        <form onsubmit="return false;">
+          <input type="email" placeholder="email@email.com">
+          <button type="submit">&#x27A1;</button>
+        </form>
       </div>
     </div>
-
-    <div class="footer-bottom">
-      <span>© 2026 OC MENA Festival. All rights reserved.</span>
-      <div class="footer-social">
-        <a href="https://instagram.com/ocmenafestival" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://tiktok.com/@ocmenafestival" target="_blank" rel="noopener">TikTok</a>
-        <a href="https://twitter.com/ocmenafestival" target="_blank" rel="noopener">X / Twitter</a>
-        <a href="https://facebook.com/ocmenafestival" target="_blank" rel="noopener">Facebook</a>
-      </div>
-    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025&ndash;2026 OC MENA Festival. All rights reserved.</p>
+    <p>
+      <a href="#">Privacy</a> &nbsp;&middot;&nbsp;
+      <a href="#">Terms</a> &nbsp;&middot;&nbsp;
+      <a href="#">Accessibility / ADA</a>
+    </p>
   </div>
 </footer>
 
-<script>
-  const nav = document.getElementById('mainNav');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 40);
-  }, { passive: true });
+</div><!-- /page-container -->
 
-  const burger = document.getElementById('navBurger');
-  const mobileMenu = document.getElementById('mobileMenu');
-  burger.addEventListener('click', () => {
-    const open = mobileMenu.classList.toggle('is-open');
-    burger.textContent = open ? '✕' : '☰';
-    document.body.style.overflow = open ? 'hidden' : '';
-  });
-</script>
-
+<script src="./assets/js/site.js?v=ship-20260422-fontfix" defer></script>
 </body>
 </html>

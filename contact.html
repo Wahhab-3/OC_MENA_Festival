@@ -1,907 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact — OC MENA Festival</title>
-  <meta name="description" content="Contact the OC MENA Festival team — tickets, press, sponsorship, vendors, artist submissions, and general inquiries.">
-  <link rel="icon" type="image/png" href="./assets/images/favicon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
-  <style>
-    /* =====================================================
-       OC MENA FESTIVAL — Contact
-       Heritage Hearth — see DESIGN_SYSTEM.md
-    ===================================================== */
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    @font-face {
-      font-family: 'Aldhabi';
-      src: url('./assets/fonts/aldhabi.ttf') format('truetype');
-      font-weight: normal;
-      font-display: swap;
-    }
+<title>Contact — OC MENA Festival 2026</title>
+<meta name="description" content="Contact the OC MENA Festival team — general inquiries, sponsorships, vendor applications, press, and more.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#DC2F3F">
+<link rel="canonical" href="https://ocmenafestival.com/contact.html">
 
-    :root {
-      --cream:      #fff8f4;
-      --sand:       #fff1e4;
-      --sand-deep:  #ffe4c2;
-      --ink:        #281801;
-      --ink-soft:   #5c403c;
-      --red:        #dc2626;
-      --red-deep:   #b70011;
-      --maroon:     #930046;
-      --maroon-ink: #66002f;
-      --gold:       #f5c842;
-      --gold-deep:  #d0a61e;
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="./assets/images/favicon.png">
+<link rel="apple-touch-icon" href="./assets/images/favicon.png">
 
-      --maxw:   1200px;
-      --pad:    clamp(1.25rem, 5vw, 3rem);
-      --nav-h:  72px;
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="OC MENA Festival">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://ocmenafestival.com/contact.html">
+<meta property="og:title" content="Contact — OC MENA Festival 2026">
+<meta property="og:description" content="Contact the OC MENA Festival team — general inquiries, sponsorships, vendor applications, press, and more.">
+<meta property="og:image" content="https://ocmenafestival.com/assets/images/hero-crowd.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="OC MENA Festival — June 19–21, 2026, Orange County, CA">
 
-      --fs-display: clamp(2.75rem, 6vw, 5.5rem);
-      --fs-h1:      clamp(2rem, 4vw, 3.5rem);
-      --fs-h2:      clamp(1.5rem, 2.5vw, 2.25rem);
-      --fs-h3:      clamp(1.125rem, 1.5vw, 1.375rem);
-      --fs-body:    1rem;
-      --fs-meta:    0.8125rem;
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Contact — OC MENA Festival 2026">
+<meta name="twitter:description" content="Contact the OC MENA Festival team — general inquiries, sponsorships, vendor applications, press, and more.">
+<meta name="twitter:image" content="https://ocmenafestival.com/assets/images/hero-crowd.webp">
+<meta name="twitter:image:alt" content="OC MENA Festival — June 19–21, 2026, Orange County, CA">
 
-      --r-sm:  0.5rem;
-      --r-md:  0.75rem;
-      --r-lg:  1rem;
-      --r-xl:  1.5rem;
-    }
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      background: var(--cream);
-      color: var(--ink);
-      font-family: 'Inter', system-ui, sans-serif;
-      font-size: var(--fs-body);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-    button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+<!-- Styles -->
+<link rel="stylesheet" href="./assets/css/site.css?v=ship-20260422-fontfix">
 
-    .ar { font-family: 'Aldhabi', serif; font-weight: normal; font-size: 1.7em; line-height: 1; vertical-align: baseline; }
-
-    /* ===== BUTTONS ===== */
-    .btn-primary {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      padding: 0.85rem 2rem;
-      background: linear-gradient(135deg, var(--red-deep) 0%, var(--red) 100%);
-      color: #fff;
-      font-weight: 600; font-size: 0.95rem; letter-spacing: 0.02em;
-      border-radius: var(--r-md);
-      box-shadow: 0 8px 24px rgba(40, 24, 1, 0.08);
-      transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
-    }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(40, 24, 1, 0.12); opacity: 0.96; }
-    .btn-secondary {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      padding: 0.85rem 2rem;
-      background: var(--sand-deep); color: var(--ink);
-      font-weight: 600; font-size: 0.95rem; letter-spacing: 0.02em;
-      border-radius: var(--r-md);
-      transition: transform 0.25s ease, background 0.25s ease;
-    }
-    .btn-secondary:hover { transform: translateY(-2px); background: #ffd89a; }
-
-    @keyframes heartbeat-maroon {
-      0%   { box-shadow: 0 0 0 0 rgba(147, 0, 70, 0.6), 0 8px 24px rgba(40, 24, 1, 0.08); transform: scale(1); }
-      50%  { box-shadow: 0 0 0 14px rgba(147, 0, 70, 0), 0 10px 28px rgba(40, 24, 1, 0.1); transform: scale(1.03); }
-      100% { box-shadow: 0 0 0 0 rgba(147, 0, 70, 0), 0 8px 24px rgba(40, 24, 1, 0.08); transform: scale(1); }
-    }
-    .heartbeat { animation: heartbeat-maroon 1.6s infinite ease-in-out; }
-
-    /* ===== NAV ===== */
-    .nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      height: var(--nav-h);
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 var(--pad);
-      background: rgba(255, 248, 244, 0.72);
-      backdrop-filter: blur(20px) saturate(1.2);
-      -webkit-backdrop-filter: blur(20px) saturate(1.2);
-      transition: background 0.35s ease;
-    }
-    .nav.scrolled { background: rgba(255, 248, 244, 0.92); }
-    .nav-logo img { height: 44px; width: auto; }
-    .nav-links { display: flex; align-items: center; gap: 1.75rem; list-style: none; }
-    .nav-links a {
-      color: var(--ink); font-size: 0.88rem; font-weight: 500;
-      letter-spacing: 0.01em; transition: color 0.2s; opacity: 0.78;
-    }
-    .nav-links a:hover { opacity: 1; color: var(--red-deep); }
-    .nav-links a.is-active {
-      opacity: 1; color: var(--ink); font-weight: 600; position: relative;
-    }
-    .nav-links a.is-active::after {
-      content: ''; position: absolute; left: 0; right: 0; bottom: -8px;
-      height: 2px; background: var(--gold-deep); border-radius: 2px;
-    }
-    .nav-dropdown { position: relative; }
-    .nav-dropdown > a { display: flex; align-items: center; gap: 0.3rem; }
-    .nav-dropdown > a::after { content: '▾'; font-size: 0.65rem; opacity: 0.5; }
-    .nav-dropdown-menu {
-      position: absolute; top: calc(100% + 0.75rem); left: 50%;
-      transform: translateX(-50%) translateY(6px);
-      min-width: 210px;
-      background: rgba(255, 248, 244, 0.96);
-      border-radius: var(--r-md); padding: 0.5rem 0;
-      opacity: 0; visibility: hidden; transition: all 0.2s ease;
-      backdrop-filter: blur(14px);
-      box-shadow: 0 16px 40px rgba(40, 24, 1, 0.08);
-    }
-    .nav-dropdown:hover .nav-dropdown-menu {
-      opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0);
-    }
-    .nav-dropdown-menu a {
-      display: block; padding: 0.65rem 1.2rem; font-size: 0.88rem;
-      color: var(--ink); opacity: 0.82;
-      transition: opacity 0.15s, background 0.15s;
-    }
-    .nav-dropdown-menu a:hover { opacity: 1; background: var(--sand); }
-    .nav-cta { flex-shrink: 0; }
-    .nav-burger { display: none; color: var(--ink); font-size: 1.5rem; padding: 0.25rem; }
-
-    .mobile-menu {
-      display: none;
-      position: fixed; top: var(--nav-h); left: 0; right: 0; bottom: 0;
-      background: var(--cream); z-index: 99;
-      flex-direction: column; padding: 2rem var(--pad); gap: 0; overflow-y: auto;
-    }
-    .mobile-menu.is-open { display: flex; }
-    .mobile-menu a {
-      color: var(--ink); font-size: 1.1rem; font-weight: 500; padding: 1rem 0;
-    }
-    .mobile-menu a + a {
-      background-image: linear-gradient(to right, rgba(40,24,1,0.08) 50%, transparent 50%);
-      background-size: 4px 1px; background-position: top; background-repeat: repeat-x;
-    }
-    .mobile-menu .mobile-cta { margin-top: 2rem; align-self: flex-start; }
-
-    /* ===== PAGE HEAD ===== */
-    .page-head {
-      position: relative; min-height: 58vh;
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      text-align: center;
-      padding: calc(var(--nav-h) + 4rem) var(--pad) 4rem;
-      overflow: hidden;
-      background-color: var(--maroon);
-    }
-    .page-head__bg {
-      position: absolute; inset: 0;
-      background-image: url('./assets/images/hero-partners.webp');
-      background-size: cover; background-position: center;
-      filter: saturate(1.05);
-    }
-    .page-head__scrim {
-      position: absolute; inset: 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(147, 0, 70, 0.55) 0%,
-        rgba(102, 0, 47, 0.4) 45%,
-        rgba(40, 24, 1, 0.7) 100%
-      );
-    }
-    .page-head-inner {
-      position: relative; z-index: 2;
-      max-width: 880px; width: 100%;
-      display: flex; flex-direction: column; gap: 1.1rem; align-items: center;
-    }
-    .page-eyebrow {
-      display: flex; flex-direction: column; align-items: center; gap: 0.3rem;
-    }
-    .page-eyebrow-ar { color: var(--gold); line-height: 1; font-size: clamp(4rem, 10vw, 100px); }
-    .page-eyebrow-en {
-      font-size: 0.72rem; font-weight: 600;
-      letter-spacing: 0.28em; text-transform: uppercase;
-      color: rgba(255, 248, 244, 0.78);
-    }
-    .page-title {
-      font-family: 'Newsreader', serif;
-      font-weight: 400; font-size: var(--fs-display);
-      line-height: 1.05; color: #fff; letter-spacing: -0.015em;
-    }
-    .page-title em { font-style: italic; font-weight: 300; color: var(--sand-deep); }
-    .page-title .ar-word {
-      font-family: 'Aldhabi', serif; font-size: 1.7em;
-      color: var(--gold); letter-spacing: 0;
-      font-weight: normal; vertical-align: baseline; line-height: 1;
-    }
-    .page-sub {
-      font-size: clamp(0.98rem, 1.35vw, 1.12rem);
-      color: rgba(255, 248, 244, 0.85);
-      max-width: 620px; line-height: 1.65;
-    }
-
-    /* ===== SECTION HEADS ===== */
-    .eyebrow-warm {
-      display: inline-block;
-      font-size: 0.72rem; font-weight: 600;
-      letter-spacing: 0.28em; text-transform: uppercase;
-      color: var(--maroon); margin-bottom: 0.75rem;
-    }
-    .section-h2 {
-      font-family: 'Newsreader', serif;
-      font-weight: 400; font-size: var(--fs-h1);
-      line-height: 1.1; letter-spacing: -0.015em;
-      color: var(--ink);
-    }
-    .section-h2 em { font-style: italic; color: var(--maroon); font-weight: 300; }
-    .section-h2 .ar-word {
-      font-family: 'Aldhabi', serif; font-size: 1.7em;
-      color: var(--maroon); font-weight: normal; vertical-align: baseline; line-height: 1;
-    }
-    .section-lede {
-      margin-top: 1rem; font-size: 1.05rem; line-height: 1.7;
-      color: var(--ink-soft);
-    }
-    .section-head-center {
-      max-width: 780px; margin: 0 auto 3rem; text-align: center;
-    }
-
-    /* ===== INBOXES (on cream) ===== */
-    .inboxes {
-      padding: clamp(4rem, 8vw, 7rem) var(--pad);
-      background: var(--cream);
-    }
-    .inboxes-inner { max-width: var(--maxw); margin: 0 auto; }
-    .inbox-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 3rem;
-    }
-    .inbox {
-      background: var(--sand);
-      border-radius: var(--r-lg);
-      padding: 1.85rem 1.65rem 1.75rem;
-      display: flex; flex-direction: column; gap: 0.65rem;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .inbox:nth-child(even) {
-      background: var(--sand-deep);
-      border-radius: var(--r-xl) var(--r-sm) var(--r-xl) var(--r-sm);
-    }
-    .inbox:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 16px 32px rgba(40, 24, 1, 0.08);
-    }
-    .inbox-tag {
-      font-size: 0.7rem; font-weight: 700;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--red-deep);
-    }
-    .inbox h3 {
-      font-family: 'Newsreader', serif;
-      font-weight: 500; font-size: 1.3rem;
-      color: var(--ink);
-      letter-spacing: -0.01em;
-      line-height: 1.2;
-    }
-    .inbox-ar {
-      font-family: 'Aldhabi', serif;
-      font-size: 2.21rem;  /* 1.7× 1.3rem */
-      color: var(--maroon);
-      line-height: 1;
-      margin-top: -0.3rem;
-    }
-    .inbox p {
-      font-size: 0.92rem; color: var(--ink-soft); line-height: 1.6;
-    }
-    .inbox-email {
-      margin-top: auto;
-      padding-top: 0.5rem;
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--red-deep);
-      letter-spacing: 0.01em;
-      transition: color 0.2s;
-      word-break: break-all;
-    }
-    .inbox-email:hover { color: var(--maroon-ink); }
-
-    /* ===== ADDRESS + SOCIAL BAND (sand) ===== */
-    .where {
-      padding: clamp(4rem, 8vw, 7rem) var(--pad);
-      background: var(--sand);
-    }
-    .where-inner {
-      max-width: var(--maxw); margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: start;
-    }
-    .where-block .eyebrow-warm { color: var(--red-deep); }
-    .where-block h3 {
-      font-family: 'Newsreader', serif;
-      font-weight: 500; font-size: 1.65rem;
-      color: var(--ink); letter-spacing: -0.01em;
-      line-height: 1.15;
-    }
-    .where-block h3 em { font-style: italic; color: var(--maroon); font-weight: 300; }
-    .where-block p {
-      font-size: 1rem; color: var(--ink-soft); line-height: 1.7;
-      margin-top: 0.75rem;
-    }
-    .where-address {
-      background: var(--sand-deep);
-      border-radius: var(--r-lg);
-      padding: 1.5rem 1.65rem;
-      margin-top: 1.5rem;
-      font-family: 'Newsreader', serif;
-      font-size: 1.1rem;
-      color: var(--ink);
-      line-height: 1.5;
-    }
-
-    .social-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0.75rem;
-      margin-top: 1.5rem;
-    }
-    .social-card {
-      display: flex; align-items: center; gap: 0.85rem;
-      background: var(--sand-deep);
-      border-radius: var(--r-md);
-      padding: 0.95rem 1.1rem;
-      transition: background 0.25s ease, transform 0.2s ease;
-    }
-    .social-card:hover {
-      background: #ffd89a;
-      transform: translateY(-2px);
-    }
-    .social-icon {
-      width: 28px; height: 28px;
-      display: flex; align-items: center; justify-content: center;
-      color: var(--maroon);
-      flex-shrink: 0;
-    }
-    .social-icon svg { width: 22px; height: 22px; }
-    .social-meta { display: flex; flex-direction: column; gap: 0.05rem; line-height: 1.2; }
-    .social-meta .label {
-      font-size: 0.68rem; font-weight: 700;
-      letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--maroon);
-    }
-    .social-meta .handle {
-      font-size: 0.92rem;
-      font-weight: 500;
-      color: var(--ink);
-    }
-
-    /* ===== CONTACT FORM (cream) ===== */
-    .contact-form-section {
-      padding: clamp(4rem, 8vw, 7rem) var(--pad);
-      background: var(--cream);
-    }
-    .contact-form-inner {
-      max-width: 780px;
-      margin: 0 auto;
-    }
-    .contact-form {
-      background: var(--sand);
-      border-radius: var(--r-xl) var(--r-sm) var(--r-xl) var(--r-sm);
-      padding: clamp(2rem, 4vw, 3rem);
-      margin-top: 2.5rem;
-      display: flex; flex-direction: column;
-      gap: 1.25rem;
-    }
-    .form-row {
-      display: flex; flex-direction: column; gap: 0.45rem;
-    }
-    .form-split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.25rem;
-    }
-    .form-row label {
-      font-size: 0.74rem;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--ink-soft);
-    }
-    .form-row input,
-    .form-row select,
-    .form-row textarea {
-      font: inherit;
-      background: transparent;
-      border: none;
-      border-bottom: 2px solid rgba(40, 24, 1, 0.15);
-      padding: 0.65rem 0;
-      color: var(--ink);
-      font-size: 1rem;
-      transition: border-color 0.2s ease;
-      width: 100%;
-      border-radius: 0;
-    }
-    .form-row textarea {
-      min-height: 140px;
-      resize: vertical;
-      line-height: 1.6;
-    }
-    .form-row select {
-      appearance: none;
-      -webkit-appearance: none;
-      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path d='M1 1l4 4 4-4' stroke='%23281801' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>");
-      background-repeat: no-repeat;
-      background-position: right 0.2rem center;
-      padding-right: 1.5rem;
-      cursor: pointer;
-    }
-    .form-row input:focus,
-    .form-row select:focus,
-    .form-row textarea:focus {
-      outline: none;
-      border-bottom-color: var(--gold-deep);
-    }
-    .form-row input::placeholder,
-    .form-row textarea::placeholder {
-      color: rgba(40, 24, 1, 0.35);
-    }
-    .form-submit {
-      margin-top: 0.5rem;
-      align-self: flex-start;
-    }
-    .form-note {
-      font-size: 0.82rem;
-      color: var(--ink-soft);
-      line-height: 1.6;
-      margin-top: 0.25rem;
-    }
-
-    /* ===== FOOTER ===== */
-    .footer {
-      background: var(--ink);
-      color: rgba(255, 248, 244, 0.78);
-      padding: 4.5rem var(--pad) 2rem;
-    }
-    .footer-inner { max-width: var(--maxw); margin: 0 auto; }
-    .footer-top {
-      display: grid;
-      grid-template-columns: 1.4fr repeat(4, 1fr);
-      gap: 2.5rem;
-      padding-bottom: 2.5rem;
-      background: linear-gradient(to bottom, transparent calc(100% - 1px), rgba(255, 248, 244, 0.12) calc(100% - 1px));
-    }
-    .footer-brand img { height: 54px; width: auto; margin-bottom: 0.9rem; }
-    .footer-brand-ar {
-      display: block;
-      font-family: 'Aldhabi', serif;
-      font-size: 1.85rem;
-      color: var(--gold);
-      line-height: 1; margin-bottom: 0.7rem;
-    }
-    .footer-tagline { font-size: 0.85rem; color: rgba(255, 248, 244, 0.6); line-height: 1.6; }
-    .footer-col h4 {
-      font-size: 0.72rem; font-weight: 700;
-      letter-spacing: 0.16em; text-transform: uppercase;
-      color: #fff; margin-bottom: 1rem;
-    }
-    .footer-col a {
-      display: block;
-      font-size: 0.88rem; color: rgba(255, 248, 244, 0.68);
-      padding: 0.3rem 0; transition: color 0.2s;
-    }
-    .footer-col a:hover { color: var(--gold); }
-    .footer-bottom {
-      display: flex; justify-content: space-between; align-items: center;
-      padding-top: 1.5rem;
-      font-size: 0.78rem; color: rgba(255, 248, 244, 0.5);
-      flex-wrap: wrap; gap: 1rem;
-    }
-    .footer-social { display: flex; gap: 1.25rem; }
-    .footer-social a {
-      color: rgba(255, 248, 244, 0.65); font-size: 0.82rem; transition: color 0.2s;
-    }
-    .footer-social a:hover { color: var(--gold); }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 1024px) {
-      .inbox-grid { grid-template-columns: repeat(2, 1fr); }
-      .where-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-    }
-    @media (max-width: 960px) {
-      .nav-links { display: none; }
-      .nav-cta { display: none; }
-      .nav-burger { display: block; }
-      .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
-      .footer-brand { grid-column: 1 / -1; }
-    }
-    @media (max-width: 640px) {
-      .inbox-grid { grid-template-columns: 1fr; }
-      .form-split { grid-template-columns: 1fr; }
-      .social-grid { grid-template-columns: 1fr; }
-      .footer-top { grid-template-columns: 1fr; }
-      .footer-bottom { flex-direction: column; align-items: flex-start; }
-    }
-  </style>
+<!-- Structured data -->
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Contact at OC MENA Festival", "url": "https://ocmenafestival.com/contact.html", "description": "Contact the OC MENA Festival team — general inquiries, sponsorships, vendor applications, press, and more.", "isPartOf": {"@type": "WebSite", "name": "OC MENA Festival", "url": "https://ocmenafestival.com/"}}</script>
 </head>
+<body data-nav="light">
 
-<body>
+<!-- FIXED VIDEO BACKGROUND -->
+<div class="video-bg-fixed">
+  <video autoplay muted loop playsinline preload="auto">
+    <source src="./assets/hero-final.mp4" type="video/mp4">
+  </video>
+</div>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="nav-announcement">June 19-21, 2026 &mdash; OC Fairgrounds &mdash; Middle East &amp; North Africa (MENA) Festival!</div>
 
 <!-- NAV -->
-<header class="nav" id="mainNav">
-  <a class="nav-logo" href="./index.html">
-    <img src="./assets/images/Logo.webp" alt="OC MENA Festival">
-  </a>
-
-  <ul class="nav-links">
-    <li><a href="./music-entertainment.html">Music &amp; Entertainment</a></li>
-    <li><a href="./schedule.html">Schedule</a></li>
-    <li><a href="./map.html">Map</a></li>
-    <li class="nav-dropdown">
-      <a href="#">Experience</a>
-      <div class="nav-dropdown-menu">
-        <a href="./experience-food-bazaar.html">Food &amp; Bazaar</a>
-        <a href="./experience-rides.html">Rides &amp; Family</a>
-        <a href="./experience-stages.html">Stages</a>
+<header class="nav">
+  <a class="brand" href="./index.html"><img class="brand-logo" src="./assets/images/Logo.webp" alt="OC MENA Festival"></a>
+  <nav class="nav-links">
+    <div class="nav-drop">
+      <a href="#">Festival <span class="caret">&#9662;</span></a>
+      <div class="nav-drop-menu">
+        <a href="./about.html">About</a>
+        <a href="./info.html">Festival Info</a>
+        <a href="./map.html">Map</a>
+        <a href="./schedule.html">Schedule</a>
       </div>
-    </li>
-    <li><a href="./about.html">About</a></li>
-    <li><a href="./info.html">Info</a></li>
-    <li class="nav-dropdown">
-      <a href="#">For Partners</a>
-      <div class="nav-dropdown-menu">
-        <a href="./sponsors.html">Sponsors</a>
-        <a href="./vendors.html">Vendors</a>
-        <a href="./partners.html">Partners &amp; Affiliates</a>
-      </div>
-    </li>
-    <li><a class="is-active" href="./contact.html">Contact</a></li>
-  </ul>
-
-  <a class="btn-primary nav-cta heartbeat" href="./tickets.html">Get Tickets</a>
-  <button class="nav-burger" id="navBurger" aria-label="Open menu">☰</button>
+    </div>
+    <a href="./lineup.html">Music &amp; Entertainment</a>
+    <a href="./vendors.html">Vendors</a>
+    <a href="./sponsors.html">Sponsors</a>
+    <a href="./faq.html">FAQ</a>
+    <a href="./contact.html">Contact</a>
+  </nav>
+  <a class="nav-cta nav-cta-ghost" href="./sponsors.html">Become a Sponsor</a>
+  <a class="nav-cta" href="./tickets.html">Get Tickets</a>
+  <div class="nav-icons">
+    <a class="nav-icon" href="#" aria-label="Account">&#9786;</a>
+    <a class="nav-icon" href="#" aria-label="Cart">&#128722;<span class="badge">0</span></a>
+  </div>
+  <button class="nav-burger" aria-label="Menu">&#9776;</button>
 </header>
 
-<nav class="mobile-menu" id="mobileMenu">
-  <a href="./music-entertainment.html">Music &amp; Entertainment</a>
-  <a href="./schedule.html">Schedule</a>
-  <a href="./map.html">Map</a>
-  <a href="./experience-food-bazaar.html">Food &amp; Bazaar</a>
-  <a href="./experience-rides.html">Rides &amp; Family</a>
-  <a href="./experience-stages.html">Stages</a>
-  <a href="./about.html">About</a>
-  <a href="./info.html">Info</a>
-  <a href="./sponsors.html">Sponsors</a>
-  <a href="./vendors.html">Vendors</a>
-  <a href="./partners.html">Partners &amp; Affiliates</a>
-  <a href="./contact.html">Contact</a>
-  <a class="btn-primary mobile-cta" href="./tickets.html">Get Tickets</a>
-</nav>
-
-
-<!-- PAGE HEAD -->
-<section class="page-head">
-  <div class="page-head__bg"></div>
-  <div class="page-head__scrim"></div>
-  <div class="page-head-inner">
-    <div class="page-eyebrow">
-      <span class="ar page-eyebrow-ar">تواصل معنا</span>
-      <span class="page-eyebrow-en">Contact</span>
-    </div>
-    <h1 class="page-title">
-      Questions. Press. <em>Say hi.</em>
-    </h1>
-    <p class="page-sub">
-      Pick the right inbox below and we'll respond within 48 hours. For day-of festival support,
-      info booths are staffed at both entries throughout the weekend.
-    </p>
-  </div>
+<!-- PAGE HEAD sits on video, no plate -->
+<section class="page-head page-hero-on-video">
+  <p class="page-eyebrow on-video">Contact <span class="ar-small">· تواصل</span></p>
+  <h1 class="page-title on-video">
+    <span class="pt-ar">تواصل معنا</span>
+    <span class="pt-en">Questions. Press. Sponsorship. Say hi.</span>
+  </h1>
+  <p class="page-lede on-video">Use the right inbox below and we'll get back within 48 hours. For day-of festival support, info booths are staffed at both entries.</p>
 </section>
 
+<!-- WHITE CARD STARTS HERE -->
+<div class="page-container">
 
-<!-- INBOXES -->
-<section class="inboxes">
-  <div class="inboxes-inner">
-    <div class="section-head-center">
-      <span class="eyebrow-warm">Six inboxes</span>
-      <h2 class="section-h2">Find the <em>right</em> team.</h2>
-      <p class="section-lede">
-        Routing your message to the right desk speeds things up.
-        Quick ticket questions are usually answered on the <a href="./faq.html" style="color: var(--red-deep); font-weight: 600;">FAQ page</a> —
-        start there first.
-      </p>
+<div class="contact-layout">
+  <aside class="contact-side">
+
+    <div class="contact-block">
+      <p class="lbl">General</p>
+      <h3>Questions &amp; tickets</h3>
+      <p>Most ticket questions are answered on the <a href="./faq.html">FAQ page</a> — start there first.</p>
+      <a href="mailto:hello@ocmenafestival.com">hello@ocmenafestival.com</a>
     </div>
 
-    <div class="inbox-grid">
-
-      <article class="inbox">
-        <span class="inbox-tag">General</span>
-        <h3>Anything else</h3>
-        <div class="inbox-ar">استفسار</div>
-        <p>Festival questions that don't fit the other boxes — lost &amp; found follow-ups, accessibility, volunteering, general feedback.</p>
-        <a class="inbox-email" href="mailto:info@ocmenafestival.com">info@ocmenafestival.com</a>
-      </article>
-
-      <article class="inbox">
-        <span class="inbox-tag">Tickets</span>
-        <h3>Passes &amp; refunds</h3>
-        <div class="inbox-ar">تذاكر</div>
-        <p>Order help, pass transfers, group bookings, accessibility seating, and ticket-platform issues. Check the FAQ first for instant answers.</p>
-        <a class="inbox-email" href="mailto:tickets@ocmenafestival.com">tickets@ocmenafestival.com</a>
-      </article>
-
-      <article class="inbox">
-        <span class="inbox-tag">Press</span>
-        <h3>Media &amp; interviews</h3>
-        <div class="inbox-ar">إعلام</div>
-        <p>Press passes, artist interview requests, shoot permissions, photo/press kit downloads. Publishers, editors, and accredited freelancers.</p>
-        <a class="inbox-email" href="mailto:press@ocmenafestival.com">press@ocmenafestival.com</a>
-      </article>
-
-      <article class="inbox">
-        <span class="inbox-tag">Sponsorship</span>
-        <h3>Brand &amp; activation</h3>
-        <div class="inbox-ar">رعاية</div>
-        <p>Sponsorship inquiries, brand activations, media partnerships, and custom partnership proposals. See the <a href="./sponsors.html" style="color: var(--red-deep); font-weight: 600;">sponsor page</a> for tiers.</p>
-        <a class="inbox-email" href="mailto:sponsors@ocmenafestival.com">sponsors@ocmenafestival.com</a>
-      </article>
-
-      <article class="inbox">
-        <span class="inbox-tag">Vendors</span>
-        <h3>Stall applications</h3>
-        <div class="inbox-ar">بائعين</div>
-        <p>Apply on the <a href="./vendors.html" style="color: var(--red-deep); font-weight: 600;">vendor page</a> first. For follow-ups, application status, or questions about permits, fees, or logistics.</p>
-        <a class="inbox-email" href="mailto:vendors@ocmenafestival.com">vendors@ocmenafestival.com</a>
-      </article>
-
-      <article class="inbox">
-        <span class="inbox-tag">Artists</span>
-        <h3>Artist submissions</h3>
-        <div class="inbox-ar">فنانين</div>
-        <p>Music, comedy, spoken word, and performer submissions for future editions. Include EPK, recent live footage, and preferred set length.</p>
-        <a class="inbox-email" href="mailto:artists@ocmenafestival.com">artists@ocmenafestival.com</a>
-      </article>
-
+    <div class="contact-block">
+      <p class="lbl">Sponsors</p>
+      <h3>Brand &amp; partnership</h3>
+      <p>For sponsorship inquiries, brand activations, or media partnership proposals.</p>
+      <a href="mailto:partners@ocmenafestival.com">partners@ocmenafestival.com</a>
     </div>
-  </div>
-</section>
 
+    <div class="contact-block">
+      <p class="lbl">Vendors</p>
+      <h3>Stall applications</h3>
+      <p>Apply on the <a href="./vendors.html">vendors page</a>. For follow-ups or questions on existing applications:</p>
+      <a href="mailto:vendors@ocmenafestival.com">vendors@ocmenafestival.com</a>
+    </div>
 
-<!-- ADDRESS + SOCIAL -->
-<section class="where">
-  <div class="where-inner">
+    <div class="contact-block">
+      <p class="lbl">Press</p>
+      <h3>Media &amp; press passes</h3>
+      <p>Press passes, artist interview requests, shoot permissions.</p>
+      <a href="mailto:press@ocmenafestival.com">press@ocmenafestival.com</a>
+    </div>
 
-    <div class="where-block">
-      <span class="eyebrow-warm">On the grounds</span>
-      <h3>Festival <em>address.</em></h3>
-      <p>The OC Fair &amp; Event Center hosts us across the festival grounds, the Pacific Amphitheatre, and indoor venues on-site. Free parking on-site; rideshare drop-off at the Arlington entrance.</p>
-      <div class="where-address">
-        OC Fair &amp; Event Center<br>
-        88 Fair Drive<br>
-        Costa Mesa, CA 92626<br>
-        United States
+    <div class="contact-block">
+      <p class="lbl">On the grounds</p>
+      <h3>Festival address</h3>
+      <p>OC Fair &amp; Event Center<br>88 Fair Drive<br>Costa Mesa, CA 92626</p>
+      <div class="social-row">
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="TikTok">TT</a>
+        <a href="#" aria-label="YouTube">YT</a>
+        <a href="#" aria-label="X / Twitter">X</a>
       </div>
     </div>
 
-    <div class="where-block">
-      <span class="eyebrow-warm">Follow along</span>
-      <h3>Where to find <em>us.</em></h3>
-      <p>Lineup drops, schedule changes, ticket windows, and day-of festival updates go out across our socials. Turn on notifications on the channel you already live in.</p>
-      <div class="social-grid">
+  </aside>
 
-        <a class="social-card" href="https://instagram.com/ocmenafestival" target="_blank" rel="noopener">
-          <span class="social-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg>
-          </span>
-          <span class="social-meta">
-            <span class="label">Instagram</span>
-            <span class="handle">@ocmenafestival</span>
-          </span>
-        </a>
-
-        <a class="social-card" href="https://tiktok.com/@ocmenafestival" target="_blank" rel="noopener">
-          <span class="social-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4v10.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 4c0 2.5 2 4.5 4.5 4.5"/></svg>
-          </span>
-          <span class="social-meta">
-            <span class="label">TikTok</span>
-            <span class="handle">@ocmenafestival</span>
-          </span>
-        </a>
-
-        <a class="social-card" href="https://twitter.com/ocmenafestival" target="_blank" rel="noopener">
-          <span class="social-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l7.5 10L4 20h2.5l6-6.5L17 20h3l-7.8-10.4L19.5 4H17l-5.5 6L7 4z" fill="currentColor" stroke="none"/></svg>
-          </span>
-          <span class="social-meta">
-            <span class="label">X / Twitter</span>
-            <span class="handle">@ocmenafestival</span>
-          </span>
-        </a>
-
-        <a class="social-card" href="https://facebook.com/ocmenafestival" target="_blank" rel="noopener">
-          <span class="social-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 21v-8h2.5l0.5-3H14V8c0-1 0.5-1.5 1.5-1.5H17V4h-2c-2.5 0-4 1.5-4 4v2H8v3h3v8z" fill="currentColor" stroke="none"/></svg>
-          </span>
-          <span class="social-meta">
-            <span class="label">Facebook</span>
-            <span class="handle">/ocmenafestival</span>
-          </span>
-        </a>
-
-        <a class="social-card" href="https://youtube.com/@ocmenafestival" target="_blank" rel="noopener">
-          <span class="social-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="19" height="12" rx="3"/><path d="M10.5 9.5v5l4.5-2.5z" fill="currentColor" stroke="none"/></svg>
-          </span>
-          <span class="social-meta">
-            <span class="label">YouTube</span>
-            <span class="handle">@ocmenafestival</span>
-          </span>
-        </a>
-
-        <a class="social-card" href="https://wa.me/ocmenafestival" target="_blank" rel="noopener">
-          <span class="social-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.8-5.3a8 8 0 1 1 3.5 3.5z"/><path d="M8.5 10c0.5 2 2 3.5 4 4 0.5 0.2 1-0.3 1-0.7v-1c0-0.3-0.3-0.6-0.6-0.6l-1 0.1-1-1 0.1-1c0-0.3-0.3-0.6-0.6-0.6h-1c-0.5 0-1 0.5-0.9 1z"/></svg>
-          </span>
-          <span class="social-meta">
-            <span class="label">WhatsApp updates</span>
-            <span class="handle">Join the channel</span>
-          </span>
-        </a>
-
-      </div>
+  <form class="contact-form" onsubmit="event.preventDefault(); alert('Got it. We\\'ll be in touch within 48 hours.');">
+    <div>
+      <h2>Send us a note.</h2>
+      <p>Or just drop an email above — we read everything.</p>
     </div>
-
-  </div>
-</section>
-
-
-<!-- CONTACT FORM -->
-<section class="contact-form-section">
-  <div class="contact-form-inner">
-    <div class="section-head-center">
-      <span class="eyebrow-warm">Send a note</span>
-      <h2 class="section-h2">Don't know which <em>inbox?</em></h2>
-      <p class="section-lede">
-        Drop the details below and we'll route your message to the right team.
-        We read every submission and respond within 48 hours on weekdays.
-      </p>
-    </div>
-
-    <form class="contact-form" id="contactForm" autocomplete="on">
-      <div class="form-split">
-        <div class="form-row">
-          <label for="c-name">Your name</label>
-          <input id="c-name" name="name" type="text" placeholder="First and last" required>
-        </div>
-        <div class="form-row">
-          <label for="c-email">Email</label>
-          <input id="c-email" name="email" type="email" placeholder="you@domain.com" required>
-        </div>
-      </div>
-
-      <div class="form-split">
-        <div class="form-row">
-          <label for="c-org">Organization <span style="opacity:0.5; font-weight:500; letter-spacing:0.06em;">(optional)</span></label>
-          <input id="c-org" name="organization" type="text" placeholder="Brand, publication, or org name">
-        </div>
-        <div class="form-row">
-          <label for="c-topic">Topic</label>
-          <select id="c-topic" name="topic" required>
-            <option value="" disabled selected>Select one</option>
-            <option value="general">General question</option>
-            <option value="tickets">Tickets &amp; passes</option>
-            <option value="press">Press &amp; media</option>
-            <option value="sponsors">Sponsorship</option>
-            <option value="vendors">Vendor application follow-up</option>
-            <option value="artists">Artist submission</option>
-            <option value="partners">Community &amp; media partnership</option>
-            <option value="other">Something else</option>
-          </select>
-        </div>
-      </div>
-
+    <div class="form-row is-split">
       <div class="form-row">
-        <label for="c-subject">Subject</label>
-        <input id="c-subject" name="subject" type="text" placeholder="Give us a one-line summary" required>
+        <label for="c-name">Your name</label>
+        <input id="c-name" type="text" required />
       </div>
-
       <div class="form-row">
-        <label for="c-message">Message</label>
-        <textarea id="c-message" name="message" placeholder="Tell us what you need. Include any links, attachments, or context that would help us respond." required></textarea>
+        <label for="c-email">Email</label>
+        <input id="c-email" type="email" required />
       </div>
+    </div>
+    <div class="form-row">
+      <label for="c-topic">What's this about?</label>
+      <select id="c-topic">
+        <option>General question</option>
+        <option>Ticket or order issue</option>
+        <option>Sponsorship or brand partnership</option>
+        <option>Vendor application</option>
+        <option>Press / media</option>
+        <option>Affiliate program</option>
+        <option>Accessibility request</option>
+        <option>Something else</option>
+      </select>
+    </div>
+    <div class="form-row">
+      <label for="c-msg">Message</label>
+      <textarea id="c-msg" placeholder="Tell us what's up." required></textarea>
+    </div>
+    <button type="submit" class="btn btn-red">Send message</button>
+  </form>
+</div>
 
-      <p class="form-note">
-        Form submissions are logged and routed by topic. For time-sensitive requests, email the relevant inbox above directly.
-      </p>
-
-      <button type="submit" class="btn-primary form-submit">Send message</button>
-    </form>
-  </div>
-</section>
-
-
-<!-- FOOTER -->
 <footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <img src="./assets/images/Logo.webp" alt="OC MENA Festival">
-        <span class="footer-brand-ar">مهرجان أورنج كاونتي</span>
-        <p class="footer-tagline">June 19–21, 2026<br>OC Fairgrounds, Costa Mesa CA</p>
+  <div class="footer-cta-strip">
+    <p class="footer-cta-text">Want your brand in front of 60,000+ fans this summer?</p>
+    <div class="footer-cta-actions">
+      <a class="btn btn-red" href="./tickets.html">Buy Tickets</a>
+      <a class="btn btn-red-ghost" href="./sponsors.html">Become a Sponsor</a>
+    </div>
+  </div>
+  <div class="footer-cols">
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="./about.html">About</a>
+      <a href="./what-is-mena.html">What is MENA?</a>
+      <a href="./faq.html">FAQ</a>
+      <a href="#">My Account</a>
+      <a href="./contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Event Info</h4>
+      <a href="./lineup.html">Festival</a>
+      <a href="./lineup.html">Music &amp; Entertainment</a>
+      <a href="./sponsors.html">Sponsors</a>
+      <a href="./partners.html">Partners</a>
+      <a href="./vendors.html">Vendors</a>
+      <a href="./map.html">Maps &amp; Directions</a>
+      <a href="./map.html">Event Map</a>
+      <a href="./schedule.html">Event Schedule</a>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="#">Privacy Policy</a>
+      <a href="#">CA Privacy Policy</a>
+      <a href="#">Accessibility / ADA</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">Ticket Terms</a>
+    </div>
+    <div class="footer-col">
+      <h4>Follow Us</h4>
+      <div class="footer-social-icons">
+        <a href="#" aria-label="Instagram">&#x1F4F7;</a>
+        <a href="#" aria-label="TikTok">&#x266B;</a>
+        <a href="#" aria-label="YouTube">&#x25B6;</a>
+        <a href="#" aria-label="Facebook">&#x1F426;</a>
+        <a href="#" aria-label="X">&#x2715;</a>
+        <a href="#" aria-label="Snapchat">&#x1F47B;</a>
       </div>
-
-      <div class="footer-col">
-        <h4>Event</h4>
-        <a href="./music-entertainment.html">Music &amp; Entertainment</a>
-        <a href="./schedule.html">Schedule</a>
-        <a href="./map.html">Map</a>
-        <a href="./tickets.html">Tickets</a>
-      </div>
-
-      <div class="footer-col">
-        <h4>Experience</h4>
-        <a href="./experience-food-bazaar.html">Food &amp; Bazaar</a>
-        <a href="./experience-rides.html">Rides &amp; Family</a>
-        <a href="./experience-stages.html">Stages</a>
-      </div>
-
-      <div class="footer-col">
-        <h4>About</h4>
-        <a href="./about.html">Our Story</a>
-        <a href="./what-is-mena.html">What is MENA</a>
-        <a href="./info.html">Festival Info</a>
-        <a href="./faq.html">FAQ</a>
-      </div>
-
-      <div class="footer-col">
-        <h4>Business</h4>
-        <a href="./sponsors.html">Sponsors</a>
-        <a href="./vendors.html">Vendors</a>
-        <a href="./partners.html">Partners &amp; Affiliates</a>
-        <a href="./contact.html">Contact</a>
+      <div class="footer-newsletter">
+        <p>Join our newsletter and stay informed!</p>
+        <form onsubmit="return false;">
+          <input type="email" placeholder="email@email.com">
+          <button type="submit">&#x27A1;</button>
+        </form>
       </div>
     </div>
-
-    <div class="footer-bottom">
-      <span>© 2026 OC MENA Festival. All rights reserved.</span>
-      <div class="footer-social">
-        <a href="https://instagram.com/ocmenafestival" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://tiktok.com/@ocmenafestival" target="_blank" rel="noopener">TikTok</a>
-        <a href="https://twitter.com/ocmenafestival" target="_blank" rel="noopener">X / Twitter</a>
-        <a href="https://facebook.com/ocmenafestival" target="_blank" rel="noopener">Facebook</a>
-      </div>
-    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025&ndash;2026 OC MENA Festival. All rights reserved.</p>
+    <p>
+      <a href="#">Privacy</a> &nbsp;&middot;&nbsp;
+      <a href="#">Terms</a> &nbsp;&middot;&nbsp;
+      <a href="#">Accessibility / ADA</a>
+    </p>
   </div>
 </footer>
 
+</div><!-- /page-container -->
 
-<script>
-  const nav = document.getElementById('mainNav');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 40);
-  }, { passive: true });
-
-  const burger = document.getElementById('navBurger');
-  const mobileMenu = document.getElementById('mobileMenu');
-  burger.addEventListener('click', () => {
-    const open = mobileMenu.classList.toggle('is-open');
-    burger.textContent = open ? '✕' : '☰';
-    document.body.style.overflow = open ? 'hidden' : '';
-  });
-
-  // Form is styled-only for now; backend will wire submit.
-  const form = document.getElementById('contactForm');
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    // Backend wiring pending. Graceful placeholder:
-    const btn = form.querySelector('button[type="submit"]');
-    btn.textContent = 'Thanks — we\u2019ll be in touch.';
-    btn.disabled = true;
-    btn.style.opacity = '0.8';
-  });
-</script>
-
+<script src="./assets/js/site.js?v=ship-20260422-fontfix" defer></script>
 </body>
 </html>

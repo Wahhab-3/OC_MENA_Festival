@@ -1,1051 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tul8te — OC MENA Festival</title>
-  <meta name="description" content="Tul8te at OC MENA Festival — Saturday, PAC Amphitheatre. June 19–21, 2026 · OC Fairgrounds, Costa Mesa CA.">
-  <link rel="icon" type="image/png" href="./assets/images/favicon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
-  <style>
-    /* =====================================================
-       OC MENA FESTIVAL — Artist Detail Page
-       Heritage Hearth — see DESIGN_SYSTEM.md
-    ===================================================== */
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    @font-face {
-      font-family: 'Aldhabi';
-      src: url('./assets/fonts/aldhabi.ttf') format('truetype');
-      font-weight: normal;
-      font-display: swap;
-    }
+<title>Tul8te — Live at OC MENA Festival 2026</title>
+<meta name="description" content="Tul8te performs live at the OC MENA Festival, June 19–21, 2026 in Orange County, CA. Bio, set time, stage, and tickets.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#DC2F3F">
+<link rel="canonical" href="https://ocmenafestival.com/artist-tul8te.html">
 
-    :root {
-      --cream:      #fff8f4;
-      --sand:       #fff1e4;
-      --sand-deep:  #ffe4c2;
-      --ink:        #281801;
-      --ink-soft:   #5c403c;
-      --red:        #dc2626;
-      --red-deep:   #b70011;
-      --maroon:     #930046;
-      --maroon-ink: #66002f;
-      --gold:       #f5c842;
-      --gold-deep:  #d0a61e;
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="./assets/images/favicon.png">
+<link rel="apple-touch-icon" href="./assets/images/favicon.png">
 
-      --maxw:   1200px;
-      --pad:    clamp(1.25rem, 5vw, 3rem);
-      --nav-h:  72px;
+<!-- Open Graph -->
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="OC MENA Festival">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://ocmenafestival.com/artist-tul8te.html">
+<meta property="og:title" content="Tul8te — Live at OC MENA Festival 2026">
+<meta property="og:description" content="Tul8te performs live at the OC MENA Festival, June 19–21, 2026 in Orange County, CA. Bio, set time, stage, and tickets.">
+<meta property="og:image" content="https://ocmenafestival.com/assets/images/hero-crowd.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="OC MENA Festival — June 19–21, 2026, Orange County, CA">
 
-      --fs-display: clamp(2.75rem, 6vw, 5.5rem);
-      --fs-h1:      clamp(2rem, 4vw, 3.5rem);
-      --fs-h2:      clamp(1.5rem, 2.5vw, 2.25rem);
-      --fs-h3:      clamp(1.125rem, 1.5vw, 1.375rem);
-      --fs-body:    1rem;
-      --fs-meta:    0.8125rem;
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tul8te — Live at OC MENA Festival 2026">
+<meta name="twitter:description" content="Tul8te performs live at the OC MENA Festival, June 19–21, 2026 in Orange County, CA. Bio, set time, stage, and tickets.">
+<meta name="twitter:image" content="https://ocmenafestival.com/assets/images/hero-crowd.webp">
+<meta name="twitter:image:alt" content="OC MENA Festival — June 19–21, 2026, Orange County, CA">
 
-      --r-sm:  0.5rem;
-      --r-md:  0.75rem;
-      --r-lg:  1rem;
-      --r-xl:  1.5rem;
-    }
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      background: var(--cream);
-      color: var(--ink);
-      font-family: 'Inter', system-ui, sans-serif;
-      font-size: var(--fs-body);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-    button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+<!-- Styles -->
+<link rel="stylesheet" href="./assets/css/site.css?v=ship-20260422-fontfix">
 
-    /* Aldhabi — 1.7× rule */
-    .ar { font-family: 'Aldhabi', serif; font-weight: normal; font-size: 1.7em; line-height: 1; vertical-align: baseline; }
-
-    /* =====================================================
-       BUTTONS
-    ===================================================== */
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.85rem 2rem;
-      background: linear-gradient(135deg, var(--red-deep) 0%, var(--red) 100%);
-      color: #fff;
-      font-weight: 600;
-      font-size: 0.95rem;
-      letter-spacing: 0.02em;
-      border-radius: var(--r-md);
-      box-shadow: 0 8px 24px rgba(40, 24, 1, 0.08);
-      transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
-    }
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 32px rgba(40, 24, 1, 0.12);
-      opacity: 0.96;
-    }
-
-    .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.85rem 2rem;
-      background: var(--sand-deep);
-      color: var(--ink);
-      font-weight: 600;
-      font-size: 0.95rem;
-      letter-spacing: 0.02em;
-      border-radius: var(--r-md);
-      transition: transform 0.25s ease, background 0.25s ease;
-    }
-    .btn-secondary:hover {
-      transform: translateY(-2px);
-      background: #ffd89a;
-    }
-
-    @keyframes heartbeat-maroon {
-      0%   { box-shadow: 0 0 0 0 rgba(147, 0, 70, 0.6), 0 8px 24px rgba(40, 24, 1, 0.08); transform: scale(1); }
-      50%  { box-shadow: 0 0 0 14px rgba(147, 0, 70, 0), 0 10px 28px rgba(40, 24, 1, 0.1); transform: scale(1.03); }
-      100% { box-shadow: 0 0 0 0 rgba(147, 0, 70, 0), 0 8px 24px rgba(40, 24, 1, 0.08); transform: scale(1); }
-    }
-    .heartbeat { animation: heartbeat-maroon 1.6s infinite ease-in-out; }
-
-    /* =====================================================
-       NAV
-    ===================================================== */
-    .nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      height: var(--nav-h);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 var(--pad);
-      background: rgba(255, 248, 244, 0.72);
-      backdrop-filter: blur(20px) saturate(1.2);
-      -webkit-backdrop-filter: blur(20px) saturate(1.2);
-      transition: background 0.35s ease;
-    }
-    .nav.scrolled { background: rgba(255, 248, 244, 0.92); }
-    .nav-logo img { height: 44px; width: auto; }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 1.75rem;
-      list-style: none;
-    }
-    .nav-links a {
-      color: var(--ink);
-      font-size: 0.88rem;
-      font-weight: 500;
-      letter-spacing: 0.01em;
-      transition: color 0.2s;
-      opacity: 0.78;
-    }
-    .nav-links a:hover { opacity: 1; color: var(--red-deep); }
-    .nav-links a.is-active {
-      opacity: 1;
-      color: var(--ink);
-      font-weight: 600;
-      position: relative;
-    }
-    .nav-links a.is-active::after {
-      content: '';
-      position: absolute;
-      left: 0; right: 0;
-      bottom: -8px;
-      height: 2px;
-      background: var(--gold-deep);
-      border-radius: 2px;
-    }
-
-    .nav-dropdown { position: relative; }
-    .nav-dropdown > a { display: flex; align-items: center; gap: 0.3rem; }
-    .nav-dropdown > a::after {
-      content: '▾';
-      font-size: 0.65rem;
-      opacity: 0.5;
-    }
-    .nav-dropdown-menu {
-      position: absolute;
-      top: calc(100% + 0.75rem);
-      left: 50%;
-      transform: translateX(-50%) translateY(6px);
-      min-width: 210px;
-      background: rgba(255, 248, 244, 0.96);
-      border-radius: var(--r-md);
-      padding: 0.5rem 0;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.2s ease;
-      backdrop-filter: blur(14px);
-      box-shadow: 0 16px 40px rgba(40, 24, 1, 0.08);
-    }
-    .nav-dropdown:hover .nav-dropdown-menu {
-      opacity: 1;
-      visibility: visible;
-      transform: translateX(-50%) translateY(0);
-    }
-    .nav-dropdown-menu a {
-      display: block;
-      padding: 0.65rem 1.2rem;
-      font-size: 0.88rem;
-      color: var(--ink);
-      opacity: 0.82;
-      transition: opacity 0.15s, background 0.15s;
-    }
-    .nav-dropdown-menu a:hover {
-      opacity: 1;
-      background: var(--sand);
-    }
-
-    .nav-cta { flex-shrink: 0; }
-    .nav-burger {
-      display: none;
-      color: var(--ink);
-      font-size: 1.5rem;
-      padding: 0.25rem;
-    }
-
-    .mobile-menu {
-      display: none;
-      position: fixed;
-      top: var(--nav-h); left: 0; right: 0; bottom: 0;
-      background: var(--cream);
-      z-index: 99;
-      flex-direction: column;
-      padding: 2rem var(--pad);
-      gap: 0;
-      overflow-y: auto;
-    }
-    .mobile-menu.is-open { display: flex; }
-    .mobile-menu a {
-      color: var(--ink);
-      font-size: 1.1rem;
-      font-weight: 500;
-      padding: 1rem 0;
-    }
-    .mobile-menu a + a {
-      background-image: linear-gradient(to right, rgba(40,24,1,0.08) 50%, transparent 50%);
-      background-size: 4px 1px;
-      background-position: top;
-      background-repeat: repeat-x;
-    }
-    .mobile-menu .mobile-cta {
-      margin-top: 2rem;
-      align-self: flex-start;
-    }
-
-    /* =====================================================
-       ARTIST HERO — full-bleed portrait, maroon scrim
-    ===================================================== */
-    .artist-hero {
-      position: relative;
-      min-height: 82vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: calc(var(--nav-h) + 4rem) var(--pad) 4rem;
-      overflow: hidden;
-      background-color: var(--maroon-ink);
-    }
-    .artist-hero__bg {
-      position: absolute;
-      inset: 0;
-      background-image: var(--hero-bg);
-      background-size: cover;
-      background-position: center top;
-      filter: saturate(1.05);
-    }
-    .artist-hero__scrim {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(147, 0, 70, 0.35) 0%,
-        rgba(102, 0, 47, 0.45) 45%,
-        rgba(40, 24, 1, 0.82) 100%
-      );
-    }
-    .artist-hero-inner {
-      position: relative;
-      z-index: 2;
-      max-width: var(--maxw);
-      width: 100%;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 1.1rem;
-    }
-    .artist-back {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: rgba(255, 248, 244, 0.78);
-      margin-bottom: 0.5rem;
-      align-self: flex-start;
-      transition: color 0.2s;
-    }
-    .artist-back:hover { color: var(--gold); }
-    .artist-eyebrow {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.1rem;
-    }
-    .artist-eyebrow-ar {
-      font-family: 'Aldhabi', serif;
-      font-size: 3.4rem; /* 1.7× the ~2rem neighboring Latin */
-      color: var(--gold);
-      line-height: 1;
-      direction: rtl;
-    }
-    .artist-name {
-      font-family: 'Newsreader', serif;
-      font-weight: 400;
-      font-size: var(--fs-display);
-      line-height: 1.02;
-      color: #fff;
-      letter-spacing: -0.015em;
-    }
-    .artist-name em {
-      font-style: italic;
-      font-weight: 300;
-      color: var(--sand-deep);
-    }
-    .artist-origin {
-      font-size: 0.92rem;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: rgba(255, 248, 244, 0.82);
-      margin-top: 0.3rem;
-    }
-    .artist-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.55rem;
-      margin-top: 0.9rem;
-    }
-    .artist-pill {
-      padding: 0.38rem 0.95rem;
-      border-radius: 999px;
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #fff;
-      backdrop-filter: blur(8px);
-    }
-    .artist-pill.day-fri { background: rgba(220, 38, 38, 0.88); }
-    .artist-pill.day-sat { background: rgba(147, 0, 70, 0.88); }
-    .artist-pill.day-sun { background: rgba(117, 91, 0, 0.92); }
-    .artist-pill.stage { background: rgba(255, 248, 244, 0.18); }
-    .artist-pill.headliner {
-      background: var(--gold);
-      color: var(--ink);
-    }
-    .artist-pill.comedy {
-      background: var(--gold);
-      color: var(--ink);
-    }
-
-    /* =====================================================
-       BIO SECTION — Newsreader pull quote + Inter body
-    ===================================================== */
-    .artist-bio {
-      padding: 5.5rem var(--pad) 4.5rem;
-      background: var(--cream);
-    }
-    .artist-bio-inner {
-      max-width: 720px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-    .pull-quote {
-      font-family: 'Newsreader', serif;
-      font-style: italic;
-      font-weight: 300;
-      font-size: clamp(1.4rem, 2.5vw, 1.9rem);
-      line-height: 1.35;
-      color: var(--maroon);
-      letter-spacing: -0.01em;
-      padding-left: 1.25rem;
-      position: relative;
-      margin-bottom: 0.75rem;
-    }
-    .pull-quote::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0.3rem;
-      bottom: 0.3rem;
-      width: 3px;
-      background: var(--gold-deep);
-      border-radius: 2px;
-    }
-    .artist-bio p {
-      font-size: 1.02rem;
-      line-height: 1.72;
-      color: var(--ink);
-    }
-    .artist-bio p + p { margin-top: 0.2rem; }
-    .artist-bio p strong {
-      color: var(--maroon);
-      font-weight: 600;
-    }
-
-    /* =====================================================
-       WHAT TO EXPECT — 3 bullets
-    ===================================================== */
-    .what-to-expect {
-      padding: 4rem var(--pad) 4.5rem;
-      background: var(--sand);
-    }
-    .wte-inner {
-      max-width: var(--maxw);
-      margin: 0 auto;
-    }
-    .wte-eyebrow {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--ink-soft);
-      margin-bottom: 0.6rem;
-    }
-    .wte-title {
-      font-family: 'Newsreader', serif;
-      font-weight: 500;
-      font-size: var(--fs-h2);
-      color: var(--ink);
-      line-height: 1.15;
-      letter-spacing: -0.015em;
-      margin-bottom: 2.5rem;
-    }
-    .wte-title .ar-word {
-      font-family: 'Aldhabi', serif;
-      font-size: 1.7em;
-      color: var(--maroon);
-      margin-left: 0.4rem;
-      vertical-align: baseline;
-      line-height: 1;
-      font-weight: normal;
-    }
-    .wte-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-    }
-    .wte-card {
-      background: var(--sand-deep);
-      border-radius: var(--r-lg);
-      padding: 1.75rem 1.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-    .wte-card:nth-child(even) {
-      border-radius: var(--r-xl) var(--r-sm) var(--r-xl) var(--r-sm);
-    }
-    .wte-number {
-      font-family: 'Newsreader', serif;
-      font-size: 1.6rem;
-      color: var(--maroon);
-      font-weight: 500;
-      line-height: 1;
-    }
-    .wte-card h3 {
-      font-family: 'Newsreader', serif;
-      font-size: 1.2rem;
-      font-weight: 500;
-      color: var(--ink);
-      line-height: 1.2;
-    }
-    .wte-card p {
-      font-size: 0.94rem;
-      line-height: 1.6;
-      color: var(--ink-soft);
-    }
-
-    /* =====================================================
-       EMBED PLACEHOLDER — Spotify/YouTube placeholder
-    ===================================================== */
-    .embed-section {
-      padding: 4.5rem var(--pad) 5rem;
-      background: var(--cream);
-    }
-    .embed-inner {
-      max-width: var(--maxw);
-      margin: 0 auto;
-    }
-    .embed-eyebrow {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--ink-soft);
-      margin-bottom: 0.6rem;
-    }
-    .embed-title {
-      font-family: 'Newsreader', serif;
-      font-weight: 500;
-      font-size: var(--fs-h2);
-      color: var(--ink);
-      line-height: 1.15;
-      letter-spacing: -0.015em;
-      margin-bottom: 2rem;
-    }
-    .embed-placeholder {
-      position: relative;
-      border-radius: var(--r-xl);
-      background: linear-gradient(135deg, var(--maroon) 0%, var(--maroon-ink) 100%);
-      padding: clamp(2.5rem, 5vw, 4rem);
-      min-height: 240px;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 2rem;
-      flex-wrap: wrap;
-      color: #fff;
-    }
-    .embed-placeholder::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 85% 15%, rgba(245, 200, 66, 0.22), transparent 55%);
-      pointer-events: none;
-    }
-    .embed-placeholder-left {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 0.45rem;
-      max-width: 480px;
-    }
-    .embed-placeholder-ar {
-      font-family: 'Aldhabi', serif;
-      font-size: 2.4rem; /* 1.7× of the Newsreader name below */
-      color: var(--gold);
-      line-height: 1;
-      direction: rtl;
-    }
-    .embed-placeholder h3 {
-      font-family: 'Newsreader', serif;
-      font-weight: 400;
-      font-size: clamp(1.5rem, 2.4vw, 2rem);
-      color: #fff;
-      line-height: 1.15;
-      letter-spacing: -0.01em;
-    }
-    .embed-placeholder p {
-      font-size: 0.95rem;
-      line-height: 1.6;
-      color: rgba(255, 248, 244, 0.8);
-      margin-top: 0.35rem;
-    }
-    .embed-cta {
-      position: relative;
-      z-index: 1;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.85rem 2rem;
-      background: var(--gold);
-      color: var(--ink);
-      font-weight: 600;
-      font-size: 0.95rem;
-      letter-spacing: 0.02em;
-      border-radius: var(--r-md);
-      transition: transform 0.25s ease, background 0.25s ease;
-      align-self: center;
-    }
-    .embed-cta:hover {
-      transform: translateY(-2px);
-      background: #ffd560;
-    }
-
-    /* =====================================================
-       CROSS-LINK FOOTER — see who else plays DAY
-    ===================================================== */
-    .cross-link {
-      padding: 3rem var(--pad) 4.5rem;
-      background: var(--sand);
-      text-align: center;
-    }
-    .cross-link-inner {
-      max-width: 640px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      align-items: center;
-    }
-    .cross-link-eyebrow {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--ink-soft);
-      margin-bottom: 0.25rem;
-    }
-    .cross-link-title {
-      font-family: 'Newsreader', serif;
-      font-weight: 500;
-      font-size: clamp(1.5rem, 2.8vw, 2.1rem);
-      color: var(--ink);
-      line-height: 1.2;
-      letter-spacing: -0.01em;
-    }
-    .cross-link-title .ar-word {
-      font-family: 'Aldhabi', serif;
-      font-size: 1.7em;
-      color: var(--maroon);
-      margin-left: 0.4rem;
-      vertical-align: baseline;
-      line-height: 1;
-      font-weight: normal;
-    }
-    .cross-link-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-top: 1rem;
-      font-size: 0.88rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--red-deep);
-      border-bottom: 2px solid var(--gold-deep);
-      padding-bottom: 0.25rem;
-      transition: color 0.2s;
-    }
-    .cross-link-cta:hover { color: var(--maroon); }
-
-    /* =====================================================
-       CLOSING CTA — same as music-entertainment.html
-    ===================================================== */
-    .closing-cta {
-      padding: 5.5rem var(--pad);
-      background: linear-gradient(135deg, var(--maroon) 0%, var(--maroon-ink) 100%);
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .closing-cta::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 80% 20%, rgba(245, 200, 66, 0.18), transparent 50%);
-      pointer-events: none;
-    }
-    .closing-inner {
-      max-width: 720px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      align-items: center;
-      position: relative;
-      z-index: 1;
-    }
-    .closing-eyebrow {
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: rgba(255, 248, 244, 0.72);
-    }
-    .closing-title {
-      font-family: 'Newsreader', serif;
-      font-weight: 400;
-      font-size: clamp(2rem, 4.2vw, 3.1rem);
-      color: #fff;
-      line-height: 1.15;
-      letter-spacing: -0.015em;
-    }
-    .closing-title em { font-style: italic; color: var(--sand-deep); font-weight: 300; }
-    .closing-title .ar-word {
-      font-family: 'Aldhabi', serif;
-      font-size: 1.7em;
-      color: var(--gold);
-      font-weight: normal;
-      vertical-align: baseline;
-      line-height: 1;
-    }
-    .closing-sub {
-      color: rgba(255, 248, 244, 0.82);
-      line-height: 1.65;
-      max-width: 540px;
-    }
-    .closing-ctas {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.85rem;
-      justify-content: center;
-      margin-top: 1rem;
-    }
-    .closing-ctas .heartbeat { animation-name: heartbeat-gold; }
-    @keyframes heartbeat-gold {
-      0%   { box-shadow: 0 0 0 0 rgba(245, 200, 66, 0.6), 0 8px 24px rgba(40, 24, 1, 0.24); transform: scale(1); }
-      50%  { box-shadow: 0 0 0 14px rgba(245, 200, 66, 0), 0 10px 28px rgba(40, 24, 1, 0.3); transform: scale(1.03); }
-      100% { box-shadow: 0 0 0 0 rgba(245, 200, 66, 0), 0 8px 24px rgba(40, 24, 1, 0.24); transform: scale(1); }
-    }
-    .closing-ctas .btn-secondary {
-      background: rgba(255, 248, 244, 0.15);
-      color: #fff;
-      backdrop-filter: blur(12px);
-    }
-    .closing-ctas .btn-secondary:hover { background: rgba(255, 248, 244, 0.25); }
-
-    /* =====================================================
-       FOOTER — identical to music-entertainment.html
-    ===================================================== */
-    .footer {
-      background: var(--ink);
-      color: rgba(255, 248, 244, 0.78);
-      padding: 4.5rem var(--pad) 2rem;
-    }
-    .footer-inner { max-width: var(--maxw); margin: 0 auto; }
-    .footer-top {
-      display: grid;
-      grid-template-columns: 1.4fr repeat(4, 1fr);
-      gap: 2.5rem;
-      padding-bottom: 2.5rem;
-      background: linear-gradient(to bottom, transparent calc(100% - 1px), rgba(255, 248, 244, 0.12) calc(100% - 1px));
-    }
-    .footer-brand img { height: 54px; width: auto; margin-bottom: 0.9rem; }
-    .footer-brand-ar {
-      display: block;
-      font-family: 'Aldhabi', serif;
-      font-size: 1.85rem;
-      color: var(--gold);
-      line-height: 1;
-      margin-bottom: 0.7rem;
-    }
-    .footer-tagline {
-      font-size: 0.85rem;
-      color: rgba(255, 248, 244, 0.6);
-      line-height: 1.6;
-    }
-    .footer-col h4 {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: #fff;
-      margin-bottom: 1rem;
-    }
-    .footer-col a {
-      display: block;
-      font-size: 0.88rem;
-      color: rgba(255, 248, 244, 0.68);
-      padding: 0.3rem 0;
-      transition: color 0.2s;
-    }
-    .footer-col a:hover { color: var(--gold); }
-    .footer-bottom {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-top: 1.5rem;
-      font-size: 0.78rem;
-      color: rgba(255, 248, 244, 0.5);
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    .footer-social { display: flex; gap: 1.25rem; }
-    .footer-social a {
-      color: rgba(255, 248, 244, 0.65);
-      font-size: 0.82rem;
-      transition: color 0.2s;
-    }
-    .footer-social a:hover { color: var(--gold); }
-
-    /* =====================================================
-       RESPONSIVE
-    ===================================================== */
-    @media (max-width: 960px) {
-      .nav-links { display: none; }
-      .nav-cta { display: none; }
-      .nav-burger { display: block; }
-      .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
-      .footer-brand { grid-column: 1 / -1; }
-    }
-    @media (max-width: 640px) {
-      .artist-hero { min-height: 72vh; }
-      .embed-placeholder { flex-direction: column; align-items: flex-start; }
-      .footer-top { grid-template-columns: 1fr; }
-      .footer-bottom { flex-direction: column; align-items: flex-start; }
-    }
-  </style>
+<!-- Structured data -->
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "MusicGroup", "name": "Tul8te", "url": "https://ocmenafestival.com/artist-tul8te.html", "image": "https://ocmenafestival.com/assets/images/artist-tul8te.webp", "performerIn": {"@type": "Festival", "name": "OC MENA Festival 2026", "startDate": "2026-06-19", "endDate": "2026-06-21", "location": {"@type": "Place", "name": "OC Fairgrounds & Pacific Amphitheatre", "address": "Costa Mesa, CA"}}}</script>
 </head>
+<body data-nav="light">
 
-<body>
+<!-- FIXED VIDEO BACKGROUND -->
+<div class="video-bg-fixed">
+  <video autoplay muted loop playsinline preload="auto">
+    <source src="./assets/hero-final.mp4" type="video/mp4">
+  </video>
+</div>
 
-<!-- =========================================================
-     NAV
-========================================================= -->
-<header class="nav" id="mainNav">
-  <a class="nav-logo" href="./index.html">
-    <img src="./assets/images/Logo.webp" alt="OC MENA Festival">
-  </a>
+<!-- ANNOUNCEMENT BAR -->
+<div class="nav-announcement">June 19-21, 2026 &mdash; OC Fairgrounds &mdash; Middle East &amp; North Africa (MENA) Festival!</div>
 
-  <ul class="nav-links">
-    <li><a class="is-active" href="./music-entertainment.html">Music &amp; Entertainment</a></li>
-    <li><a href="./schedule.html">Schedule</a></li>
-    <li><a href="./map.html">Map</a></li>
-    <li class="nav-dropdown">
-      <a href="#">Experience</a>
-      <div class="nav-dropdown-menu">
-        <a href="./experience-food-bazaar.html">Food &amp; Bazaar</a>
-        <a href="./experience-rides.html">Rides &amp; Family</a>
-        <a href="./experience-stages.html">Stages</a>
+<!-- NAV -->
+<header class="nav">
+  <a class="brand" href="./index.html"><img class="brand-logo" src="./assets/images/Logo.webp" alt="OC MENA Festival"></a>
+  <nav class="nav-links">
+    <div class="nav-drop">
+      <a href="#">Festival <span class="caret">&#9662;</span></a>
+      <div class="nav-drop-menu">
+        <a href="./about.html">About</a>
+        <a href="./info.html">Festival Info</a>
+        <a href="./map.html">Map</a>
+        <a href="./schedule.html">Schedule</a>
       </div>
-    </li>
-    <li><a href="./about.html">About</a></li>
-    <li><a href="./info.html">Info</a></li>
-    <li class="nav-dropdown">
-      <a href="#">For Partners</a>
-      <div class="nav-dropdown-menu">
-        <a href="./sponsors.html">Sponsors</a>
-        <a href="./vendors.html">Vendors</a>
-        <a href="./partners.html">Partners &amp; Affiliates</a>
-      </div>
-    </li>
-    <li><a href="./contact.html">Contact</a></li>
-  </ul>
-
-  <a class="btn-primary nav-cta heartbeat" href="./tickets.html">Get Tickets</a>
-  <button class="nav-burger" id="navBurger" aria-label="Open menu">☰</button>
+    </div>
+    <a href="./lineup.html">Music &amp; Entertainment</a>
+    <a href="./vendors.html">Vendors</a>
+    <a href="./sponsors.html">Sponsors</a>
+    <a href="./faq.html">FAQ</a>
+    <a href="./contact.html">Contact</a>
+  </nav>
+  <a class="nav-cta nav-cta-ghost" href="./sponsors.html">Become a Sponsor</a>
+  <a class="nav-cta" href="./tickets.html">Get Tickets</a>
+  <div class="nav-icons">
+    <a class="nav-icon" href="#" aria-label="Account">&#9786;</a>
+    <a class="nav-icon" href="#" aria-label="Cart">&#128722;<span class="badge">0</span></a>
+  </div>
+  <button class="nav-burger" aria-label="Menu">&#9776;</button>
 </header>
 
-<nav class="mobile-menu" id="mobileMenu">
-  <a href="./music-entertainment.html">Music &amp; Entertainment</a>
-  <a href="./schedule.html">Schedule</a>
-  <a href="./map.html">Map</a>
-  <a href="./experience-food-bazaar.html">Food &amp; Bazaar</a>
-  <a href="./experience-rides.html">Rides &amp; Family</a>
-  <a href="./experience-stages.html">Stages</a>
-  <a href="./about.html">About</a>
-  <a href="./info.html">Info</a>
-  <a href="./sponsors.html">Sponsors</a>
-  <a href="./vendors.html">Vendors</a>
-  <a href="./contact.html">Contact</a>
-  <a class="btn-primary mobile-cta" href="./tickets.html">Get Tickets</a>
-</nav>
-
-
-<!-- =========================================================
-     ARTIST HERO
-========================================================= -->
-<section class="artist-hero" style="--hero-bg: url('./assets/images/artist-tul8te.webp');">
-  <div class="artist-hero__bg"></div>
-  <div class="artist-hero__scrim"></div>
+<!-- ARTIST HERO sits on video, no plate -->
+<section class="artist-hero artist-hero-on-video">
   <div class="artist-hero-inner">
-    <a class="artist-back" href="./music-entertainment.html">← Back to lineup</a>
-    <div class="artist-eyebrow">
-      <span class="artist-eyebrow-ar">تلاتة</span>
-    </div>
-    <h1 class="artist-name">Tul8te</h1>
-    <p class="artist-origin">Egypt</p>
-    <div class="artist-pills">
-      <span class="artist-pill day-sat">Saturday</span>
-      <span class="artist-pill stage">PAC Amphitheatre</span>
-      
-    </div>
-  </div>
-</section>
-
-
-<!-- =========================================================
-     BIO — Newsreader pull quote + body copy
-========================================================= -->
-<section class="artist-bio">
-  <div class="artist-bio-inner">
-    <p class="pull-quote">Cairo's new voice. Alt-pop soaked in 2000s Egyptian cinema. Writes like a poet, sings like a ghost. The reason Arabic indie sounds different now.</p>
-    <p>Tul8te arrived with a mask and no explanation. Egyptian, anonymous, and writing songs that Egyptian Gen Z recognized immediately as their own inner monologue. His 2024 debut album "Tesh Shabab" — roughly translating to "the energy of youth" — landed in February 2024 as one of the most emotionally direct Arabic albums in recent memory.</p>
-    <p>He writes about anxiety, loneliness, mental health, and the exhaustion of performing happiness for people who don't see you. Young Egyptians heard themselves in it instantly. "Habeeby Leh" — <em>Why My Love</em> — became the signature track. Over one million monthly listeners followed. The mask stays on. The music holds.</p>
-    <p>Arab music has always had love songs. What it has had less of — at least openly — is music about the interior life: about mental health, about confusion, about the specific exhaustion of being young in a culture that tells you to perform strength. Tul8te made that music without apology, and a generation claimed it.</p>
-  </div>
-</section>
-
-
-<!-- =========================================================
-     WHAT TO EXPECT — 3 bullets
-========================================================= -->
-<section class="what-to-expect">
-  <div class="wte-inner">
-    <p class="wte-eyebrow">On the night</p>
-    <h2 class="wte-title">What to expect <span class="ar-word">الليلة</span></h2>
-    <div class="wte-grid">
-      <div class="wte-card">
-        <div class="wte-number">01</div>
-        <h3>Intimacy at amphitheatre scale.</h3>
-        <p>Built around "Tesh Shabab" with the emotional directness of the album intact. Quiet when it needs to be.</p>
-      </div>
-      <div class="wte-card">
-        <div class="wte-number">02</div>
-        <h3>The crowd already knows the words.</h3>
-        <p>"Habeeby Leh" will be sung back at him. Come early if you want to hear every line.</p>
-      </div>
-      <div class="wte-card">
-        <div class="wte-number">03</div>
-        <h3>A masked, present performer.</h3>
-        <p>The anonymity is part of the delivery. The voice is not. Everything is in the vocal.</p>
+    <img class="artist-portrait on-video-img" src="./assets/images/artist-tul8te.webp" alt="Artist Tul8Te" loading="lazy">
+    <div class="artist-head">
+      <p class="back on-video"><a href="./talents.html">&#8592; Back to lineup</a></p>
+      <p class="artist-name-ar on-video">توليت</p>
+      <h1 class="artist-name on-video">Tul8te</h1>
+      <p class="artist-origin on-video">Egypt <span class="ar-small">· مصر</span></p>
+      <p class="artist-tag on-video">Egyptian. Masked. Anonymous by choice. His debut album "Tesh Shabab" gave Gen Z Arab youth a mirror they had never seen before.</p>
+      <div class="artist-set artist-set-on-video">
+        <div class="set-meta-item"><span class="k">Stage</span><span class="v">Pacific Amphitheatre</span></div>
+        <div class="set-meta-item"><span class="k">Day</span><span class="v">Saturday, June 20</span></div>
+        <div class="set-meta-item"><span class="k">Time</span><span class="v">8:30 PM</span></div>
+        <div class="set-meta-item"><span class="k">Billing</span><span class="v">Support · co-bill</span></div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- WHITE CARD STARTS HERE -->
+<div class="page-container">
 
-<!-- =========================================================
-     LISTEN — embed placeholder
-========================================================= -->
-<section class="embed-section">
-  <div class="embed-inner">
-    <p class="embed-eyebrow">Do your homework</p>
-    <h2 class="embed-title">Listen before the set.</h2>
-    <div class="embed-placeholder">
-      <div class="embed-placeholder-left">
-        <div class="embed-placeholder-ar">تلاتة</div>
-        <h3>Tul8te</h3>
-        <p>The "Tesh Shabab" album front-to-back, then "Habeeby Leh" on repeat. He rewards close listening — headphones, not a speaker on the commute.</p>
+<section class="artist-body">
+  <aside class="artist-body-side">
+    <div class="artist-stat-line"><span class="k">From</span><span class="v">Egypt</span></div>
+    <div class="artist-stat-line"><span class="k">Identity</span><span class="v">Masked persona</span></div>
+    <div class="artist-stat-line"><span class="k">Breakthrough</span><span class="v">"Habeeby Leh" (Why My Love) — 2024</span></div>
+    <div class="artist-stat-line"><span class="k">Debut album</span><span class="v">Tesh Shabab — Feb 2024</span></div>
+    <div class="artist-stat-line"><span class="k">Monthly listeners</span><span class="v">1M+ on Spotify</span></div>
+    <div class="artist-stat-line"><span class="k">Known for</span><span class="v">Masked persona · Gen Z themes · mental health</span></div>
+  </aside>
+
+  <main class="artist-prose">
+    <p>Tul8te arrived with a mask and no explanation. Egyptian, anonymous, and writing songs that Egyptian Gen Z recognized immediately as their own inner monologue. His 2024 debut album "Tesh Shabab" — roughly translating to "the energy of youth" — landed in February 2024 as one of the most emotionally direct Arabic albums in recent memory. He writes about anxiety, loneliness, mental health, and the exhaustion of performing happiness for people who don't see you. Young Egyptians heard themselves in it instantly.</p>
+
+    <p>"Habeeby Leh" — Why My Love — became the signature track. Over one million monthly listeners followed. The mask stays on. The music holds.</p>
+  </main>
+</section>
+
+<section class="essentials-band">
+  <div class="essentials-inner">
+    <div>
+      <div class="essentials-head">
+        <p class="page-eyebrow text-gold">Essential tracks <span class="ar-small text-cream-mid">· الأغاني الأساسية</span></p>
+        <h3>The hard-hitters.</h3>
       </div>
-      <a class="embed-cta" href="#">
-        Listen
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </a>
+      <ul class="tracklist">
+        <li><span class="n">01</span><span class="t">Habeeby Leh (Why My Love)</span><span class="y">2024</span></li>
+        <li><span class="n">02</span><span class="t">Tesh Shabab</span><span class="y">2024</span></li>
+        <li><span class="n">03</span><span class="t">El Donia</span><span class="y">2024</span></li>
+        <li><span class="n">04</span><span class="t">Matkhafsh</span><span class="y">2024</span></li>
+        <li><span class="n">05</span><span class="t">Akher El Lail</span><span class="y">2024</span></li>
+        <li><span class="n">06</span><span class="t">El Shareh</span><span class="y">2024</span></li>
+        <li><span class="n">07</span><span class="t">Mesh Ananiya</span><span class="y">2025</span></li>
+      </ul>
+    </div>
+    <div>
+      <div class="essentials-head">
+        <p class="page-eyebrow text-gold">Listen everywhere <span class="ar-small text-cream-mid">· اسمع</span></p>
+        <h3>Do your homework.</h3>
+      </div>
+      <div class="dsp-label">Listen on your platform</div>
+      <div class="dsp-buttons">
+        <a class="dsp-btn spotify" href="#" aria-label="Listen on Spotify">
+          <span class="dsp-btn-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg></span>
+          <span class="dsp-btn-text"><span class="sub">Listen on</span><span class="name">Spotify</span></span>
+        </a>
+        <a class="dsp-btn apple" href="#" aria-label="Listen on Apple Music">
+          <span class="dsp-btn-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.994 6.124a9.23 9.23 0 00-.24-2.19c-.317-1.31-1.062-2.31-2.18-3.043a5.022 5.022 0 00-1.877-.726 10.496 10.496 0 00-1.564-.15c-.04-.003-.083-.01-.124-.013H5.986c-.152.01-.303.017-.455.026C4.273.1 3.044.325 1.93 1.075.7 1.904.058 3.045.013 4.56c-.013.43-.013.859-.013 1.288v12.304c0 .43 0 .858.013 1.288.033 1.517.69 2.656 1.917 3.486 1.117.75 2.345.974 3.6 1.058.153.01.305.017.457.026h12.024c.04-.003.083-.01.124-.013 1.245-.094 2.464-.326 3.569-1.077 1.148-.78 1.812-1.865 2.113-3.203.16-.713.226-1.44.243-2.17.007-.282.013-.565.013-.848.002-4.21.002-8.421 0-12.633V6.124zM17.873 11.67c-.057.45-.225.858-.48 1.22a3.063 3.063 0 01-1.097.95 3.118 3.118 0 01-1.404.333c-.42 0-.82-.086-1.2-.254l-.036.196-.91 5.11c-.052.298-.246.472-.517.448-.24-.023-.39-.198-.348-.49.075-.49.153-.98.23-1.47.374-2.15.75-4.3 1.126-6.45.085-.49.174-.978.263-1.466.087-.48.27-.9.593-1.26.502-.56 1.135-.86 1.87-.94.72-.078 1.426.05 2.074.4.687.37 1.15.94 1.32 1.72.097.447.097.9.016 1.353zM14.93 8.77c-.35.01-.668.12-.968.31-.36.23-.6.55-.69.97l-.42 2.37c-.01.05-.02.11-.04.18l.18.04c.23.08.47.12.71.12.72 0 1.28-.28 1.67-.86.15-.22.24-.47.29-.74.07-.4.04-.77-.13-1.12-.14-.28-.4-.45-.6-.27z"/></svg></span>
+          <span class="dsp-btn-text"><span class="sub">Listen on</span><span class="name">Apple Music</span></span>
+        </a>
+        <a class="dsp-btn youtube" href="#" aria-label="Listen on YouTube Music">
+          <span class="dsp-btn-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.376 0 0 5.376 0 12s5.376 12 12 12 12-5.376 12-12S18.624 0 12 0zm0 19.104c-3.924 0-7.104-3.18-7.104-7.104S8.076 4.896 12 4.896s7.104 3.18 7.104 7.104-3.18 7.104-7.104 7.104zm0-13.332c-3.432 0-6.228 2.796-6.228 6.228S8.568 18.228 12 18.228s6.228-2.796 6.228-6.228S15.432 5.772 12 5.772zM9.684 15.54V8.46L15.816 12l-6.132 3.54z"/></svg></span>
+          <span class="dsp-btn-text"><span class="sub">Listen on</span><span class="name">YouTube Music</span></span>
+        </a>
+        <a class="dsp-btn anghami" href="#" aria-label="Listen on Anghami">
+          <span class="dsp-btn-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm-2.8 17.6c-.8 0-1.5-.3-2-.9-.5-.6-.8-1.3-.7-2.1.1-1.5 1.4-2.7 2.9-2.7h.4V7.5c0-.9.7-1.6 1.6-1.6.9 0 1.6.7 1.6 1.6v7.3c0 1.6-1.3 2.8-2.9 2.8h-.9zm6.3-1.9c-.4-.3-.5-.9-.2-1.3.8-1.1 1.2-2.5 1.2-3.9 0-1.4-.4-2.8-1.2-3.9-.3-.4-.2-1 .2-1.3.4-.3 1-.2 1.3.2 1 1.4 1.6 3.1 1.6 5s-.5 3.6-1.6 5c-.3.3-.9.4-1.3.2z"/></svg></span>
+          <span class="dsp-btn-text"><span class="sub">Listen on</span><span class="name">Anghami</span></span>
+        </a>
+      </div>
+      <p>
+        He lives more on SoundCloud than Spotify. Dig there for the freestyles and the loose cuts. The main catalogue is a starting point.
+      </p>
+      <a class="btn btn-ghost btn-on-dark" href="#">Open the deep-cut playlist →</a>
     </div>
   </div>
 </section>
 
-
-<!-- =========================================================
-     CROSS-LINK FOOTER — see who else plays DAY
-========================================================= -->
-<section class="cross-link">
-  <div class="cross-link-inner">
-    <p class="cross-link-eyebrow">Keep planning</p>
-    <h2 class="cross-link-title">See who else plays Saturday <span class="ar-word">السبت</span></h2>
-    <a class="cross-link-cta" href="./music-entertainment.html#day-sat">
-      View the Saturday lineup
-      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-    </a>
-  </div>
-</section>
-
-
-<!-- =========================================================
-     CLOSING CTA
-========================================================= -->
-<section class="closing-cta">
-  <div class="closing-inner">
-    <div class="closing-eyebrow">Plan your three days</div>
-    <h2 class="closing-title">
-      One weekend. <em>The whole</em> <span class="ar-word">وطن</span>.
-    </h2>
-    <p class="closing-sub">
-      Grab your pass before the crowd does. Early-bird tiers sell out first — and Saturday's PAC Amphitheatre block goes fast.
-    </p>
-    <div class="closing-ctas">
-      <a class="btn-primary heartbeat" href="./tickets.html">Get Tickets</a>
-      <a class="btn-secondary" href="./schedule.html">See the Schedule</a>
+<section class="artist-more">
+  <div class="artist-more-inner">
+    <h3>Also playing Saturday</h3>
+    <div class="artist-more-grid">
+      <article class="lineup-card">
+        <div class="img-placeholder lineup-img">Dystinct · portrait</div>
+        <div class="lineup-body">
+          <p class="lineup-origin">Morocco · Belgium</p>
+          <h4 class="lineup-name">Dystinct</h4>
+          <a href="./artist-dystinct.html" class="lineup-link">See full page →</a>
+        </div>
+      </article>
+      <article class="lineup-card">
+        <div class="img-placeholder lineup-img">Bayou · portrait</div>
+        <div class="lineup-body">
+          <p class="lineup-origin">Egypt · Germany</p>
+          <h4 class="lineup-name">Bayou</h4>
+          <a href="./artist-bayou.html" class="lineup-link">See full page →</a>
+        </div>
+      </article>
+      <article class="lineup-card">
+        <div class="img-placeholder lineup-img">Full lineup</div>
+        <div class="lineup-body">
+          <p class="lineup-origin">All weekend</p>
+          <h4 class="lineup-name">See everyone</h4>
+          <a href="./talents.html" class="lineup-link">Full lineup →</a>
+        </div>
+      </article>
     </div>
   </div>
 </section>
 
-
-<!-- =========================================================
-     FOOTER
-========================================================= -->
 <footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <img src="./assets/images/Logo.webp" alt="OC MENA Festival">
-        <span class="footer-brand-ar">مهرجان أورنج كاونتي</span>
-        <p class="footer-tagline">June 19–21, 2026<br>OC Fairgrounds, Costa Mesa CA</p>
+  <div class="footer-cta-strip">
+    <p class="footer-cta-text">Want your brand in front of 60,000+ fans this summer?</p>
+    <div class="footer-cta-actions">
+      <a class="btn btn-red" href="./tickets.html">Buy Tickets</a>
+      <a class="btn btn-red-ghost" href="./sponsors.html">Become a Sponsor</a>
+    </div>
+  </div>
+  <div class="footer-cols">
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="./about.html">About</a>
+      <a href="./what-is-mena.html">What is MENA?</a>
+      <a href="./faq.html">FAQ</a>
+      <a href="#">My Account</a>
+      <a href="./contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Event Info</h4>
+      <a href="./lineup.html">Festival</a>
+      <a href="./lineup.html">Music &amp; Entertainment</a>
+      <a href="./sponsors.html">Sponsors</a>
+      <a href="./partners.html">Partners</a>
+      <a href="./vendors.html">Vendors</a>
+      <a href="./map.html">Maps &amp; Directions</a>
+      <a href="./map.html">Event Map</a>
+      <a href="./schedule.html">Event Schedule</a>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="#">Privacy Policy</a>
+      <a href="#">CA Privacy Policy</a>
+      <a href="#">Accessibility / ADA</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">Ticket Terms</a>
+    </div>
+    <div class="footer-col">
+      <h4>Follow Us</h4>
+      <div class="footer-social-icons">
+        <a href="#" aria-label="Instagram">&#x1F4F7;</a>
+        <a href="#" aria-label="TikTok">&#x266B;</a>
+        <a href="#" aria-label="YouTube">&#x25B6;</a>
+        <a href="#" aria-label="Facebook">&#x1F426;</a>
+        <a href="#" aria-label="X">&#x2715;</a>
+        <a href="#" aria-label="Snapchat">&#x1F47B;</a>
       </div>
-
-      <div class="footer-col">
-        <h4>Event</h4>
-        <a href="./music-entertainment.html">Music &amp; Entertainment</a>
-        <a href="./schedule.html">Schedule</a>
-        <a href="./map.html">Map</a>
-        <a href="./tickets.html">Tickets</a>
-      </div>
-
-      <div class="footer-col">
-        <h4>Experience</h4>
-        <a href="./experience-food-bazaar.html">Food &amp; Bazaar</a>
-        <a href="./experience-rides.html">Rides &amp; Family</a>
-        <a href="./experience-stages.html">Stages</a>
-      </div>
-
-      <div class="footer-col">
-        <h4>About</h4>
-        <a href="./about.html">Our Story</a>
-        <a href="./what-is-mena.html">What is MENA</a>
-        <a href="./info.html">Festival Info</a>
-        <a href="./faq.html">FAQ</a>
-      </div>
-
-      <div class="footer-col">
-        <h4>Business</h4>
-        <a href="./sponsors.html">Sponsors</a>
-        <a href="./vendors.html">Vendors</a>
-        <a href="./partners.html">Partners &amp; Affiliates</a>
-        <a href="./contact.html">Contact</a>
+      <div class="footer-newsletter">
+        <p>Join our newsletter and stay informed!</p>
+        <form onsubmit="return false;">
+          <input type="email" placeholder="email@email.com">
+          <button type="submit">&#x27A1;</button>
+        </form>
       </div>
     </div>
-
-    <div class="footer-bottom">
-      <span>© 2026 OC MENA Festival. All rights reserved.</span>
-      <div class="footer-social">
-        <a href="https://instagram.com/ocmenafestival" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://tiktok.com/@ocmenafestival" target="_blank" rel="noopener">TikTok</a>
-        <a href="https://twitter.com/ocmenafestival" target="_blank" rel="noopener">X / Twitter</a>
-        <a href="https://facebook.com/ocmenafestival" target="_blank" rel="noopener">Facebook</a>
-      </div>
-    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025&ndash;2026 OC MENA Festival. All rights reserved.</p>
+    <p>
+      <a href="#">Privacy</a> &nbsp;&middot;&nbsp;
+      <a href="#">Terms</a> &nbsp;&middot;&nbsp;
+      <a href="#">Accessibility / ADA</a>
+    </p>
   </div>
 </footer>
 
+</div><!-- /page-container -->
 
-<!-- =========================================================
-     SCRIPTS
-========================================================= -->
-<script>
-  const nav = document.getElementById('mainNav');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 40);
-  }, { passive: true });
-
-  const burger = document.getElementById('navBurger');
-  const mobileMenu = document.getElementById('mobileMenu');
-  burger.addEventListener('click', () => {
-    const open = mobileMenu.classList.toggle('is-open');
-    burger.textContent = open ? '✕' : '☰';
-    document.body.style.overflow = open ? 'hidden' : '';
-  });
-</script>
-
+<script src="./assets/js/site.js?v=ship-20260422-fontfix" defer></script>
 </body>
 </html>

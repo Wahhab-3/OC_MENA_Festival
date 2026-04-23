@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Block backups, source maps, and dev artifacts
+Disallow: /*.bak
+Disallow: /*.bak.pre-shared-apply
+Disallow: /*.bak.pre-seo
+Disallow: /_shared/
+
+Sitemap: https://ocmenafestival.com/sitemap.xml

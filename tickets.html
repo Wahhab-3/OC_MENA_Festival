@@ -1,631 +1,309 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tickets — OC MENA Festival</title>
-  <meta name="description" content="OC MENA Festival tickets drop soon. Sign up to be first in line. June 19–21, 2026 · OC Fairgrounds, Costa Mesa CA.">
-  <link rel="icon" type="image/png" href="./assets/images/favicon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
-  <style>
-    @font-face {
-      font-family: 'Aldhabi';
-      src: url('./assets/fonts/aldhabi.ttf') format('truetype');
-      font-weight: normal;
-      font-display: swap;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    :root {
-      --cream:      #fff8f4;
-      --sand:       #fff1e4;
-      --sand-deep:  #ffe4c2;
-      --ink:        #281801;
-      --ink-soft:   #5c403c;
-      --red:        #dc2626;
-      --red-deep:   #b70011;
-      --maroon:     #930046;
-      --maroon-ink: #66002f;
-      --gold:       #f5c842;
-      --gold-deep:  #d0a61e;
+<title>Tickets — OC MENA Festival 2026</title>
+<meta name="description" content="Buy tickets for OC MENA Festival 2026 — single-day, 3-day, family bundles, and Pacific Amphitheatre upgrades. June 19–21, Orange County, CA.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#DC2F3F">
+<link rel="canonical" href="https://ocmenafestival.com/tickets.html">
 
-      --maxw:   1200px;
-      --pad:    clamp(1.25rem, 5vw, 3rem);
-      --nav-h:  72px;
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="./assets/images/favicon.png">
+<link rel="apple-touch-icon" href="./assets/images/favicon.png">
 
-      --fs-display: clamp(2.75rem, 6vw, 5.5rem);
-      --fs-h1:      clamp(2rem, 4vw, 3.5rem);
-      --fs-h2:      clamp(1.5rem, 2.5vw, 2.25rem);
-      --fs-h3:      clamp(1.125rem, 1.5vw, 1.375rem);
-      --fs-body:    1rem;
-      --fs-meta:    0.8125rem;
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="OC MENA Festival">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://ocmenafestival.com/tickets.html">
+<meta property="og:title" content="Tickets — OC MENA Festival 2026">
+<meta property="og:description" content="Buy tickets for OC MENA Festival 2026 — single-day, 3-day, family bundles, and Pacific Amphitheatre upgrades. June 19–21, Orange County, CA.">
+<meta property="og:image" content="https://ocmenafestival.com/assets/images/hero-crowd.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="OC MENA Festival — June 19–21, 2026, Orange County, CA">
 
-      --r-sm:  0.5rem;
-      --r-md:  0.75rem;
-      --r-lg:  1rem;
-      --r-xl:  1.5rem;
-    }
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tickets — OC MENA Festival 2026">
+<meta name="twitter:description" content="Buy tickets for OC MENA Festival 2026 — single-day, 3-day, family bundles, and Pacific Amphitheatre upgrades. June 19–21, Orange County, CA.">
+<meta name="twitter:image" content="https://ocmenafestival.com/assets/images/hero-crowd.webp">
+<meta name="twitter:image:alt" content="OC MENA Festival — June 19–21, 2026, Orange County, CA">
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      background: var(--cream);
-      color: var(--ink);
-      font-family: 'Inter', system-ui, sans-serif;
-      font-size: var(--fs-body);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-    button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    .ar { font-family: 'Aldhabi', serif; font-weight: normal; font-size: 1.7em; line-height: 1; vertical-align: baseline; }
-    .ar-word { font-family: 'Aldhabi', serif; font-weight: normal; font-size: 1.7em; line-height: 1; vertical-align: baseline; font-style: normal; }
+<!-- Styles -->
+<link rel="stylesheet" href="./assets/css/site.css?v=ship-20260422-fontfix">
 
-    /* ===== BUTTONS ===== */
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: var(--maroon);
-      color: var(--cream);
-      padding: 0.75rem 1.4rem;
-      border-radius: var(--r-xl) var(--r-sm);
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      box-shadow: 0 6px 16px -8px rgba(102, 0, 47, 0.6);
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-    }
-    .btn-primary:hover {
-      background: var(--maroon-ink);
-      transform: translateY(-1px);
-      box-shadow: 0 10px 22px -8px rgba(102, 0, 47, 0.7);
-    }
-    .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: transparent;
-      color: var(--ink);
-      padding: 0.7rem 1.3rem;
-      border-radius: var(--r-xl) var(--r-sm);
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      box-shadow: inset 0 0 0 1.5px var(--ink);
-      transition: background 0.2s ease, color 0.2s ease;
-    }
-    .btn-secondary:hover { background: var(--ink); color: var(--cream); }
-
-    /* Heartbeat — gold pulse on dark hero */
-    @keyframes heartbeat-gold {
-      0%, 100% { box-shadow: 0 6px 16px -8px rgba(245, 200, 66, 0.6), 0 0 0 0 rgba(245, 200, 66, 0.45); }
-      50%      { box-shadow: 0 6px 16px -8px rgba(245, 200, 66, 0.8), 0 0 0 14px rgba(245, 200, 66, 0); }
-    }
-    .heartbeat-gold { animation: heartbeat-gold 2.4s ease-in-out infinite; }
-
-    /* ===== NAV ===== */
-    .nav {
-      position: fixed; top: 0; left: 0; right: 0;
-      height: var(--nav-h);
-      display: flex; align-items: center;
-      padding: 0 var(--pad);
-      gap: 1.5rem;
-      background: rgba(255, 248, 244, 0.86);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      box-shadow: 0 1px 0 rgba(40, 24, 1, 0.06);
-      z-index: 100;
-      transition: box-shadow 0.2s ease, background 0.2s ease;
-    }
-    .nav.scrolled { box-shadow: 0 6px 24px -12px rgba(40, 24, 1, 0.18); }
-    .nav-logo { display: flex; align-items: center; }
-    .nav-links {
-      display: flex; gap: 1.5rem;
-      list-style: none;
-      flex: 1;
-      align-items: center;
-    }
-    .nav-links a {
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: var(--ink);
-      padding: 0.5rem 0;
-      position: relative;
-      transition: color 0.2s ease;
-    }
-    .nav-links a:hover { color: var(--maroon); }
-    .nav-links a.is-active { color: var(--maroon); font-weight: 600; }
-    .nav-links a.is-active::after {
-      content: '';
-      position: absolute; left: 0; right: 0; bottom: -2px;
-      height: 2px;
-      background: var(--maroon);
-      border-radius: 2px;
-    }
-    .nav-dropdown { position: relative; }
-    .nav-dropdown-menu {
-      position: absolute; top: 100%; left: -0.75rem;
-      background: var(--cream);
-      border-radius: var(--r-md);
-      padding: 0.5rem;
-      box-shadow: 0 12px 32px -10px rgba(40, 24, 1, 0.22);
-      min-width: 200px;
-      opacity: 0; pointer-events: none;
-      transform: translateY(-6px);
-      transition: opacity 0.18s ease, transform 0.18s ease;
-    }
-    .nav-dropdown:hover .nav-dropdown-menu { opacity: 1; pointer-events: auto; transform: translateY(0); }
-    .nav-dropdown-menu a {
-      display: block; padding: 0.5rem 0.75rem;
-      border-radius: var(--r-sm);
-      font-size: 0.875rem;
-    }
-    .nav-dropdown-menu a:hover { background: var(--sand); }
-    .nav-cta { font-size: 0.875rem; padding: 0.55rem 1rem; }
-    .nav-burger { display: none; font-size: 1.5rem; padding: 0.25rem 0.5rem; }
-    .mobile-menu {
-      display: none;
-      position: fixed; top: var(--nav-h); left: 0; right: 0;
-      background: var(--cream);
-      padding: 1.5rem var(--pad) 2rem;
-      flex-direction: column;
-      gap: 0.25rem;
-      z-index: 99;
-      box-shadow: 0 12px 32px -12px rgba(40, 24, 1, 0.22);
-    }
-    .mobile-menu.is-open { display: flex; }
-    .mobile-menu a {
-      padding: 0.85rem 0.5rem;
-      font-size: 1rem;
-      font-weight: 500;
-    }
-    .mobile-cta { margin-top: 1rem; justify-content: center; }
-
-    @media (max-width: 900px) {
-      .nav-links, .nav-cta { display: none; }
-      .nav-burger { display: inline-flex; }
-    }
-
-    /* ===== MAIN — Coming Soon ===== */
-    main {
-      flex: 1;
-      padding-top: var(--nav-h);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .cs-hero {
-      flex: 1;
-      position: relative;
-      padding: clamp(3rem, 8vw, 6rem) var(--pad);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      isolation: isolate;
-    }
-    .cs-hero__bg {
-      position: absolute; inset: 0;
-      background:
-        radial-gradient(ellipse at 30% 20%, rgba(245, 200, 66, 0.18), transparent 55%),
-        radial-gradient(ellipse at 75% 80%, rgba(220, 38, 38, 0.22), transparent 55%),
-        linear-gradient(160deg, var(--maroon-ink) 0%, var(--maroon) 55%, #7a003a 100%);
-      z-index: -2;
-    }
-    .cs-hero__grain {
-      position: absolute; inset: 0;
-      background-image:
-        repeating-linear-gradient(45deg, rgba(255, 248, 244, 0.025) 0 1px, transparent 1px 8px),
-        repeating-linear-gradient(-45deg, rgba(40, 24, 1, 0.04) 0 1px, transparent 1px 8px);
-      z-index: -1;
-      opacity: 0.6;
-    }
-
-    .cs-card {
-      max-width: 720px;
-      width: 100%;
-      background: rgba(255, 248, 244, 0.06);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      border-radius: var(--r-xl) var(--r-sm) var(--r-xl) var(--r-sm);
-      padding: clamp(2rem, 5vw, 3.5rem);
-      box-shadow:
-        inset 0 0 0 1.5px rgba(245, 200, 66, 0.35),
-        0 24px 60px -20px rgba(0, 0, 0, 0.4);
-      text-align: center;
-      color: var(--cream);
-    }
-
-    .cs-eyebrow {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.35rem;
-      margin-bottom: 1.5rem;
-    }
-    .cs-eyebrow-ar {
-      font-family: 'Aldhabi', serif;
-      font-weight: normal;
-      color: var(--gold);
-      line-height: 1;
-      font-size: clamp(4rem, 10vw, 100px);
-    }
-    .cs-eyebrow-en {
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.32em;
-      text-transform: uppercase;
-      color: rgba(255, 248, 244, 0.78);
-    }
-
-    .cs-title {
-      font-family: 'Newsreader', serif;
-      font-size: clamp(2.25rem, 5vw, 3.75rem);
-      font-weight: 400;
-      line-height: 1.05;
-      letter-spacing: -0.01em;
-      margin-bottom: 1.25rem;
-    }
-    .cs-title em {
-      font-style: italic;
-      color: var(--gold);
-    }
-
-    .cs-sub {
-      font-size: clamp(1rem, 1.5vw, 1.15rem);
-      line-height: 1.65;
-      color: rgba(255, 248, 244, 0.88);
-      margin-bottom: 2rem;
-      max-width: 540px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .cs-meta {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.6rem;
-      margin-bottom: 2rem;
-    }
-    .cs-pill {
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--gold);
-      padding: 0.45rem 0.95rem;
-      border-radius: 999px;
-      box-shadow: inset 0 0 0 1.5px rgba(245, 200, 66, 0.45);
-    }
-
-    .cs-actions {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.85rem;
-    }
-    .cs-actions .btn-primary {
-      background: var(--gold);
-      color: var(--maroon-ink);
-    }
-    .cs-actions .btn-primary:hover {
-      background: var(--gold-deep);
-      color: var(--maroon-ink);
-    }
-    .cs-actions .btn-secondary {
-      color: var(--cream);
-      box-shadow: inset 0 0 0 1.5px rgba(255, 248, 244, 0.5);
-    }
-    .cs-actions .btn-secondary:hover {
-      background: rgba(255, 248, 244, 0.1);
-      color: var(--cream);
-    }
-
-    .cs-divider {
-      margin: 2rem auto;
-      width: 60px;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--gold), transparent);
-      border-radius: 999px;
-    }
-
-    .cs-form {
-      display: flex;
-      gap: 0.6rem;
-      max-width: 440px;
-      margin: 0 auto;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    .cs-form input[type="email"] {
-      flex: 1;
-      min-width: 220px;
-      padding: 0.75rem 1rem;
-      border-radius: var(--r-md);
-      border: none;
-      background: rgba(255, 248, 244, 0.95);
-      color: var(--ink);
-      font: inherit;
-      font-size: 0.95rem;
-      box-shadow: inset 0 0 0 1.5px rgba(245, 200, 66, 0.3);
-    }
-    .cs-form input[type="email"]::placeholder { color: var(--ink-soft); }
-    .cs-form input[type="email"]:focus {
-      outline: none;
-      box-shadow: inset 0 0 0 2px var(--gold);
-    }
-    .cs-form button {
-      background: var(--gold);
-      color: var(--maroon-ink);
-      padding: 0.75rem 1.4rem;
-      border-radius: var(--r-md);
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      transition: background 0.2s ease;
-    }
-    .cs-form button:hover { background: var(--gold-deep); }
-
-    .cs-fineprint {
-      margin-top: 1rem;
-      font-size: 0.78rem;
-      color: rgba(255, 248, 244, 0.55);
-      letter-spacing: 0.04em;
-    }
-
-    /* ===== FOOTER ===== */
-    .footer {
-      background: var(--ink);
-      color: var(--cream);
-      padding: clamp(2.5rem, 5vw, 4rem) var(--pad) 2rem;
-    }
-    .footer-inner { max-width: var(--maxw); margin: 0 auto; }
-    .footer-top {
-      display: grid;
-      grid-template-columns: 1.4fr repeat(4, 1fr);
-      gap: 2.5rem;
-      padding-bottom: 2.5rem;
-      border-bottom: 1.5px solid rgba(255, 248, 244, 0.12);
-    }
-    @media (max-width: 900px) {
-      .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
-    }
-    @media (max-width: 560px) {
-      .footer-top { grid-template-columns: 1fr; }
-    }
-    .footer-brand img { width: 64px; height: 64px; margin-bottom: 0.75rem; }
-    .footer-brand-ar {
-      font-family: 'Aldhabi', serif;
-      font-size: 1.85rem;
-      color: var(--gold);
-      display: block;
-      line-height: 1;
-      margin-bottom: 0.6rem;
-    }
-    .footer-tagline {
-      font-size: 0.85rem;
-      color: rgba(255, 248, 244, 0.7);
-      line-height: 1.5;
-    }
-    .footer-col h4 {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1rem;
-    }
-    .footer-col a {
-      display: block;
-      font-size: 0.9rem;
-      color: rgba(255, 248, 244, 0.78);
-      padding: 0.3rem 0;
-      transition: color 0.2s ease;
-    }
-    .footer-col a:hover { color: var(--cream); }
-    .footer-bottom {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-top: 1.5rem;
-      flex-wrap: wrap;
-      gap: 1rem;
-      font-size: 0.82rem;
-      color: rgba(255, 248, 244, 0.55);
-    }
-    .footer-social { display: flex; gap: 1.25rem; }
-    .footer-social a { color: rgba(255, 248, 244, 0.7); transition: color 0.2s ease; }
-    .footer-social a:hover { color: var(--gold); }
-  </style>
+<!-- Structured data -->
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Tickets at OC MENA Festival", "url": "https://ocmenafestival.com/tickets.html", "description": "Buy tickets for OC MENA Festival 2026 — single-day, 3-day, family bundles, and Pacific Amphitheatre upgrades. June 19–21, Orange County, CA.", "isPartOf": {"@type": "WebSite", "name": "OC MENA Festival", "url": "https://ocmenafestival.com/"}}</script>
 </head>
+<body data-nav="light">
 
-<body>
+<!-- FIXED VIDEO BACKGROUND -->
+<div class="video-bg-fixed">
+  <video autoplay muted loop playsinline preload="auto">
+    <source src="./assets/hero-final.mp4" type="video/mp4">
+  </video>
+</div>
 
-<!-- =========================================================
-     NAV
-========================================================= -->
-<header class="nav" id="mainNav">
-  <a class="nav-logo" href="./index.html">
-    <img src="./assets/images/Logo.webp" alt="OC MENA Festival" style="width: 66px; height: 66px">
-  </a>
+<!-- ANNOUNCEMENT BAR -->
+<div class="nav-announcement">June 19-21, 2026 &mdash; OC Fairgrounds &mdash; Middle East &amp; North Africa (MENA) Festival!</div>
 
-  <ul class="nav-links">
-    <li><a href="./music-entertainment.html">Music &amp; Entertainment</a></li>
-    <li><a href="./schedule.html">Schedule</a></li>
-    <li><a href="./map.html">Map</a></li>
-    <li class="nav-dropdown">
-      <a href="#">Experience</a>
-      <div class="nav-dropdown-menu">
-        <a href="./experience-food-bazaar.html">Food &amp; Bazaar</a>
-        <a href="./experience-rides.html">Rides &amp; Family</a>
-        <a href="./experience-stages.html">Stages</a>
+<!-- NAV -->
+<header class="nav">
+  <a class="brand" href="./index.html"><img class="brand-logo" src="./assets/images/Logo.webp" alt="OC MENA Festival"></a>
+  <nav class="nav-links">
+    <div class="nav-drop">
+      <a href="#">Festival <span class="caret">&#9662;</span></a>
+      <div class="nav-drop-menu">
+        <a href="./about.html">About</a>
+        <a href="./info.html">Festival Info</a>
+        <a href="./map.html">Map</a>
+        <a href="./schedule.html">Schedule</a>
       </div>
-    </li>
-    <li><a href="./about.html">About</a></li>
-    <li><a href="./info.html">Info</a></li>
-    <li class="nav-dropdown">
-      <a href="#">For Partners</a>
-      <div class="nav-dropdown-menu">
-        <a href="./sponsors.html">Sponsors</a>
-        <a href="./vendors.html">Vendors</a>
-        <a href="./partners.html">Partners &amp; Affiliates</a>
-      </div>
-    </li>
-    <li><a href="./contact.html">Contact</a></li>
-  </ul>
-
-  <a class="btn-primary nav-cta is-active" href="./tickets.html">Get Tickets</a>
-  <button class="nav-burger" id="navBurger" aria-label="Open menu">☰</button>
+    </div>
+    <a href="./lineup.html">Music &amp; Entertainment</a>
+    <a href="./vendors.html">Vendors</a>
+    <a href="./sponsors.html">Sponsors</a>
+    <a href="./faq.html">FAQ</a>
+    <a href="./contact.html">Contact</a>
+  </nav>
+  <a class="nav-cta nav-cta-ghost" href="./sponsors.html">Become a Sponsor</a>
+  <a class="nav-cta" href="./tickets.html">Get Tickets</a>
+  <div class="nav-icons">
+    <a class="nav-icon" href="#" aria-label="Account">&#9786;</a>
+    <a class="nav-icon" href="#" aria-label="Cart">&#128722;<span class="badge">0</span></a>
+  </div>
+  <button class="nav-burger" aria-label="Menu">&#9776;</button>
 </header>
 
-<nav class="mobile-menu" id="mobileMenu">
-  <a href="./music-entertainment.html">Music &amp; Entertainment</a>
-  <a href="./schedule.html">Schedule</a>
-  <a href="./map.html">Map</a>
-  <a href="./experience-food-bazaar.html">Food &amp; Bazaar</a>
-  <a href="./experience-rides.html">Rides &amp; Family</a>
-  <a href="./experience-stages.html">Stages</a>
-  <a href="./about.html">About</a>
-  <a href="./info.html">Info</a>
-  <a href="./sponsors.html">Sponsors</a>
-  <a href="./vendors.html">Vendors</a>
-  <a href="./contact.html">Contact</a>
-  <a class="btn-primary mobile-cta" href="./tickets.html">Get Tickets</a>
-</nav>
+<!-- PAGE HEAD sits on video, no plate -->
+<section class="page-head page-hero-on-video">
+  <p class="page-eyebrow on-video">Tickets <span class="ar-small">· التذاكر</span></p>
+  <h1 class="page-title on-video">
+    <span class="pt-ar">التذاكر</span>
+    <span class="pt-en">Pick your day. Pick your energy.</span>
+  </h1>
+</section>
 
+<!-- WHITE CARD STARTS HERE -->
+<div class="page-container">
 
-<!-- =========================================================
-     COMING SOON HERO
-========================================================= -->
-<main>
-  <section class="cs-hero">
-    <div class="cs-hero__bg"></div>
-    <div class="cs-hero__grain"></div>
-
-    <div class="cs-card">
-      <div class="cs-eyebrow">
-        <span class="cs-eyebrow-ar">تذاكر</span>
-        <span class="cs-eyebrow-en">Tickets</span>
+<section class="tickets-intro">
+  <div class="tickets-intro-inner">
+    <p class="page-lede">Three days, three ways in. A festival day pass gets you the grounds, the Festival Stage, the bazaar, the food court, and the rides. An amphitheatre upgrade adds your seat to the headliner. The weekend pass covers all three. Children three and under are free every day.</p>
+    <div class="tickets-quickfacts">
+      <div>
+        <p class="qf-label">Kids</p>
+        <p class="qf-value">3 &amp; under free</p>
       </div>
-
-      <h1 class="cs-title">
-        The drop is <em>almost here.</em>
-      </h1>
-
-      <p class="cs-sub">
-        Three-day passes, single-day tickets, family bundles, and VIP suites for the Pacific Amphitheatre go on sale soon. Be the first to know — leave your email and we'll send the link the moment the gates open.
-      </p>
-
-      <div class="cs-meta">
-        <span class="cs-pill">June 19 · 20 · 21, 2026</span>
-        <span class="cs-pill">Costa Mesa, CA</span>
+      <div>
+        <p class="qf-label">Re-entry</p>
+        <p class="qf-value">Same-day with wristband</p>
       </div>
-
-      <div class="cs-divider"></div>
-
-      <form class="cs-form" id="notifyForm">
-        <input type="email" placeholder="your@email.com" required aria-label="Email address">
-        <button type="submit" class="heartbeat-gold">Notify me</button>
-      </form>
-      <p class="cs-fineprint">No spam. One email when tickets go live, then quiet until the festival.</p>
-    </div>
-  </section>
-</main>
-
-
-<!-- =========================================================
-     FOOTER
-========================================================= -->
-<footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <img src="./assets/images/Logo.webp" alt="OC MENA Festival">
-        <span class="footer-brand-ar">مهرجان أورنج كاونتي</span>
-        <p class="footer-tagline">June 19–21, 2026<br>OC Fairgrounds, Costa Mesa CA</p>
+      <div>
+        <p class="qf-label">ADA</p>
+        <p class="qf-value">Accessible throughout</p>
       </div>
-
-      <div class="footer-col">
-        <h4>Event</h4>
-        <a href="./music-entertainment.html">Music &amp; Entertainment</a>
-        <a href="./schedule.html">Schedule</a>
-        <a href="./map.html">Map</a>
-        <a href="./tickets.html">Tickets</a>
-      </div>
-
-      <div class="footer-col">
-        <h4>Experience</h4>
-        <a href="./experience-food-bazaar.html">Food &amp; Bazaar</a>
-        <a href="./experience-rides.html">Rides &amp; Family</a>
-        <a href="./experience-stages.html">Stages</a>
-      </div>
-
-      <div class="footer-col">
-        <h4>About</h4>
-        <a href="./about.html">Our Story</a>
-        <a href="./what-is-mena.html">What is MENA</a>
-        <a href="./info.html">Festival Info</a>
-        <a href="./faq.html">FAQ</a>
-      </div>
-
-      <div class="footer-col">
-        <h4>Business</h4>
-        <a href="./sponsors.html">Sponsors</a>
-        <a href="./vendors.html">Vendors</a>
-        <a href="./partners.html">Partners &amp; Affiliates</a>
-        <a href="./contact.html">Contact</a>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <span>© 2026 OC MENA Festival. All rights reserved.</span>
-      <div class="footer-social">
-        <a href="https://instagram.com/ocmenafestival" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://tiktok.com/@ocmenafestival" target="_blank" rel="noopener">TikTok</a>
-        <a href="https://twitter.com/ocmenafestival" target="_blank" rel="noopener">X / Twitter</a>
-        <a href="https://facebook.com/ocmenafestival" target="_blank" rel="noopener">Facebook</a>
+      <div>
+        <p class="qf-label">Box office</p>
+        <p class="qf-value">Official only</p>
       </div>
     </div>
   </div>
+</section>
+
+<section class="tier-grid">
+
+  <article class="tier-card">
+    <p class="tier-tag">Day Pass</p>
+    <h2 class="tier-name">Single-Day Festival</h2>
+    <p class="tier-ar">يوم واحد</p>
+    <p class="tier-price">from $—</p>
+    <p class="tier-price-note">Price set by box office</p>
+    <ul class="tier-includes">
+      <li>General admission — festival grounds, all day</li>
+      <li>Festival Stage + Indoor Stage access</li>
+      <li>Bazaar, food court, artisan souq</li>
+      <li>Carnival rides &amp; family lounge</li>
+      <li>Pick your day: Fri, Sat, or Sun</li>
+    </ul>
+    <a class="tier-cta" href="#box-office">Get a day pass →</a>
+  </article>
+
+  <article class="tier-card is-featured">
+    <p class="tier-tag">Best value</p>
+    <h2 class="tier-name">3-Day Weekend Pass</h2>
+    <p class="tier-ar">ثلاثة أيام</p>
+    <p class="tier-price">from $—</p>
+    <p class="tier-price-note">Price set by box office</p>
+    <ul class="tier-includes">
+      <li>All three days of festival grounds</li>
+      <li>Festival Stage + Indoor Stage — every night</li>
+      <li>Full bazaar + food + rides, all weekend</li>
+      <li>Priority re-entry line</li>
+      <li>Upgradeable to PAC AMP seating</li>
+    </ul>
+    <a class="tier-cta heartbeat" href="#box-office">Get the weekend pass →</a>
+  </article>
+
+  <article class="tier-card">
+    <p class="tier-tag">Headliners</p>
+    <h2 class="tier-name">PAC Amphitheatre Upgrade</h2>
+    <p class="tier-ar">ترقية المدرج</p>
+    <p class="tier-price">add-on $—</p>
+    <p class="tier-price-note">Requires festival ticket</p>
+    <ul class="tier-includes">
+      <li>Reserved seat at the Pacific Amphitheatre</li>
+      <li>Sat: Dystinct · Tul8te · Bayou</li>
+      <li>Sun: Mohammed Assaf · Dana Salah · Issam</li>
+      <li>Sightlines tiered: orchestra, loge, terrace</li>
+      <li>Add to any day pass or weekend pass</li>
+    </ul>
+    <a class="tier-cta" href="#box-office">Upgrade your seat →</a>
+  </article>
+
+  <article class="tier-card">
+    <p class="tier-tag">Family</p>
+    <h2 class="tier-name">Family Bundle</h2>
+    <p class="tier-ar">حزمة العائلة</p>
+    <p class="tier-price">from $—</p>
+    <p class="tier-price-note">2 adults + 2 children (4–12)</p>
+    <ul class="tier-includes">
+      <li>Four festival day passes, one day of your choice</li>
+      <li>Family lounge access + stroller parking</li>
+      <li>Ride tokens included (20 per bundle)</li>
+      <li>Dedicated family entrance lane</li>
+      <li>Add additional kids at a reduced rate</li>
+    </ul>
+    <a class="tier-cta" href="#box-office">Get the family bundle →</a>
+  </article>
+
+  <article class="tier-card">
+    <p class="tier-tag">VIP</p>
+    <h2 class="tier-name">VIP Pass</h2>
+    <p class="tier-ar">كبار الشخصيات</p>
+    <p class="tier-price">from $—</p>
+    <p class="tier-price-note">Limited inventory</p>
+    <ul class="tier-includes">
+      <li>All weekend, all stages — including PAC AMP</li>
+      <li>VIP lounge with open-bar mocktails + mezze</li>
+      <li>Expedited entry + dedicated ride-share drop</li>
+      <li>Reserved premium Amphitheatre seating</li>
+      <li>Commemorative credential &amp; merch drop</li>
+    </ul>
+    <a class="tier-cta" href="#box-office">Go VIP →</a>
+  </article>
+
+  <article class="tier-card">
+    <p class="tier-tag">Access</p>
+    <h2 class="tier-name">ADA &amp; Companion</h2>
+    <p class="tier-ar">الوصول</p>
+    <p class="tier-price">same price</p>
+    <p class="tier-price-note">At every tier above</p>
+    <ul class="tier-includes">
+      <li>ADA seating at the Pacific Amphitheatre</li>
+      <li>Accessible paths across the grounds</li>
+      <li>Companion ticket at no extra charge</li>
+      <li>Sensory-friendly quiet room on site</li>
+      <li>Email our access team to arrange</li>
+    </ul>
+    <a class="tier-cta" href="./contact.html">Request access →</a>
+  </article>
+
+</section>
+
+<section class="tickets-notes" id="box-office">
+  <div class="tickets-notes-inner">
+    <div class="note-block">
+      <h4>Official box office only</h4>
+      <p>All tickets are sold through the OC Fair &amp; Event Center's official ticketing partner. Buying from resellers or unverified social posts puts you at risk of counterfeit wristbands. If it's not on ocmenafestival.com or the fairgrounds box office — it's not real.</p>
+    </div>
+    <div class="note-block">
+      <h4>What a festival ticket includes</h4>
+      <p>Every festival day pass includes full grounds access, the Festival Stage, the Indoor Stage, the bazaar, food court, artisan souq, rides, and family lounge. The only thing it does <em>not</em> include is a reserved seat at the Pacific Amphitheatre — that's the upgrade.</p>
+    </div>
+    <div class="note-block">
+      <h4>Why the Amphitheatre is separate</h4>
+      <p>The Pacific Amphitheatre is an 8,500-seat venue inside the fairgrounds with reserved seating. We've structured ticketing so every Amp seat guarantees a sightline — and so festival-only guests still get an incredible weekend at a fair price.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-cta-strip">
+    <p class="footer-cta-text">Want your brand in front of 60,000+ fans this summer?</p>
+    <div class="footer-cta-actions">
+      <a class="btn btn-red" href="./tickets.html">Buy Tickets</a>
+      <a class="btn btn-red-ghost" href="./sponsors.html">Become a Sponsor</a>
+    </div>
+  </div>
+  <div class="footer-cols">
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="./about.html">About</a>
+      <a href="./what-is-mena.html">What is MENA?</a>
+      <a href="./faq.html">FAQ</a>
+      <a href="#">My Account</a>
+      <a href="./contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Event Info</h4>
+      <a href="./lineup.html">Festival</a>
+      <a href="./lineup.html">Music &amp; Entertainment</a>
+      <a href="./sponsors.html">Sponsors</a>
+      <a href="./partners.html">Partners</a>
+      <a href="./vendors.html">Vendors</a>
+      <a href="./map.html">Maps &amp; Directions</a>
+      <a href="./map.html">Event Map</a>
+      <a href="./schedule.html">Event Schedule</a>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="#">Privacy Policy</a>
+      <a href="#">CA Privacy Policy</a>
+      <a href="#">Accessibility / ADA</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">Ticket Terms</a>
+    </div>
+    <div class="footer-col">
+      <h4>Follow Us</h4>
+      <div class="footer-social-icons">
+        <a href="#" aria-label="Instagram">&#x1F4F7;</a>
+        <a href="#" aria-label="TikTok">&#x266B;</a>
+        <a href="#" aria-label="YouTube">&#x25B6;</a>
+        <a href="#" aria-label="Facebook">&#x1F426;</a>
+        <a href="#" aria-label="X">&#x2715;</a>
+        <a href="#" aria-label="Snapchat">&#x1F47B;</a>
+      </div>
+      <div class="footer-newsletter">
+        <p>Join our newsletter and stay informed!</p>
+        <form onsubmit="return false;">
+          <input type="email" placeholder="email@email.com">
+          <button type="submit">&#x27A1;</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025&ndash;2026 OC MENA Festival. All rights reserved.</p>
+    <p>
+      <a href="#">Privacy</a> &nbsp;&middot;&nbsp;
+      <a href="#">Terms</a> &nbsp;&middot;&nbsp;
+      <a href="#">Accessibility / ADA</a>
+    </p>
+  </div>
 </footer>
 
+</div><!-- /page-container -->
 
-<!-- =========================================================
-     SCRIPTS
-========================================================= -->
-<script>
-  const nav = document.getElementById('mainNav');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 40);
-  }, { passive: true });
-
-  const burger = document.getElementById('navBurger');
-  const mobileMenu = document.getElementById('mobileMenu');
-  burger.addEventListener('click', () => {
-    const open = mobileMenu.classList.toggle('is-open');
-    burger.textContent = open ? '✕' : '☰';
-    document.body.style.overflow = open ? 'hidden' : '';
-  });
-
-  // Notify form — placeholder handler (no backend yet)
-  const notifyForm = document.getElementById('notifyForm');
-  if (notifyForm) {
-    notifyForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const btn = notifyForm.querySelector('button');
-      const input = notifyForm.querySelector('input');
-      btn.textContent = "You're on the list ✓";
-      btn.disabled = true;
-      input.value = '';
-    });
-  }
-</script>
-
+<script src="./assets/js/site.js?v=ship-20260422-fontfix" defer></script>
 </body>
 </html>
